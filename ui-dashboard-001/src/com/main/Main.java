@@ -110,7 +110,7 @@ public class Main extends javax.swing.JFrame {
         setForm(new TrangChu());
     }
 
-    private void setForm(JComponent com) {
+    public void setForm(JComponent com) {
         mainPanel.removeAll();
         mainPanel.add(com);
         mainPanel.repaint();
@@ -121,7 +121,7 @@ public class Main extends javax.swing.JFrame {
         mainPanel.setLayout(new BorderLayout());
         mainPanel.add(form1);
         form1.testData();
-        openLogin();
+//        openLogin();
 
     }
 

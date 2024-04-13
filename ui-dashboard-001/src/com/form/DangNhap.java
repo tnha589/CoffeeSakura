@@ -20,7 +20,40 @@ import java.awt.Color;
  */
 public class DangNhap extends javax.swing.JDialog {
 
-    nhanVienDao NVDao = new nhanVienDao();
+	
+	
+    public javax.swing.JButton getBtnHuy() {
+		return btnHuy;
+	}
+
+	public void setBtnHuy(javax.swing.JButton btnHuy) {
+		this.btnHuy = btnHuy;
+	}
+
+	public javax.swing.JButton getBtnXacNhan() {
+		return btnXacNhan;
+	}
+
+	public void setBtnXacNhan(javax.swing.JButton btnXacNhan) {
+		this.btnXacNhan = btnXacNhan;
+	}
+
+	public javax.swing.JPasswordField getTxtPassword() {
+		return txtPassword;
+	}
+
+	public void setTxtPassword(javax.swing.JPasswordField txtPassword) {
+		this.txtPassword = txtPassword;
+	}
+
+	public javax.swing.JTextField getTxtTenTK() {
+		return txtTenTK;
+	}
+
+	public void setTxtTenTK(javax.swing.JTextField txtTenTK) {
+		this.txtTenTK = txtTenTK;
+	}
+	nhanVienDao NVDao = new nhanVienDao();
 
     /**
      * Creates new form DangNhap
@@ -29,8 +62,8 @@ public class DangNhap extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
-        txtTenTK.setText("NV000");
-        txtPassword.setText("123");
+//        txtTenTK.setText("NV000");
+//        txtPassword.setText("123");
     }
 
     //Nhập dữ liệu tư

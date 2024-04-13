@@ -65,7 +65,7 @@ public class Menu1 extends javax.swing.JPanel {
     HoaDonChiTietDAO hdctdao = new HoaDonChiTietDAO();
     List<HoaDon> listHD = new ArrayList();
     DefaultCellEditor cellEditor;
-    List<SanPham> listSP = new ArrayList<>();
+    public List<SanPham> listSP = new ArrayList<>();
     List<Integer> listrow = new ArrayList<>();
     List<String> listMaSP = new ArrayList<>();
     List<String> listKM = new ArrayList<>();
@@ -78,13 +78,13 @@ public class Menu1 extends javax.swing.JPanel {
     List<Double> listGia = new ArrayList();
     int row = -1;
     int row2 = -1;
-    private JSpinner spinner;
-    private int newValue = 0;
-    private boolean taoHD = false;
-    private String ngayTaoHD = "";
-    private String maHDInsert;
-    private double giakm = 0;
-    private JTextPane bill;
+    public JSpinner spinner;
+    public int newValue = 0;
+    public boolean taoHD = false;
+    public String ngayTaoHD = "";
+    public String maHDInsert;
+    public double giakm = 0;
+    public JTextPane bill;
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     Date ngayTao = null;
@@ -102,6 +102,7 @@ public class Menu1 extends javax.swing.JPanel {
     List<Object[]> MahoaQR = new ArrayList<>();
     int giatrivoucher = 0;
     int maVoucher = 0;
+    String message ="";
 
     /**
      * Creates new form Menu1
@@ -718,22 +719,7 @@ public class Menu1 extends javax.swing.JPanel {
     }//GEN-LAST:event_btnVCActionPerformed
 
     private void cboLoaiSPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboLoaiSPActionPerformed
-        if (cboLoaiSP.getSelectedIndex() != 0) {
-            try {
-                listSP = SPDao.selectByLoaiSP(cboLoaiSP.getSelectedItem().toString());
-                if (listSP.size() == 0) {
-                    panelItem1.removeAll();
-                    panelItem1.repaint();
-                }
-                panelItem1.removeAll();
-                testData();
-            } catch (Exception e) {
-            }
-        } else {
-            fillPanelSP();
-        }
-
-
+       clickCboLoaiSP();
     }//GEN-LAST:event_cboLoaiSPActionPerformed
 
     private void tblHoaDonChoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHoaDonChoMouseClicked
@@ -827,11 +813,11 @@ public class Menu1 extends javax.swing.JPanel {
         rdoTienMat.setSelected(true);
         txtTienSP.setEditable(false);
         txtTienThua.setEditable(false);
-        txtChiPhiKhac.setText("0");
-        txtTienNhan.setText("0");
-        txtTienSP.setText("0");
-        lblTongTien.setText("0 ");
-        txtTienThua.setText("0");
+//        txtChiPhiKhac.setText("0");
+//        txtTienNhan.setText("0");
+//        txtTienSP.setText("0");
+//        lblTongTien.setText("0 ");
+//        txtTienThua.setText("0");
         lblThongBaoTienNhan.setVisible(false);
         lblThongBaoPhi.setVisible(false);
         lblvoucher.setVisible(false);
@@ -1112,7 +1098,7 @@ public class Menu1 extends javax.swing.JPanel {
         return modelGF;
     }
 
-    private static Date convertLocalDateTimeToDate(LocalDateTime localDateTime) {
+    public static Date convertLocalDateTimeToDate(LocalDateTime localDateTime) {
         return java.sql.Timestamp.valueOf(localDateTime);
     }
 
@@ -1166,6 +1152,9 @@ public class Menu1 extends javax.swing.JPanel {
             txtTienThua.setText("0");
             txtGhiChu.setText("");
             maVoucher = 0;
+            message = "Tạo hóa đơn thành công";
+            closeJdialog();
+            JOptionPane.showMessageDialog(null, message);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -1494,7 +1483,9 @@ public class Menu1 extends javax.swing.JPanel {
 
     public boolean checkThanhToan() {
         if (tblHoaDon.getRowCount() == 0) {
-            JOptionPane.showMessageDialog(null, "Hãy thêm sản phẩm vào hóa đơn!");
+        	message = "Hãy thêm sản phẩm vào hóa đơn!";
+        	closeJdialog();
+            JOptionPane.showMessageDialog(null, message);
             return false;
         }
         if (!alterPhi.isEmpty()) {
@@ -1554,6 +1545,166 @@ public class Menu1 extends javax.swing.JPanel {
 
             e.printStackTrace();
         }
-
     }
+    
+    public javax.swing.JButton getBtnThanhToan1() {
+		return btnThanhToan1;
+	}
+
+	public void setBtnThanhToan1(javax.swing.JButton btnThanhToan1) {
+		this.btnThanhToan1 = btnThanhToan1;
+	}
+
+	public javax.swing.JTextField getTxtChiPhiKhac() {
+		return txtChiPhiKhac;
+	}
+
+	public void setTxtChiPhiKhac(javax.swing.JTextField txtChiPhiKhac) {
+		this.txtChiPhiKhac = txtChiPhiKhac;
+	}
+
+	public javax.swing.JTextArea getTxtGhiChu() {
+		return txtGhiChu;
+	}
+
+	public void setTxtGhiChu(javax.swing.JTextArea txtGhiChu) {
+		this.txtGhiChu = txtGhiChu;
+	}
+
+	public javax.swing.JTextField getTxtTienNhan() {
+		return txtTienNhan;
+	}
+
+	public void setTxtTienNhan(javax.swing.JTextField txtTienNhan) {
+		this.txtTienNhan = txtTienNhan;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getAlterTien() {
+		return alterTien;
+	}
+
+	public void setAlterTien(String alterTien) {
+		this.alterTien = alterTien;
+	}
+	
+	
+    
+	public javax.swing.JTextField getTxtSearch() {
+		return txtSearch;
+	}
+
+	public void setTxtSearch(javax.swing.JTextField txtSearch) {
+		this.txtSearch = txtSearch;
+	}
+	
+	
+	public String getAlterPhi() {
+		return alterPhi;
+	}
+
+	public void setAlterPhi(String alterPhi) {
+		this.alterPhi = alterPhi;
+	}
+
+	public javax.swing.JComboBox<String> getCboLoaiSP() {
+		return cboLoaiSP;
+	}
+
+	public void setCboLoaiSP(javax.swing.JComboBox<String> cboLoaiSP) {
+		this.cboLoaiSP = cboLoaiSP;
+	}
+
+	public javax.swing.JPopupMenu getjPopupMenu1() {
+		return jPopupMenu1;
+	}
+
+	public void setjPopupMenu1(javax.swing.JPopupMenu jPopupMenu1) {
+		this.jPopupMenu1 = jPopupMenu1;
+	}
+
+	public javax.swing.JProgressBar getjProgressBar1() {
+		return jProgressBar1;
+	}
+
+	public void setjProgressBar1(javax.swing.JProgressBar jProgressBar1) {
+		this.jProgressBar1 = jProgressBar1;
+	}
+
+	public javax.swing.JMenuItem getMnuPopRemoveAll() {
+		return mnuPopRemoveAll;
+	}
+
+	public void setMnuPopRemoveAll(javax.swing.JMenuItem mnuPopRemoveAll) {
+		this.mnuPopRemoveAll = mnuPopRemoveAll;
+	}
+
+	public javax.swing.JMenuItem getMnuPopXoa() {
+		return mnuPopXoa;
+	}
+
+	public void setMnuPopXoa(javax.swing.JMenuItem mnuPopXoa) {
+		this.mnuPopXoa = mnuPopXoa;
+	}
+	
+	
+	public javax.swing.JButton getjButton6() {
+		return jButton6;
+	}
+
+	public void setjButton6(javax.swing.JButton jButton6) {
+		this.jButton6 = jButton6;
+	}
+
+	public javax.swing.JTable getTblHoaDon() {
+		return tblHoaDon;
+	}
+
+	public void setTblHoaDon(javax.swing.JTable tblHoaDon) {
+		this.tblHoaDon = tblHoaDon;
+	}
+
+	
+	
+	public void closeJdialog() {
+		Thread loginThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    // Tạm dừng thực thi trong 3 giây
+                   
+                    Thread.sleep(3000);
+                    // Sau khi tạm dừng, gọi phương thức đăng nhập
+                    JOptionPane.getRootFrame().dispose();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        loginThread.start();
+	}
+	
+	public void clickCboLoaiSP() {
+		 if (cboLoaiSP.getSelectedIndex() != 0) {
+	            try {
+	                listSP = SPDao.selectByLoaiSP(cboLoaiSP.getSelectedItem().toString());
+	                if (listSP.size() == 0) {
+	                    panelItem1.removeAll();
+	                    panelItem1.repaint();
+	                }
+	                panelItem1.removeAll();
+	                testData();
+	            } catch (Exception e) {
+	            }
+	        } else {
+	            fillPanelSP();
+	        }
+	}
 }
