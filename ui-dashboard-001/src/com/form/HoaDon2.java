@@ -8,6 +8,8 @@ import com.Dao.HoaDonDAO_1;
 import com.model.HoaDon;
 import com.untils.XAuth;
 import com.untils.XDate;
+import com.untils.getJOptionePane;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.text.SimpleDateFormat;
@@ -56,7 +58,7 @@ public class HoaDon2 extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    public void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -818,20 +820,20 @@ public class HoaDon2 extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tblHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHoaDonMouseClicked
+    public void tblHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHoaDonMouseClicked
         row = tblHoaDon.getSelectedRow();
         String maHD = (String) tblHoaDon.getValueAt(row, 0);
         fillTableHoaDonCT();
         // TODO add your handling code here:
     }//GEN-LAST:event_tblHoaDonMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    public void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         updateHoaDon();
         Reset();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void tblLSHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLSHoaDonMouseClicked
+    public void tblLSHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLSHoaDonMouseClicked
         try {
             row1 = tblLSHoaDon.getSelectedRow();
             String maHD = (String) tblLSHoaDon.getValueAt(row1, 0);
@@ -843,7 +845,7 @@ public class HoaDon2 extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tblLSHoaDonMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    public void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         userInput = JOptionPane.showInputDialog("Lý do hủy:");
         if (userInput != null) {
             updateHuyHoaDon();
@@ -851,86 +853,86 @@ public class HoaDon2 extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void btnXacNhanHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanHuyActionPerformed
+    public void btnXacNhanHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanHuyActionPerformed
         updateXacNhanHuy();
     }//GEN-LAST:event_btnXacNhanHuyActionPerformed
 
-    private void btnTuChoiHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTuChoiHuyActionPerformed
+    public void btnTuChoiHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTuChoiHuyActionPerformed
         updateTrangThaiHuy();
     }//GEN-LAST:event_btnTuChoiHuyActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnTuChoiHuy;
-    private javax.swing.JButton btnXacNhanHuy;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private com.toedter.calendar.JDateChooser jdcNgay;
-    private javax.swing.JLabel lblGhiChu;
-    private javax.swing.JLabel lblGhiChu1;
-    private javax.swing.JLabel lblGiaTriVouCher;
-    private javax.swing.JLabel lblGiaTriVoucher1;
-    private javax.swing.JLabel lblHuy;
-    private javax.swing.JLabel lblKhuyenMai;
-    private javax.swing.JLabel lblLyDo;
-    private javax.swing.JLabel lblMaHD;
-    private javax.swing.JLabel lblMaHD1;
-    private javax.swing.JLabel lblNguoiTao;
-    private javax.swing.JLabel lblNguoiTao1;
-    private javax.swing.JLabel lblNoiDungHuy;
-    private javax.swing.JLabel lblPhiKhac;
-    private javax.swing.JLabel lblPhiKhac1;
-    private javax.swing.JLabel lblThoiGianTT1;
-    private javax.swing.JLabel lblThoiGianTao;
-    private javax.swing.JLabel lblThoiGianTao1;
-    private javax.swing.JLabel lblThoiGianThanhToan;
-    private javax.swing.JLabel lblTienSP;
-    private javax.swing.JLabel lblTienSP1;
-    private javax.swing.JLabel lblTongTien;
-    private javax.swing.JLabel lblTongTien1;
-    private javax.swing.JLabel lblTrangThai;
-    private javax.swing.JLabel lblTrangThai1;
-    private javax.swing.JLabel lblVoucher;
-    private javax.swing.JLabel lbllLyDoHuy;
-    private javax.swing.JTable tblHoaDon;
-    private javax.swing.JTable tblHoaDonCT;
-    private javax.swing.JTable tblLSHoaDon;
+    public javax.swing.JButton btnTuChoiHuy;
+    public javax.swing.JButton btnXacNhanHuy;
+    public javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton2;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel10;
+    public javax.swing.JLabel jLabel11;
+    public javax.swing.JLabel jLabel12;
+    public javax.swing.JLabel jLabel13;
+    public javax.swing.JLabel jLabel14;
+    public javax.swing.JLabel jLabel15;
+    public javax.swing.JLabel jLabel16;
+    public javax.swing.JLabel jLabel17;
+    public javax.swing.JLabel jLabel18;
+    public javax.swing.JLabel jLabel19;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel20;
+    public javax.swing.JLabel jLabel21;
+    public javax.swing.JLabel jLabel22;
+    public javax.swing.JLabel jLabel23;
+    public javax.swing.JLabel jLabel24;
+    public javax.swing.JLabel jLabel25;
+    public javax.swing.JLabel jLabel26;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel5;
+    public javax.swing.JLabel jLabel6;
+    public javax.swing.JLabel jLabel7;
+    public javax.swing.JLabel jLabel8;
+    public javax.swing.JLabel jLabel9;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel2;
+    public javax.swing.JPanel jPanel3;
+    public javax.swing.JPanel jPanel4;
+    public javax.swing.JPanel jPanel5;
+    public javax.swing.JPanel jPanel6;
+    public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JScrollPane jScrollPane3;
+    public javax.swing.JTabbedPane jTabbedPane1;
+    public com.toedter.calendar.JDateChooser jdcNgay;
+    public javax.swing.JLabel lblGhiChu;
+    public javax.swing.JLabel lblGhiChu1;
+    public javax.swing.JLabel lblGiaTriVouCher;
+    public javax.swing.JLabel lblGiaTriVoucher1;
+    public javax.swing.JLabel lblHuy;
+    public javax.swing.JLabel lblKhuyenMai;
+    public javax.swing.JLabel lblLyDo;
+    public javax.swing.JLabel lblMaHD;
+    public javax.swing.JLabel lblMaHD1;
+    public javax.swing.JLabel lblNguoiTao;
+    public javax.swing.JLabel lblNguoiTao1;
+    public javax.swing.JLabel lblNoiDungHuy;
+    public javax.swing.JLabel lblPhiKhac;
+    public javax.swing.JLabel lblPhiKhac1;
+    public javax.swing.JLabel lblThoiGianTT1;
+    public javax.swing.JLabel lblThoiGianTao;
+    public javax.swing.JLabel lblThoiGianTao1;
+    public javax.swing.JLabel lblThoiGianThanhToan;
+    public javax.swing.JLabel lblTienSP;
+    public javax.swing.JLabel lblTienSP1;
+    public javax.swing.JLabel lblTongTien;
+    public javax.swing.JLabel lblTongTien1;
+    public javax.swing.JLabel lblTrangThai;
+    public javax.swing.JLabel lblTrangThai1;
+    public javax.swing.JLabel lblVoucher;
+    public javax.swing.JLabel lbllLyDoHuy;
+    public javax.swing.JTable tblHoaDon;
+    public javax.swing.JTable tblHoaDonCT;
+    public javax.swing.JTable tblLSHoaDon;
     // End of variables declaration//GEN-END:variables
 public void init() {
         fillTableHoaDon();
@@ -1140,7 +1142,7 @@ public void init() {
         fillTableHoaDon();
         row = -1;
         fillTableHoaDonCT();
-        JOptionPane.showMessageDialog(null, "Đã từ chối hủy hóa đơn");
+            getJOptionePane.methodThatUsesOptionPane(null, "Đã từ chối hủy hóa đơn");
     }
 
     public void updateXacNhanHuy() {
@@ -1161,7 +1163,7 @@ public void init() {
         row = -1;
         fillTableHoaDonCT();
         fillTableLSHoaDon();
-        JOptionPane.showMessageDialog(null, "Đã xác nhận hủy hóa đơn");
+            getJOptionePane.methodThatUsesOptionPane(null, "Đã xác nhận hủy hóa đơn");
     }
 
     public void xemLyDo() {
@@ -1203,8 +1205,8 @@ public void init() {
 
     class CustomRowRenderer implements TableCellRenderer {
 
-        private final List<String> statuses;
-        private final DefaultTableCellRenderer defaultRenderer = new DefaultTableCellRenderer();
+        public final List<String> statuses;
+        public final DefaultTableCellRenderer defaultRenderer = new DefaultTableCellRenderer();
 
         public CustomRowRenderer(List<String> statuses) {
             this.statuses = statuses;
