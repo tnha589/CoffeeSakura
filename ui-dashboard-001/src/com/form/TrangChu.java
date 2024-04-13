@@ -29,7 +29,7 @@ public class TrangChu extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    public void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -77,12 +77,12 @@ public class TrangChu extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    public void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        new Calam(null, true).setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    public void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         GiaoCa gc = new GiaoCa(null, true);
         gc.setVisible(true);
@@ -90,10 +90,10 @@ public class TrangChu extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton2;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
 }
