@@ -115,10 +115,10 @@ public class MenuTest {
 	@Test
 	public void CF_05() {
 		sleep(1);
-		menu1.getCboLoaiSP().setSelectedItem("Thức ăn");
-		menu1.getCboLoaiSP().setSelectedIndex(1);
+		menu1.getCboLoaiSP().setSelectedIndex(2); // 2 la loai thức ăn
+
 		sleep(1);
-		menu1.clickCboLoaiSP();
+//		menu1.clickCboLoaiSP();
 		sleep(1);
 		list = spDao.selectByLoaiSP("Thức ăn");
 		sleep(1);

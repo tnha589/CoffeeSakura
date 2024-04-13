@@ -1693,7 +1693,7 @@ public class Menu1 extends javax.swing.JPanel {
 	
 	public void clickCboLoaiSP() {
 		 if (cboLoaiSP.getSelectedIndex() != 0) {
-	            try {
+	           try {
 	                listSP = SPDao.selectByLoaiSP(cboLoaiSP.getSelectedItem().toString());
 	                if (listSP.size() == 0) {
 	                    panelItem1.removeAll();
