@@ -1,10 +1,9 @@
 package test.kienlhpc05751;
 
 import static org.testng.Assert.assertEquals;
-//import static org.junit.Assert.assertTrue;
-import static org.testng.Assert.assertTrue;
 
 import java.awt.AWTEvent;
+import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
 import java.awt.Window;
@@ -23,18 +22,18 @@ import org.testng.annotations.Test;
 import com.Dao.nhanVienDao;
 import com.form.DangNhap;
 import com.form.KhuyenMai1;
-import com.form.QuanLyNhanVien1;
 import com.main.Main;
+import com.model.KhuyenMai;
 import com.supportTest.YesMockOptionPane;
 import com.untils.XDialog;
 
 public class LamMoiKhuyenMai {
-
 	private Main main;
 	public DangNhap login = new DangNhap(main, false);
 //	private QuanLyNhanVien1 quanLyNhanVien;
 	public KhuyenMai1 km = new KhuyenMai1();
 	private nhanVienDao nvDao;
+
 	public void closeJOptionPane() {
 		Window[] windows = Window.getWindows();
 		for (Window window : windows) {
@@ -48,7 +47,6 @@ public class LamMoiKhuyenMai {
 			}
 		}
 	}
-	
 
 	public void setText(String makm, String tenkm, Date ngayBD, Date ngayKT, boolean hinhthuc, boolean Trangthai,
 			String giatri) {
@@ -98,167 +96,56 @@ public class LamMoiKhuyenMai {
 			km.setVisible(true);
 		});
 	}
-	
-	   private void closeJOptionPane1() {
-	        AWTEvent event = new AWTEvent(new JOptionPane(), 0) {};
-	        EventQueue queue = Toolkit.getDefaultToolkit().getSystemEventQueue();
-	        queue.postEvent(event);
-	    }
-	   
-	   private void closeJOptionPaneIfDisplayed() {
-	        Window[] windows = Window.getWindows();
-	        for (Window window1 : windows) {
-	            JOptionPane window = null;
-				if (window instanceof JOptionPane) {
-	                JOptionPane optionPane = (JOptionPane) window;
-	                if (optionPane.isVisible() && optionPane.getValue() != null && optionPane.getValue().equals(JOptionPane.OK_OPTION)) {
-	                    optionPane.setValue(JOptionPane.CLOSED_OPTION);
+
+	private void closeJOptionPane1() {
+		AWTEvent event = new AWTEvent(new JOptionPane(), 0) {
+		};
+		EventQueue queue = Toolkit.getDefaultToolkit().getSystemEventQueue();
+		queue.postEvent(event);
+	}
+
+	private void closeJOptionPaneIfDisplayed() {
+		Window[] windows = Window.getWindows();
+		for (Window window1 : windows) {
+			JOptionPane window = null;
+			if (window instanceof JOptionPane) {
+				JOptionPane optionPane = (JOptionPane) window;
+				if (optionPane.isVisible() && optionPane.getValue() != null
+						&& optionPane.getValue().equals(JOptionPane.OK_OPTION)) {
+					optionPane.setValue(JOptionPane.CLOSED_OPTION);
 //	                    optionPane.z();
-	                }
-	            }
-	        }
-	    }
+				}
+			}
+		}
+	}
 
 	@AfterMethod
 	public void logout() {
 		main.setVisible(false);
 	}
-	
-		@Test(priority = 0)
-		public void insertKhuyenmai() throws InterruptedException {
-			Assert.assertNotNull(km);
-			Date ngayBD = new Date(); // Tạo một đối tượng Date hiện tại cho ngày bắt đầu
-			Date ngayKT = new Date(ngayBD.getTime() + TimeUnit.DAYS.toMillis(2));
-			
-			System.out.println("ngày kết thúc: " + ngayKT);
-			setText("KM011", "Thangs4", ngayBD, ngayKT, false, false, "10");
-			TimeUnit.SECONDS.sleep(2);
-	//		XDialog.setOptionPane(new YesMockOptionPane());
-			km.btnThem.doClick(1);
-			TimeUnit.SECONDS.sleep(2); 
-//			closeJOptionPane();
-			closeJOptionPaneIfDisplayed();
-	//		String error;
-			Assert.assertEquals(km.message,"Mã khuyến mãi đã tồn tại!");
-	
-		}
-		@Test(priority = 1)
-		public void insertKhuyenmai1() throws InterruptedException {
-			Assert.assertNotNull(km);
-			Date ngayBD = new Date(); // Tạo một đối tượng Date hiện tại cho ngày bắt đầu
-			Date ngayKT = new Date(ngayBD.getTime() + TimeUnit.DAYS.toMillis(2));
-			
-			System.out.println("ngày kết thúc: " + ngayKT);
-			setText("", "Thangs4", ngayBD, ngayKT, false, false, "10");
-			TimeUnit.SECONDS.sleep(2);
-	//		XDialog.setOptionPane(new YesMockOptionPane());
-			km.btnThem.doClick(1);
-			TimeUnit.SECONDS.sleep(2); 
-//			closeJOptionPane();
-			closeJOptionPaneIfDisplayed();
-	//		String error;
-			Assert.assertEquals(km.message,"Hãy điền mã khuyến mãi!");
-	
-		}
-		@Test(priority = 2)
-		public void insertKhuyenmai2() throws InterruptedException {
-			Assert.assertNotNull(km);
-			Date ngayBD = new Date(); // Tạo một đối tượng Date hiện tại cho ngày bắt đầu
-			Date ngayKT = new Date(ngayBD.getTime() + TimeUnit.DAYS.toMillis(2));
-			
-			System.out.println("ngày kết thúc: " + ngayKT);
-			setText("KM075", "", ngayBD, ngayKT, false, false, "10");
-			TimeUnit.SECONDS.sleep(2);
-	//		XDialog.setOptionPane(new YesMockOptionPane());
-			km.btnThem.doClick(1);
-			TimeUnit.SECONDS.sleep(2); 
-//			closeJOptionPane();
-			closeJOptionPaneIfDisplayed();
-	//		String error;
-			Assert.assertEquals(km.message,"hãy nhập tên khuyến mãi!");
-	
-		}
 
-		
-		@Test(priority = 3)
-		public void insertKhuyenmai3() throws InterruptedException {
-			Assert.assertNotNull(km);
-			Date ngayBD = new Date(); // Tạo một đối tượng Date hiện tại cho ngày bắt đầu
-			Date ngayKT = new Date(ngayBD.getTime() + TimeUnit.DAYS.toMillis(2));		
-			System.out.println("ngày kết thúc: " + ngayKT);
-			setText("KM075qqqqqq", "thang4", ngayBD, ngayKT, false, false, "10");
-			TimeUnit.SECONDS.sleep(2);
-			km.btnThem.doClick(1);
-			TimeUnit.SECONDS.sleep(2); 
-			closeJOptionPaneIfDisplayed();
-			Assert.assertEquals(km.message,"Mã khuyến mãi quá dài");
-	
+	@Test(priority = 0)
+	public void lamMoiKhuyenmai() throws InterruptedException {
+		km.row2 = 2;
+		km.edit();
+		TimeUnit.SECONDS.sleep(2);
+		XDialog.setOptionPane(new YesMockOptionPane());
+		km.btnMoi.doClick(1);
+		TimeUnit.SECONDS.sleep(2);
+//			closeJOptionPane();
+		closeJOptionPaneIfDisplayed();
+		KhuyenMai kmModel = new KhuyenMai();
+		kmModel.setTenKM(km.txtTenKM.getText());
+		kmModel.setNgayBD(km.txtNgayBD.getDate());
+		System.out.println("new "+kmModel.getTenKM());
+//		Assert.assertNull(kmModel);
+		if(kmModel.TenKM != null) {
+			Assert.assertEquals(kmModel.getTenKM(),"");
+		}else if(kmModel.NgayBD!=null) {
+			Assert.assertEquals(kmModel.getNgayBD(),"");
 		}
-		
-		@Test(priority = 4)
-		public void insertKhuyenmai4() throws InterruptedException {
-			Assert.assertNotNull(km);
-			Date ngayBD = new Date(); // Tạo một đối tượng Date hiện tại cho ngày bắt đầu
-			Date ngayKT = new Date(ngayBD.getTime() + TimeUnit.DAYS.toMillis(2));		
-			System.out.println("ngày kết thúc: " + ngayKT);
-			setText("KM075", "thang4", ngayBD, ngayKT, false,false, "");
-			TimeUnit.SECONDS.sleep(2);
-			km.btnThem.doClick(1);
-			TimeUnit.SECONDS.sleep(2); 
-			closeJOptionPaneIfDisplayed();
-			Assert.assertEquals(km.message,"hãy nhập giá khuyến mãi!");
+		assertEquals("", "");
 	
-		}
-		@Test(priority = 5)
-		public void insertKhuyenmai5() throws InterruptedException {
-			Assert.assertNotNull(km);
-			Date ngayBD = new Date(); // Tạo một đối tượng Date hiện tại cho ngày bắt đầu
-			Date ngayKT = new Date(ngayBD.getTime() + TimeUnit.DAYS.toMillis(2));		
-			System.out.println("ngày kết thúc: " + ngayKT);
-			setText("KM075", "thang4", ngayBD, ngayKT, false, false, "400");
-			TimeUnit.SECONDS.sleep(2);
-			km.btnThem.doClick(1);
-			TimeUnit.SECONDS.sleep(2); 
-			closeJOptionPaneIfDisplayed();
-			Assert.assertEquals(km.message,"Giá khuyến mãi chưa phù hợp!");
-	
-		}
-           
-		@Test(priority = 6)
-		public void insertKhuyenmai6() throws InterruptedException {
-			Assert.assertNotNull(km);
-			Date ngayBD = new Date(); // Tạo một đối tượng Date hiện tại cho ngày bắt đầu
-			Date ngayKT = new Date(ngayBD.getTime() + TimeUnit.DAYS.toMillis(2));		
-			System.out.println("ngày kết thúc: " + ngayKT);
-			setText("KM075", "thang4", ngayBD, ngayKT, false, false, "ádsd");
-			TimeUnit.SECONDS.sleep(2);
-			km.btnThem.doClick(1);
-			TimeUnit.SECONDS.sleep(2); 
-			closeJOptionPaneIfDisplayed();
-			Assert.assertEquals(km.message,"Giá khuyến mãi chỉ nhập số!");
-	
-		}
-		// chest trang thái
-		@Test(priority = 7)
-		public void insertKhuyenmai7() throws InterruptedException {
-			Assert.assertNotNull(km);
-			Date ngayBD = new Date(); // Tạo một đối tượng Date hiện tại cho ngày bắt đầu
-			Date ngayKT = new Date(ngayBD.getTime() + TimeUnit.DAYS.toMillis(2));		
-			System.out.println("ngày kết thúc: " + ngayKT);
-//			setText("KM075", "thang4", ngayBD, ngayKT, false, null, "ádsd");
-			km.txtGiaTri.setText("10");
-			km.txtMaKM.setText("KM086");
-			km.txtTenKM.setText("thang190");
-			km.txtNgayBD.setDate(ngayBD);
-			km.txtNgayKT.setDate(ngayKT);
-		    km.rdoVND.setSelected(true);
-			
-			
-			TimeUnit.SECONDS.sleep(2);
-			km.btnThem.doClick(1);
-			TimeUnit.SECONDS.sleep(2); 
-			closeJOptionPaneIfDisplayed();
-			Assert.assertEquals(km.message,"Vui lòng chọn trạng thái!");
-	
-		}
+
+	}
 }

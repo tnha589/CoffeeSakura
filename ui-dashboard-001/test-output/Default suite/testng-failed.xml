@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.LamMoiKhuyenMai">
+      <class name="test.kienlhpc05751.LamMoiKhuyenMai">
         <methods>
-          <include name="setUp"/>
-          <include name="insertKhuyenmai3"/>
+          <include name="lamMoiKhuyenmai"/>
           <include name="logout"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- test.LamMoiKhuyenMai -->
+      </class> <!-- test.kienlhpc05751.LamMoiKhuyenMai -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

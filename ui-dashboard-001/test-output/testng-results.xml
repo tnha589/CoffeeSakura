@@ -1,151 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="7" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-13T17:30:56 ICT" name="Default suite" finished-at="2024-04-13T17:33:07 ICT" duration-ms="131669">
+  <suite started-at="2024-04-14T10:40:05 ICT" name="Default suite" finished-at="2024-04-14T10:40:14 ICT" duration-ms="8941">
     <groups>
     </groups>
-    <test started-at="2024-04-13T17:30:56 ICT" name="Default test" finished-at="2024-04-13T17:33:07 ICT" duration-ms="131669">
-      <class name="test.LamMoiKhuyenMai">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:30:56 ICT" name="setUp" finished-at="2024-04-13T17:31:01 ICT" duration-ms="5163" status="PASS">
+    <test started-at="2024-04-14T10:40:05 ICT" name="Default test" finished-at="2024-04-14T10:40:14 ICT" duration-ms="8941">
+      <class name="test.kienlhpc05751.LamMoiKhuyenMai">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.LamMoiKhuyenMai@698122b2]" started-at="2024-04-14T10:40:05 ICT" name="setUp" finished-at="2024-04-14T10:40:10 ICT" duration-ms="4841" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="insertKhuyenmai()[pri:0, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:31:01 ICT" name="insertKhuyenmai" finished-at="2024-04-13T17:31:19 ICT" duration-ms="18345" status="PASS">
+        <test-method signature="lamMoiKhuyenmai()[pri:0, instance:test.kienlhpc05751.LamMoiKhuyenMai@698122b2]" started-at="2024-04-14T10:40:10 ICT" name="lamMoiKhuyenmai" finished-at="2024-04-14T10:40:14 ICT" duration-ms="4065" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- insertKhuyenmai -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:31:19 ICT" name="logout" finished-at="2024-04-13T17:31:19 ICT" duration-ms="9" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logout -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:31:19 ICT" name="setUp" finished-at="2024-04-13T17:31:24 ICT" duration-ms="4387" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="insertKhuyenmai1()[pri:1, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:31:24 ICT" name="insertKhuyenmai1" finished-at="2024-04-13T17:31:29 ICT" duration-ms="5328" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- insertKhuyenmai1 -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:31:29 ICT" name="logout" finished-at="2024-04-13T17:31:29 ICT" duration-ms="10" status="PASS">
+        </test-method> <!-- lamMoiKhuyenmai -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:test.kienlhpc05751.LamMoiKhuyenMai@698122b2]" started-at="2024-04-14T10:40:14 ICT" name="logout" finished-at="2024-04-14T10:40:14 ICT" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:31:29 ICT" name="setUp" finished-at="2024-04-13T17:31:33 ICT" duration-ms="4318" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="insertKhuyenmai2()[pri:2, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:31:33 ICT" name="insertKhuyenmai2" finished-at="2024-04-13T17:31:41 ICT" duration-ms="8007" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- insertKhuyenmai2 -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:31:41 ICT" name="logout" finished-at="2024-04-13T17:31:41 ICT" duration-ms="9" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logout -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:31:41 ICT" name="setUp" finished-at="2024-04-13T17:31:46 ICT" duration-ms="4397" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="insertKhuyenmai3()[pri:3, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:31:46 ICT" name="insertKhuyenmai3" finished-at="2024-04-13T17:31:55 ICT" duration-ms="9642" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [Mã khuyến mãi quá dài] but found []]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Mã khuyến mãi quá dài] but found []
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-at org.testng.Assert.assertEquals(Assert.java:122)
-at org.testng.Assert.assertEquals(Assert.java:629)
-at org.testng.Assert.assertEquals(Assert.java:639)
-at test.LamMoiKhuyenMai.insertKhuyenmai3(LamMoiKhuyenMai.java:194)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- insertKhuyenmai3 -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:31:55 ICT" name="logout" finished-at="2024-04-13T17:31:55 ICT" duration-ms="8" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logout -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:31:55 ICT" name="setUp" finished-at="2024-04-13T17:32:00 ICT" duration-ms="4165" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="insertKhuyenmai4()[pri:4, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:32:00 ICT" name="insertKhuyenmai4" finished-at="2024-04-13T17:32:32 ICT" duration-ms="32828" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- insertKhuyenmai4 -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:32:32 ICT" name="logout" finished-at="2024-04-13T17:32:32 ICT" duration-ms="7" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logout -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:32:32 ICT" name="setUp" finished-at="2024-04-13T17:32:36 ICT" duration-ms="4088" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="insertKhuyenmai5()[pri:5, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:32:36 ICT" name="insertKhuyenmai5" finished-at="2024-04-13T17:32:46 ICT" duration-ms="9262" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- insertKhuyenmai5 -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:32:46 ICT" name="logout" finished-at="2024-04-13T17:32:46 ICT" duration-ms="7" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logout -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:32:46 ICT" name="setUp" finished-at="2024-04-13T17:32:50 ICT" duration-ms="4141" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="insertKhuyenmai6()[pri:6, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:32:50 ICT" name="insertKhuyenmai6" finished-at="2024-04-13T17:32:55 ICT" duration-ms="5597" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- insertKhuyenmai6 -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:32:55 ICT" name="logout" finished-at="2024-04-13T17:32:55 ICT" duration-ms="8" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logout -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:32:55 ICT" name="setUp" finished-at="2024-04-13T17:33:00 ICT" duration-ms="4074" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="insertKhuyenmai7()[pri:7, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:33:00 ICT" name="insertKhuyenmai7" finished-at="2024-04-13T17:33:07 ICT" duration-ms="7817" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- insertKhuyenmai7 -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:test.LamMoiKhuyenMai@1c6804cd]" started-at="2024-04-13T17:33:07 ICT" name="logout" finished-at="2024-04-13T17:33:07 ICT" duration-ms="6" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logout -->
-      </class> <!-- test.LamMoiKhuyenMai -->
+      </class> <!-- test.kienlhpc05751.LamMoiKhuyenMai -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
