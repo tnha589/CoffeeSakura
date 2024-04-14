@@ -170,7 +170,7 @@ public class KhuyenMaiDao extends PeachCoffeeDao<KhuyenMai, String> {
         }
     }
 
-    public List<Object[]> getListOfArray(String sql, String[] cols, Object... args) {
+    private List<Object[]> getListOfArray(String sql, String[] cols, Object... args) {
         try {
             List<Object[]> list = new ArrayList<>();
             rs = JDBC.query(sql, args);

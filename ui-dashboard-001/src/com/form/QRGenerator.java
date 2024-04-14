@@ -47,7 +47,7 @@ public class QRGenerator extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    public void initComponents() {
+    private void initComponents() {
 
         btnScanner = new javax.swing.JButton();
         panelGenerate = new javax.swing.JPanel();
@@ -137,7 +137,7 @@ public class QRGenerator extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void btnGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateActionPerformed
+    private void btnGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerateActionPerformed
         if (txtGenerate.getText() != null) {
             String data = txtGenerate.getText();
             QRCodeWriter qrCodeWriter = new QRCodeWriter();
@@ -158,7 +158,7 @@ public class QRGenerator extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnGenerateActionPerformed
 
-    public void btnScannerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnScannerActionPerformed
+    private void btnScannerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnScannerActionPerformed
         QRScanner scanner = new QRScanner();
         scanner.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
@@ -169,7 +169,7 @@ public class QRGenerator extends javax.swing.JFrame {
         scanner.setVisible(true);
     }//GEN-LAST:event_btnScannerActionPerformed
 
-    public void btnSaveCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveCodeActionPerformed
+    private void btnSaveCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveCodeActionPerformed
         if (lblGenResult.getIcon() != null) {
             Icon icon = lblGenResult.getIcon();
             BufferedImage bi = new BufferedImage(
@@ -235,13 +235,13 @@ public class QRGenerator extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnGenerate;
-    public javax.swing.JButton btnSaveCode;
-    public javax.swing.JButton btnScanner;
-    public javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel lblGenResult;
-    public javax.swing.JLabel lblScanResult;
-    public javax.swing.JPanel panelGenerate;
-    public javax.swing.JTextField txtGenerate;
+    private javax.swing.JButton btnGenerate;
+    private javax.swing.JButton btnSaveCode;
+    private javax.swing.JButton btnScanner;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblGenResult;
+    private javax.swing.JLabel lblScanResult;
+    private javax.swing.JPanel panelGenerate;
+    private javax.swing.JTextField txtGenerate;
     // End of variables declaration//GEN-END:variables
 }
