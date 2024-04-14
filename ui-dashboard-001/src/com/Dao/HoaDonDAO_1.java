@@ -120,7 +120,7 @@ public class HoaDonDAO_1 extends PeachCoffeeDao<HoaDon, String> {
     public static String JChart_SQL = "Select Sum(Kh.HocPhi) Doanhthu,YEAR(NgayKG) Nam from KhoaHoc kh JOIN HocVien hv ON kh.MaKH = hv.MaKH JOIN ChuyenDe cd ON cd.MaCD = kh.MaCD group by YEAR(NgayKG)";
     public static String PieChart_SQL = "SELECT YEAR(NgayDK) Nam,COUNT(*) SoLuong FROM NguoiHoc GROUP BY YEAR(NgayDK)";
 
-    private List<Object[]> getListOfArray(String sql, String[] cols, Object... args) {
+    public List<Object[]> getListOfArray(String sql, String[] cols, Object... args) {
         try {
             List<Object[]> list = new ArrayList<>();
             rs = JDBC.query(sql, args);
