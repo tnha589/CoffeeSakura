@@ -31,7 +31,7 @@ public class CaLamDao {
     public static String ThongTinChiTiet_SQL = "{CALL sp_ThongTinChiTiet(?)}";
     
     
-    private List<Object[]> getListOfArray(String sql, String[] cols, Object... args) {
+    public List<Object[]> getListOfArray(String sql, String[] cols, Object... args) {
         try {
             List<Object[]> list = new ArrayList<>();
             rs = JDBC.query(sql, args);

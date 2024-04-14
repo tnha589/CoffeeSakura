@@ -9,6 +9,8 @@ import com.model.ChiTieu;
 import com.model.NhanVien;
 import com.untils.XAuth;
 import com.untils.XDialog;
+import com.untils.getJOptionePane;
+
 import java.awt.Color;
 import java.util.Properties;
 import java.util.Random;
@@ -50,7 +52,7 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
         }
     }
 
-    private String getRandomString(int n) {
+    public String getRandomString(int n) {
         String txt = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJLMNOPQRSTUVWXYZ1234567890";
         StringBuilder sb = new StringBuilder();
         while (n > 0) {
@@ -69,19 +71,19 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
 
         ///bắt lỗi trống
         if (email.equals("")) {
-            XDialog.alert(this, "Vui lòng nhập email.");
+              getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng nhập email.");
             return;
         }
 
         //bắt lỗi định dạng email
         if (!email.matches(dinhangemail)) {
-            XDialog.alert(this, "Email không đúng định dạng.");
+              getJOptionePane.methodThatUsesOptionPane(this, "Email không đúng định dạng.");
             return;
         }
 
         //bắt lỗi tồn tại
         if (email.equals(XAuth.user.getEmail())) {
-            XDialog.alert(this, "Email đã tồn tại trong hệ thống.");
+              getJOptionePane.methodThatUsesOptionPane(this, "Email đã tồn tại trong hệ thống.");
             return;
         }
 
@@ -122,7 +124,7 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
             message.setSubject(tieuDe);
             message.setContent(noiDung, "text/html;charset=utf-8");
             Transport.send(message);
-            XDialog.alert(this, "Đã gửi mã thành công!");
+              getJOptionePane.methodThatUsesOptionPane(this, "Đã gửi mã thành công!");
             //   System.out.println("Da gui");
             timer = false;
             Thread time = new Thread(this);
@@ -137,7 +139,7 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
         String email = txtEmail.getText().trim();
 
         if (maxn.equals("")) {
-            XDialog.alert(this, "Mã xác thực không được để trống");
+              getJOptionePane.methodThatUsesOptionPane(this, "Mã xác thực không được để trống");
         }
         if (maxn.equals(maXT)) {
             String maNV = XAuth.user.getMaNV();
@@ -152,10 +154,10 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
             txtEmail.setText("");
             txtMa.setText("");
 
-            XDialog.alert(this, "Liên kết thành công!");
+              getJOptionePane.methodThatUsesOptionPane(this, "Liên kết thành công!");
         } else {
 
-            XDialog.alert(this, "Sai mã xác thực");
+              getJOptionePane.methodThatUsesOptionPane(this, "Sai mã xác thực");
 
         }
     }
@@ -168,7 +170,7 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    public void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         txtEmail = new javax.swing.JTextField();
@@ -337,33 +339,33 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnLienKetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLienKetActionPerformed
+    public void btnLienKetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLienKetActionPerformed
         // TODO add your handling code here:
         //  KiemTra();
         xacNhan();
     }//GEN-LAST:event_btnLienKetActionPerformed
 
-    private void btnGuiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuiActionPerformed
+    public void btnGuiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuiActionPerformed
         // TODO add your handling code here:
         //GuiMa();  
         sendMail();
 
     }//GEN-LAST:event_btnGuiActionPerformed
 
-    private void btnGuiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuiMouseClicked
+    public void btnGuiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuiMouseClicked
         // TODO add your handling code here:
 
 
     }//GEN-LAST:event_btnGuiMouseClicked
 
-    private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
+    public void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
         // TODO add your handling code here:
         if (XDialog.confirm(this, "Bạn chắc chắn thoát!! ")) {
             dispose();
         }
     }//GEN-LAST:event_btnHuyActionPerformed
 
-    private void txtMaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtMaCaretUpdate
+    public void txtMaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtMaCaretUpdate
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMaCaretUpdate
 
@@ -411,19 +413,19 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGui;
-    private javax.swing.JButton btnHuy;
-    private javax.swing.JButton btnLienKet;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblEmail;
-    private javax.swing.JLabel lblXN;
-    private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtMa;
-    private javax.swing.JTextField txtTen;
+    public javax.swing.JButton btnGui;
+    public javax.swing.JButton btnHuy;
+    public javax.swing.JButton btnLienKet;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JLabel lblEmail;
+    public javax.swing.JLabel lblXN;
+    public javax.swing.JTextField txtEmail;
+    public javax.swing.JTextField txtMa;
+    public javax.swing.JTextField txtTen;
     // End of variables declaration//GEN-END:variables
  @Override
     public void run() {

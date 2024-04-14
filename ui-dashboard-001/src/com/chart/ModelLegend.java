@@ -28,6 +28,6 @@ public class ModelLegend {
     public ModelLegend() {
     }
 
-    private String name;
-    private Color color;
+    public String name;
+    public Color color;
 }
