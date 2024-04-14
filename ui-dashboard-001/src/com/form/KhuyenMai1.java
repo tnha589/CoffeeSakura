@@ -34,58 +34,58 @@ public class KhuyenMai1 extends javax.swing.JPanel {
         row2 = -1;
     }
     boolean flag = true;
-
-    boolean kiemTraInsert() {
+  public String message = "";
+  public  boolean kiemTraInsert() {
         // String pattenGiaTri = "\\d+(\\.\\d+)?";
 
         //Bắt lỗi Mã khuyến mãi
         if (txtMaKM.getText().isBlank()) {
-            XDialog.alert(this, "Hãy điền mã khuyến mãi!");
+            XDialog.alert(this, message ="Hãy điền mã khuyến mãi!");
             flag = false;
         } else if (txtMaKM.getText().length() > 7) {
             XDialog.alert(this, "Mã khuyến mãi quá dài");
             flag = false;
         } else if (daokm.selectById(txtMaKM.getText()) != null) {
-            XDialog.alert(this, "Mã khuyến mãi đã tồn tại!");
+            XDialog.alert(this, message ="Mã khuyến mãi đã tồn tại!");
             flag = false;
         }
         //Bắt lỗi tên khuyến mãi
 
         if (txtTenKM.getText().isBlank()) {
-            XDialog.alert(this, "hãy nhập tên khuyến mãi!");
+            XDialog.alert(this, message ="hãy nhập tên khuyến mãi!");
             flag = false;
         }
         try {
             //bắt lỗi giá trị khuyến mãi
             if (txtGiaTri.getText().isBlank()) {
-                XDialog.alert(this, "hãy nhập giá khuyến mãi!");
+                XDialog.alert(this,message = "hãy nhập giá khuyến mãi!");
                 flag = false;
             } else if (Double.parseDouble(txtGiaTri.getText()) > 10 || Double.parseDouble(txtGiaTri.getText()) <= 0) {
-                XDialog.alert(this, "Giá khuyến mãi chưa phù hợp!");
+                XDialog.alert(this,message = "Giá khuyến mãi chưa phù hợp!");
                 flag = false;
             }
         } catch (Exception e) {
-            XDialog.alert(this, "Giá khuyến mãi chỉ nhập số!");
+            XDialog.alert(this,message = "Giá khuyến mãi chỉ nhập số!");
             flag = false;
         }
 
         //kiểm tra trang thái / loại khuyến mãi
         if (!rdoDaKetThuc.isSelected() && !rdoDangDienRa.isSelected()) {
-            XDialog.alert(this, "Vui lòng chọn trạng thái!");
+            XDialog.alert(this,message = "Vui lòng chọn trạng thái!");
             flag = false;
         }
         if (!rdoPhanTram.isSelected() && !rdoVND.isSelected()) {
-            XDialog.alert(this, "Vui lòng chọn loại khuyến mãi");
+            XDialog.alert(this,message = "Vui lòng chọn loại khuyến mãi");
             flag = false;
         }
         //Kiểm tra JDateChoser
         if (txtNgayBD.getDate() == null || txtNgayKT.getDate() == null) {
-            XDialog.alert(this, "Vui lòng chọn ngày khuyến mãi");
+            XDialog.alert(this, message ="Vui lòng chọn ngày khuyến mãi");
             flag = false;
         }
         if (!txtNgayBD.getDate().before(txtNgayKT.getDate())) {
             // Ngày BD trước Ngày KT, hợp lệ
-            XDialog.alert(this, "Vui lòng chọn ngày khuyến mãi phù hợp");
+            XDialog.alert(this, message ="Vui lòng chọn ngày khuyến mãi phù hợp");
             flag = false;
 
         }
@@ -431,7 +431,7 @@ public class KhuyenMai1 extends javax.swing.JPanel {
         }
     }
 
-//    private void fillComboBoxKM() {
+//    public void fillComboBoxKM() {
 //        DefaultComboBoxModel model = (DefaultComboBoxModel) cboLoaiSanPham1.getModel();
 //        model.removeAllElements();
 //        List<String> list = daosp.selectTenLSP();
@@ -446,7 +446,7 @@ public class KhuyenMai1 extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    public void initComponents() {
 
         btgHTKM = new javax.swing.ButtonGroup();
         btgTrangThai = new javax.swing.ButtonGroup();
@@ -883,19 +883,19 @@ public class KhuyenMai1 extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtMaKMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaKMActionPerformed
+    public void txtMaKMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaKMActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMaKMActionPerformed
 
-    private void txtGiaTriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGiaTriActionPerformed
+    public void txtGiaTriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGiaTriActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtGiaTriActionPerformed
 
-    private void txtTenKMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTenKMActionPerformed
+    public void txtTenKMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTenKMActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTenKMActionPerformed
 
-    private void btnCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhatActionPerformed
+    public void btnCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhatActionPerformed
         // TODO add your handling code here:
         if (kiemTraUpdate()) {
             update();
@@ -905,16 +905,16 @@ public class KhuyenMai1 extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnCapNhatActionPerformed
 
-    private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
+    public void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
 
         clearForm();
     }//GEN-LAST:event_btnMoiActionPerformed
 
-    private void cboLoaiSanPhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboLoaiSanPhamActionPerformed
+    public void cboLoaiSanPhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboLoaiSanPhamActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cboLoaiSanPhamActionPerformed
 
-    private void tblKhuyenMaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhuyenMaiMouseClicked
+    public void tblKhuyenMaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblKhuyenMaiMouseClicked
         // TODO add your handling code here:
         btnCapNhat.setEnabled(true);
         btnThem.setEnabled(false);
@@ -924,7 +924,7 @@ public class KhuyenMai1 extends javax.swing.JPanel {
 
     }//GEN-LAST:event_tblKhuyenMaiMouseClicked
 
-    private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+    public void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
         if (kiemTraInsert()) {
             insert();
@@ -934,20 +934,20 @@ public class KhuyenMai1 extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnThemActionPerformed
 
-    private void cboKhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboKhuyenMaiActionPerformed
+    public void cboKhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboKhuyenMaiActionPerformed
         // TODO add your handling code here:
         //selectKM();
         LocKhuyenMai();
     }//GEN-LAST:event_cboKhuyenMaiActionPerformed
     int row = 0;
-    private void tblSanPamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSanPamMouseClicked
+    public void tblSanPamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSanPamMouseClicked
 
         clickCheckBox();
 
 
     }//GEN-LAST:event_tblSanPamMouseClicked
 
-    private void txtTenKM1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTenKM1KeyReleased
+    public void txtTenKM1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTenKM1KeyReleased
         // TODO add your handling code here:
         String timKiem = txtTenKM1.getText();
         TimKhuyenMai1(timKiem);
@@ -955,55 +955,55 @@ public class KhuyenMai1 extends javax.swing.JPanel {
         // tblSanPam.setEnabled(false);
     }//GEN-LAST:event_txtTenKM1KeyReleased
 
-    private void txtTenSPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTenSPKeyReleased
+    public void txtTenSPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTenSPKeyReleased
         // TODO add your handling code here:
         String timKiem = txtTenSP.getText();
         TimSanPham1(timKiem);
     }//GEN-LAST:event_txtTenSPKeyReleased
 
-    private void txtTenKM1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTenKM1ActionPerformed
+    public void txtTenKM1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTenKM1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTenKM1ActionPerformed
 
-    private void btnMoi1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoi1ActionPerformed
+    public void btnMoi1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoi1ActionPerformed
      Voucher voucher = new Voucher(null, true);
      voucher.setVisible(true);
     }//GEN-LAST:event_btnMoi1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup btgHTKM;
-    private javax.swing.ButtonGroup btgTrangThai;
-    private javax.swing.JButton btnCapNhat;
-    private javax.swing.JButton btnMoi;
-    private javax.swing.JButton btnMoi1;
-    private javax.swing.JButton btnThem;
-    private javax.swing.JComboBox<String> cboKhuyenMai;
-    private javax.swing.JComboBox<String> cboLoaiSanPham;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JRadioButton rdoDaKetThuc;
-    private javax.swing.JRadioButton rdoDangDienRa;
-    private javax.swing.JRadioButton rdoPhanTram;
-    private javax.swing.JRadioButton rdoVND;
-    private javax.swing.JTable tblKhuyenMai;
-    private javax.swing.JTable tblSanPam;
-    private javax.swing.JTextField txtGiaTri;
-    private javax.swing.JTextField txtMaKM;
-    private com.toedter.calendar.JDateChooser txtNgayBD;
-    private com.toedter.calendar.JDateChooser txtNgayKT;
-    private javax.swing.JTextField txtTenKM;
-    private javax.swing.JTextField txtTenKM1;
-    private javax.swing.JTextField txtTenSP;
+    public javax.swing.ButtonGroup btgHTKM;
+    public javax.swing.ButtonGroup btgTrangThai;
+    public javax.swing.JButton btnCapNhat;
+    public javax.swing.JButton btnMoi;
+    public javax.swing.JButton btnMoi1;
+    public javax.swing.JButton btnThem;
+    public javax.swing.JComboBox<String> cboKhuyenMai;
+    public javax.swing.JComboBox<String> cboLoaiSanPham;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel6;
+    public javax.swing.JLabel jLabel7;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel2;
+    public javax.swing.JPanel jPanel3;
+    public javax.swing.JPanel jPanel4;
+    public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JRadioButton rdoDaKetThuc;
+    public javax.swing.JRadioButton rdoDangDienRa;
+    public javax.swing.JRadioButton rdoPhanTram;
+    public javax.swing.JRadioButton rdoVND;
+    public javax.swing.JTable tblKhuyenMai;
+    public javax.swing.JTable tblSanPam;
+    public javax.swing.JTextField txtGiaTri;
+    public javax.swing.JTextField txtMaKM;
+    public com.toedter.calendar.JDateChooser txtNgayBD;
+    public com.toedter.calendar.JDateChooser txtNgayKT;
+    public javax.swing.JTextField txtTenKM;
+    public javax.swing.JTextField txtTenKM1;
+    public javax.swing.JTextField txtTenSP;
     // End of variables declaration//GEN-END:variables
 }

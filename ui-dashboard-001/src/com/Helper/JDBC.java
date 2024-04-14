@@ -24,7 +24,7 @@ public class JDBC {
     public static final String connectionUrl = "jdbc:sqlserver://localhost:1433;"
                     + "databaseName=database_sakuracoffee;"
                     + "user=sa;"
-                    + "password=nghia;"
+                    + "password=123;"
                     + "encrypt=true;"
                     + "trustServerCertificate=true;";
     /*

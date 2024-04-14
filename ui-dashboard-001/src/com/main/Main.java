@@ -259,5 +259,140 @@ public class Main extends javax.swing.JFrame {
         }
         return true;
     }
+    
+    
+    public sanPhamDao getSpDao() {
+		return spDao;
+	}
+
+	public void setSpDao(sanPhamDao spDao) {
+		this.spDao = spDao;
+	}
+
+	public TrangChu getHome() {
+		return home;
+	}
+
+	public void setHome(TrangChu home) {
+		this.home = home;
+	}
+
+	public Menu1 getForm1() {
+		return form1;
+	}
+
+	public void setForm1(Menu1 form1) {
+		this.form1 = form1;
+	}
+
+	public HoaDon2 getForm2() {
+		return form2;
+	}
+
+	public void setForm2(HoaDon2 form2) {
+		this.form2 = form2;
+	}
+
+	public QuanLySanPham1 getForm3() {
+		return form3;
+	}
+
+	public void setForm3(QuanLySanPham1 form3) {
+		this.form3 = form3;
+	}
+
+	public KhuyenMai1 getForm4() {
+		return form4;
+	}
+
+	public void setForm4(KhuyenMai1 form4) {
+		this.form4 = form4;
+	}
+
+	public ThongKe1 getForm5() {
+		return form5;
+	}
+
+	public void setForm5(ThongKe1 form5) {
+		this.form5 = form5;
+	}
+
+	public QuanLyNhanVien1 getForm6() {
+		return form6;
+	}
+
+	public void setForm6(QuanLyNhanVien1 form6) {
+		this.form6 = form6;
+	}
+
+	public ChiTieu1 getForm7() {
+		return form7;
+	}
+
+	public void setForm7(ChiTieu1 form7) {
+		this.form7 = form7;
+	}
+
+	public ModelItem getItemSelected() {
+		return itemSelected;
+	}
+
+	public void setItemSelected(ModelItem itemSelected) {
+		this.itemSelected = itemSelected;
+	}
+
+	public Header getH() {
+		return h;
+	}
+
+	public void setH(Header h) {
+		this.h = h;
+	}
+
+	public com.component.Header getHeader2() {
+		return header2;
+	}
+
+	public void setHeader2(com.component.Header header2) {
+		this.header2 = header2;
+	}
+
+	public javax.swing.JPanel getMainPanel() {
+		return mainPanel;
+	}
+
+	public void setMainPanel(javax.swing.JPanel mainPanel) {
+		this.mainPanel = mainPanel;
+	}
+
+	public com.component.Menu getMenu() {
+		return menu;
+	}
+
+	public void setMenu(com.component.Menu menu) {
+		this.menu = menu;
+	}
+
+	public com.swing.PanelBorder getPanelBorder1() {
+		return panelBorder1;
+	}
+
+	public void setPanelBorder1(com.swing.PanelBorder panelBorder1) {
+		this.panelBorder1 = panelBorder1;
+	}
+
+	public void openQuanLyNhanVien() {
+	    setForm(form6);
+	}
+	public void openChiTieu() {
+	    setForm(form7);
+	}
+	public void openThongKe() {
+	    setForm(form5);
+	}
+	public void openKhuyenMai() {
+		setForm(form4);
+
+	}
 
 }
