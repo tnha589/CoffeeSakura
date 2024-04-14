@@ -27,11 +27,11 @@ import java.util.concurrent.ThreadFactory;
  */
 public class QRScanne extends javax.swing.JDialog implements Runnable, ThreadFactory {
 
-    public WebcamPanel panel = null;
-    public Webcam webcam = null;
-    public final Executor executor = Executors.newSingleThreadExecutor(this);
-    public Boolean running = true;
-    public Boolean found = false;
+    private WebcamPanel panel = null;
+    private Webcam webcam = null;
+    private final Executor executor = Executors.newSingleThreadExecutor(this);
+    private Boolean running = true;
+    private Boolean found = false;
 
     /**
      * Creates new form QRScanne
@@ -61,7 +61,7 @@ public class QRScanne extends javax.swing.JDialog implements Runnable, ThreadFac
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    public void initComponents() {
+    private void initComponents() {
 
         panelCamera = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -114,7 +114,7 @@ public class QRScanne extends javax.swing.JDialog implements Runnable, ThreadFac
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void formComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentHidden
+    private void formComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentHidden
         running = false;
         webcam.close();
         if (!found) {
@@ -123,7 +123,7 @@ public class QRScanne extends javax.swing.JDialog implements Runnable, ThreadFac
         this.dispose();
     }//GEN-LAST:event_formComponentHidden
 
-    public void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         running = false;
         webcam.close();
         if (!found) {
@@ -175,11 +175,11 @@ public class QRScanne extends javax.swing.JDialog implements Runnable, ThreadFac
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButton1;
-    public javax.swing.JPanel panelCamera;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JPanel panelCamera;
     // End of variables declaration//GEN-END:variables
 
-    public void initWebcam() {
+    private void initWebcam() {
         setDefaultCloseOperation(this.DO_NOTHING_ON_CLOSE);
         Dimension size = WebcamResolution.VGA.getSize();
         webcam = Webcam.getWebcams().get(0);

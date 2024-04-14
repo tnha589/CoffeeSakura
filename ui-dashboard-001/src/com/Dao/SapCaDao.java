@@ -99,7 +99,7 @@ public class SapCaDao extends PeachCoffeeDao<SapCa, String> {
         return list;
     }
 
-    public List<Object[]> getListOfArray(String sql, String[] cols, Object... args) {
+    private List<Object[]> getListOfArray(String sql, String[] cols, Object... args) {
         try {
             List<Object[]> list = new ArrayList<>();
             rs = JDBC.query(sql, args);

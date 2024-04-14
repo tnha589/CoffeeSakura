@@ -9,8 +9,6 @@ import com.Dao.SapCaDao;
 import com.untils.XDialog;
 import com.untils.XExcel;
 import com.untils.XExcel1;
-import com.untils.getJOptionePane;
-
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -46,7 +44,7 @@ public class THU extends javax.swing.JDialog {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    public void initComponents() {
+    private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         cboThu = new javax.swing.JComboBox<>();
@@ -198,7 +196,7 @@ public class THU extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void tblCaLamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCaLamMouseClicked
+    private void tblCaLamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCaLamMouseClicked
         int col = tblCaLam.getSelectedColumn();
         int row = tblCaLam.getSelectedRow();
         Thu = String.valueOf(cboThu.getSelectedItem());
@@ -216,16 +214,16 @@ public class THU extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_tblCaLamMouseClicked
 
-    public void cboThuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cboThuMouseClicked
+    private void cboThuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cboThuMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_cboThuMouseClicked
 
-    public void cboThuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboThuActionPerformed
+    private void cboThuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboThuActionPerformed
         fillTableCaLam();
         // TODO add your handling code here:
     }//GEN-LAST:event_cboThuActionPerformed
 
-    public void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
+    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
         Thu = String.valueOf(cboThu.getSelectedItem());
         boolean userConfirmed = XDialog.confirm(null, "Bạn có chắt muốn xóa!");
         if (userConfirmed) {
@@ -235,7 +233,7 @@ public class THU extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnXoaActionPerformed
 
-    public void btnXoaAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaAllActionPerformed
+    private void btnXoaAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaAllActionPerformed
         boolean userConfirmed = XDialog.confirm(null, "Bạn có chắt muốn xóa!");
         if (userConfirmed) {
             clDao.deleteAllCaLam();
@@ -244,7 +242,7 @@ public class THU extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnXoaAllActionPerformed
 
-    public void btnXoaAll1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaAll1ActionPerformed
+    private void btnXoaAll1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaAll1ActionPerformed
        List<Object[]> list = clDao.getExcelFullCa();
         XExcel1.writeToExcel(list, "Lich Ca Lam Nhan Vien");
     for(Object[] row:list){
@@ -311,15 +309,15 @@ public class THU extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnXoa;
-    public javax.swing.JButton btnXoaAll;
-    public javax.swing.JButton btnXoaAll1;
-    public javax.swing.JComboBox<String> cboThu;
-    public javax.swing.JLabel jLabel1;
-    public javax.swing.JPanel jPanel1;
-    public javax.swing.JPanel jPanel2;
-    public javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable tblCaLam;
+    private javax.swing.JButton btnXoa;
+    private javax.swing.JButton btnXoaAll;
+    private javax.swing.JButton btnXoaAll1;
+    private javax.swing.JComboBox<String> cboThu;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblCaLam;
     // End of variables declaration//GEN-END:variables
 
     public void init() {
@@ -341,7 +339,7 @@ public class THU extends javax.swing.JDialog {
                 model.addRow(new Object[]{i, row[0], row[1], "Chi tiết"});
             }
         } catch (Exception e) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Lỗi truy vấn dữ liệu Sap ca");
+            XDialog.alert(this, "Lỗi truy vấn dữ liệu Sap ca");
             e.printStackTrace();
         }
 
