@@ -1,4 +1,4 @@
-package kienlhpc05751;
+package test.kienlhpc05751;
 
 import static org.testng.Assert.assertEquals;
 //import static org.junit.Assert.assertTrue;
