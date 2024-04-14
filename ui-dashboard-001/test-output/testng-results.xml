@@ -1,21 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-13T09:52:32 ICT" name="Default suite" finished-at="2024-04-13T09:52:43 ICT" duration-ms="11235">
+  <suite started-at="2024-04-14T15:27:23 ICT" name="Default suite" finished-at="2024-04-14T15:27:40 ICT" duration-ms="16859">
     <groups>
     </groups>
-    <test started-at="2024-04-13T09:52:32 ICT" name="Default test" finished-at="2024-04-13T09:52:43 ICT" duration-ms="11235">
+    <test started-at="2024-04-14T15:27:23 ICT" name="Default test" finished-at="2024-04-14T15:27:40 ICT" duration-ms="16859">
       <class name="test.MenuTest">
-        <test-method is-config="true" signature="openMenu()[pri:0, instance:test.MenuTest@2362f559]" started-at="2024-04-13T09:52:32 ICT" name="openMenu" finished-at="2024-04-13T09:52:38 ICT" duration-ms="5933" status="PASS">
+        <test-method is-config="true" signature="openMenu()[pri:0, instance:test.MenuTest@b2c9a9c]" started-at="2024-04-14T15:27:23 ICT" name="openMenu" finished-at="2024-04-14T15:27:29 ICT" duration-ms="5655" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openMenu -->
-        <test-method signature="CF_05()[pri:0, instance:test.MenuTest@2362f559]" started-at="2024-04-13T09:52:38 ICT" name="CF_05" finished-at="2024-04-13T09:52:43 ICT" duration-ms="5217" status="PASS">
+        <test-method signature="CF_18()[pri:8, instance:test.MenuTest@b2c9a9c]" started-at="2024-04-14T15:27:29 ICT" name="CF_18" finished-at="2024-04-14T15:27:40 ICT" duration-ms="11150" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Tạo hóa đơn thành công] but found []]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Tạo hóa đơn thành công] but found []
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at test.MenuTest.CF_18(MenuTest.java:254)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CF_05 -->
-        <test-method is-config="true" signature="closeMenu()[pri:0, instance:test.MenuTest@2362f559]" started-at="2024-04-13T09:52:43 ICT" name="closeMenu" finished-at="2024-04-13T09:52:43 ICT" duration-ms="54" status="PASS">
+        </test-method> <!-- CF_18 -->
+        <test-method is-config="true" signature="closeMenu()[pri:0, instance:test.MenuTest@b2c9a9c]" started-at="2024-04-14T15:27:40 ICT" name="closeMenu" finished-at="2024-04-14T15:27:40 ICT" duration-ms="23" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeMenu -->

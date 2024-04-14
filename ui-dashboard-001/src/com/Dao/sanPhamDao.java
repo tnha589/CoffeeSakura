@@ -159,5 +159,13 @@ public class sanPhamDao extends PeachCoffeeDao<SanPham, String> {
                 + "where TenLSP like ?";
         return selectBySql(sql, "%" + keyword + "%");
     }
-     
+    
+    public List<SanPham> selectByTenAdnLoaiSP(String ten,String loaiSP) {
+        String sql = "select * \n"
+                + "from SanPham sp\n"
+                + "inner join LoaiSanPham lsp on lsp.MaLSP = sp.MaLSP\n"
+                + "where lsp.TenLSP like ? AND sp.TenSp like ?";
+        return selectBySql(sql, "%" + loaiSP + "%",  "%" + ten + "%");
+    }
+      
 }

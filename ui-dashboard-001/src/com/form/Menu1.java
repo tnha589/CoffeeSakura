@@ -66,7 +66,7 @@ public class Menu1 extends javax.swing.JPanel {
     List<HoaDon> listHD = new ArrayList();
     DefaultCellEditor cellEditor;
     public List<SanPham> listSP = new ArrayList<>();
-    List<Integer> listrow = new ArrayList<>();
+    public List<Integer> listrow = new ArrayList<>();
     List<String> listMaSP = new ArrayList<>();
     List<String> listKM = new ArrayList<>();
     KhuyenMaiDao kmdao = new KhuyenMaiDao();
@@ -77,7 +77,7 @@ public class Menu1 extends javax.swing.JPanel {
     private SanPham itemSelected;
     List<Double> listGia = new ArrayList();
     int row = -1;
-    int row2 = -1;
+    public int row2 = -1;
     public JSpinner spinner;
     public int newValue = 0;
     public boolean taoHD = false;
@@ -91,7 +91,7 @@ public class Menu1 extends javax.swing.JPanel {
     Date ngayTao2 = null;
     String alterTien = "";
     String alterPhi = "";
-    boolean checkselected = false;
+    public boolean checkselected = false;
     String ma = "";
     Date bd = null;
     Date kt = null;
@@ -599,14 +599,19 @@ public class Menu1 extends javax.swing.JPanel {
 
     private void btnInHoaDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInHoaDonActionPerformed
         if (tblHoaDon.getRowCount() == 0) {
-            JOptionPane.showMessageDialog(null, "Hãy chọn một hóa đơn chờ hoặc thanh toán hóa đơn mới để in!");
+        	message =  "Hãy chọn một hóa đơn chờ hoặc thanh toán hóa đơn mới để in!";
+            JOptionPane.showMessageDialog(null,message);
             return;
         }
         if (checkselected) {
-            JOptionPane.showMessageDialog(null, "Hãy chọn một hóa đơn chờ hoặc thanh toán hóa đơn hiện tại để in!");
+        	message = "Hãy chọn một hóa đơn chờ hoặc thanh toán hóa đơn hiện tại để in!";
+            JOptionPane.showMessageDialog(null, message);
             return;
         }
         prinBill();
+        message = "In hóa đơn thành công!";
+        JOptionPane.showMessageDialog(null, message);
+     
     }//GEN-LAST:event_btnInHoaDonActionPerformed
 
     private void tblHoaDonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHoaDonMouseReleased
@@ -616,25 +621,7 @@ public class Menu1 extends javax.swing.JPanel {
     }//GEN-LAST:event_tblHoaDonMouseReleased
 
     private void mnuPopXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuPopXoaActionPerformed
-        for (int rowsp : tblHoaDon.getSelectedRows()) {
-            listrow.add(rowsp);
-        }
-        Collections.sort(listrow);
-        int number = -1;
-
-        while (true) {
-            if (listrow.size() == 0) {
-                break;
-            }
-            number = listrow.get(listrow.size() - 1);
-            listMaSP.remove(number);
-            model.removeRow(listrow.get(listrow.size() - 1));
-            listrow.remove(listrow.size() - 1);
-            if (tblHoaDon.getRowCount() == 0) {
-                txtTienThua.setText("0");
-                txtTienNhan.setText("0");
-            }
-        }
+        removeTungSP();
     }//GEN-LAST:event_mnuPopXoaActionPerformed
 
     private void mnuPopRemoveAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuPopRemoveAllActionPerformed
@@ -725,6 +712,7 @@ public class Menu1 extends javax.swing.JPanel {
     private void tblHoaDonChoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHoaDonChoMouseClicked
         checkselected = false;
         if (!checkselected) {
+        	row2 = tblHoaDonCho.getSelectedRow();
             fillTableHoaDonCT();
         }
     }//GEN-LAST:event_tblHoaDonChoMouseClicked
@@ -799,10 +787,10 @@ public class Menu1 extends javax.swing.JPanel {
     private javax.swing.JScrollPane scroll1;
     private javax.swing.JTable tblHoaDon;
     private javax.swing.JTable tblHoaDonCho;
-    private javax.swing.JTextField txtChiPhiKhac;
+    public javax.swing.JTextField txtChiPhiKhac;
     private javax.swing.JTextArea txtGhiChu;
     private javax.swing.JTextField txtSearch;
-    private javax.swing.JTextField txtTienNhan;
+    public javax.swing.JTextField txtTienNhan;
     private javax.swing.JTextField txtTienSP;
     private javax.swing.JTextField txtTienThua;
     // End of variables declaration//GEN-END:variables
@@ -1280,7 +1268,6 @@ public class Menu1 extends javax.swing.JPanel {
             bill.setFont(font);
             JOptionPane.showMessageDialog(null, bill);
             bill.print();
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -1290,7 +1277,6 @@ public class Menu1 extends javax.swing.JPanel {
         DefaultTableModel dtm = (DefaultTableModel) tblHoaDon.getModel();
         dtm.setRowCount(0);
         double tienSp = 0;
-        row2 = tblHoaDonCho.getSelectedRow();
         System.out.println("" + row2);
         ma = listMaHD.get(row2);
         System.out.println("" + ma);
@@ -1489,10 +1475,12 @@ public class Menu1 extends javax.swing.JPanel {
             return false;
         }
         if (!alterPhi.isEmpty()) {
+        	message = alterPhi;
             JOptionPane.showMessageDialog(null, alterPhi);
             return false;
         }
         if (!alterTien.isEmpty()) {
+        	message = alterTien;
             JOptionPane.showMessageDialog(null, alterTien);
             return false;
         }
@@ -1532,7 +1520,8 @@ public class Menu1 extends javax.swing.JPanel {
                     maVoucher = Integer.parseInt(vc[0].toString());
                     System.out.println("ma them" + maVoucher);
                     tinhTienNhan();
-                    JOptionPane.showMessageDialog(null, "Áp dụng voucher thành công");
+                    message = "Áp dụng voucher thành công";
+                    JOptionPane.showMessageDialog(null, message);
                     return;
                 }
             }
@@ -1549,6 +1538,15 @@ public class Menu1 extends javax.swing.JPanel {
     
     public javax.swing.JButton getBtnThanhToan1() {
 		return btnThanhToan1;
+	}
+
+    
+	public javax.swing.JButton getBtnInHoaDon() {
+		return btnInHoaDon;
+	}
+
+	public void setBtnInHoaDon(javax.swing.JButton btnInHoaDon) {
+		this.btnInHoaDon = btnInHoaDon;
 	}
 
 	public void setBtnThanhToan1(javax.swing.JButton btnThanhToan1) {
@@ -1670,9 +1668,39 @@ public class Menu1 extends javax.swing.JPanel {
 	public void setTblHoaDon(javax.swing.JTable tblHoaDon) {
 		this.tblHoaDon = tblHoaDon;
 	}
+	
+	public int getRow2() {
+		return row2;
+	}
 
-	
-	
+	public void setRow2(int row2) {
+		this.row2 = row2;
+	}
+
+	public boolean isCheckselected() {
+		return checkselected;
+	}
+
+	public void setCheckselected(boolean checkselected) {
+		this.checkselected = checkselected;
+	}
+
+	public javax.swing.JTable getTblHoaDonCho() {
+		return tblHoaDonCho;
+	}
+
+	public void setTblHoaDonCho(javax.swing.JTable tblHoaDonCho) {
+		this.tblHoaDonCho = tblHoaDonCho;
+	}
+
+	public javax.swing.JLabel getLblTongTien() {
+		return lblTongTien;
+	}
+
+	public void setLblTongTien(javax.swing.JLabel lblTongTien) {
+		this.lblTongTien = lblTongTien;
+	}
+
 	public void closeJdialog() {
 		Thread loginThread = new Thread(new Runnable() {
             @Override
@@ -1680,7 +1708,7 @@ public class Menu1 extends javax.swing.JPanel {
                 try {
                     // Tạm dừng thực thi trong 3 giây
                    
-                    Thread.sleep(3000);
+                    Thread.sleep(1000);
                     // Sau khi tạm dừng, gọi phương thức đăng nhập
                     JOptionPane.getRootFrame().dispose();
                 } catch (InterruptedException e) {
@@ -1706,5 +1734,26 @@ public class Menu1 extends javax.swing.JPanel {
 	        } else {
 	            fillPanelSP();
 	        }
+	}
+	public void removeTungSP() {
+		for (int rowsp : tblHoaDon.getSelectedRows()) {
+            listrow.add(rowsp);
+        }
+        Collections.sort(listrow);
+        int number = -1;
+
+        while (true) {
+            if (listrow.size() == 0) {
+                break;
+            }
+            number = listrow.get(listrow.size() - 1);
+            listMaSP.remove(number);
+            model.removeRow(listrow.get(listrow.size() - 1));
+            listrow.remove(listrow.size() - 1);
+            if (tblHoaDon.getRowCount() == 0) {
+                txtTienThua.setText("0");
+                txtTienNhan.setText("0");
+            }
+        }
 	}
 }

@@ -6,8 +6,8 @@
       <class name="test.MenuTest">
         <methods>
           <include name="closeMenu"/>
-          <include name="CF_05"/>
           <include name="openMenu"/>
+          <include name="CF_18"/>
         </methods>
       </class> <!-- test.MenuTest -->
     </classes>
