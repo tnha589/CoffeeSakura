@@ -7,7 +7,6 @@ package com.form;
 import com.Helper.JDBC;
 import com.untils.XAuth;
 import com.untils.XDialog;
-import com.untils.getJOptionePane;
 
 /**
  *
@@ -41,10 +40,10 @@ public class MatKhauMoi extends javax.swing.JDialog {
 
         try {
             JDBC.update("UPDATE NhanVien SET MatKhau = ? WHERE MaNV = ?", password, ma);
-              getJOptionePane.methodThatUsesOptionPane(this, "Đã đổi mật khẩu!");
+            XDialog.alert(this, "Đã đổi mật khẩu!");
             this.dispose();
         } catch (Exception e) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Xảy ra lỗi!!");
+            XDialog.alert(this, "Xảy ra lỗi!!");
             e.printStackTrace();
         }
 
@@ -57,7 +56,7 @@ public class MatKhauMoi extends javax.swing.JDialog {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    public void initComponents() {
+    private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -183,12 +182,12 @@ public class MatKhauMoi extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
+    private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
         // TODO add your handling code here:
        
     }//GEN-LAST:event_btnHuyActionPerformed
 
-    public void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
+    private void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
         // TODO add your handling code here:
         xacnhan();
     }//GEN-LAST:event_btnXacNhanActionPerformed
@@ -237,15 +236,15 @@ public class MatKhauMoi extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnHuy;
-    public javax.swing.JButton btnXacNhan;
-    public javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel2;
-    public javax.swing.JLabel jLabel3;
-    public javax.swing.JLabel jLabel4;
-    public javax.swing.JPanel jPanel1;
-    public javax.swing.JLabel lblTen;
-    public javax.swing.JPasswordField txtMKM;
-    public javax.swing.JPasswordField txtNLMK;
+    private javax.swing.JButton btnHuy;
+    private javax.swing.JButton btnXacNhan;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblTen;
+    private javax.swing.JPasswordField txtMKM;
+    private javax.swing.JPasswordField txtNLMK;
     // End of variables declaration//GEN-END:variables
 }

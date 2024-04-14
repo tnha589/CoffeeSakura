@@ -47,10 +47,10 @@ public class PanelRound extends JPanel {
         repaint();
     }
 
-    public int roundTopLeft = 0;
-    public int roundTopRight = 0;
-    public int roundBottomLeft = 0;
-    public int roundBottomRight = 0;
+    private int roundTopLeft = 0;
+    private int roundTopRight = 0;
+    private int roundBottomLeft = 0;
+    private int roundBottomRight = 0;
 
     public PanelRound() {
         setOpaque(false);
@@ -76,7 +76,7 @@ public class PanelRound extends JPanel {
         super.paintComponent(grphcs);
     }
 
-    public Shape createRoundTopLeft() {
+    private Shape createRoundTopLeft() {
         int width = getWidth();
         int height = getHeight();
         int roundX = Math.min(width, roundTopLeft);
@@ -87,7 +87,7 @@ public class PanelRound extends JPanel {
         return area;
     }
 
-    public Shape createRoundTopRight() {
+    private Shape createRoundTopRight() {
         int width = getWidth();
         int height = getHeight();
         int roundX = Math.min(width, roundTopRight);
@@ -98,7 +98,7 @@ public class PanelRound extends JPanel {
         return area;
     }
 
-    public Shape createRoundBottomLeft() {
+    private Shape createRoundBottomLeft() {
         int width = getWidth();
         int height = getHeight();
         int roundX = Math.min(width, roundBottomLeft);
@@ -109,7 +109,7 @@ public class PanelRound extends JPanel {
         return area;
     }
 
-    public Shape createRoundBottomRight() {
+    private Shape createRoundBottomRight() {
         int width = getWidth();
         int height = getHeight();
         int roundX = Math.min(width, roundBottomRight);

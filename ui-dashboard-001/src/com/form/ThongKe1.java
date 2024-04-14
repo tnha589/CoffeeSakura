@@ -509,7 +509,7 @@ public class ThongKe1 extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    public void initComponents() {
+    private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         tabs = new javax.swing.JTabbedPane();
@@ -1087,7 +1087,7 @@ public class ThongKe1 extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    public void btnHomNayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomNayActionPerformed
+    private void btnHomNayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomNayActionPerformed
         // TODO add your handling code here:
         if (flag) {
             chart1.setVisible(true);
@@ -1108,7 +1108,7 @@ public class ThongKe1 extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnHomNayActionPerformed
 
-    public void btnTuanNayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTuanNayActionPerformed
+    private void btnTuanNayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTuanNayActionPerformed
         // TODO add your handling code here:
         if (flag3) {
             chart3.setVisible(true);
@@ -1126,7 +1126,7 @@ public class ThongKe1 extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnTuanNayActionPerformed
 
-    public void btnThangNayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThangNayActionPerformed
+    private void btnThangNayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThangNayActionPerformed
         // TODO add your handling code here:
         if (flag2) {
             chart2.setVisible(true);
@@ -1144,36 +1144,36 @@ public class ThongKe1 extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnThangNayActionPerformed
 
-    public void panelRound1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRound1MouseClicked
+    private void panelRound1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRound1MouseClicked
         // TODO add your handling code here:
         //fillTableChiTietHoaDonClick();
         //System.out.println("He");
         fillTableThongKeByCard1();
     }//GEN-LAST:event_panelRound1MouseClicked
 
-    public void panelRound1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRound1MousePressed
+    private void panelRound1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRound1MousePressed
         // TODO add your handling code here:
 
     }//GEN-LAST:event_panelRound1MousePressed
 
-    public void panelRound2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRound2MouseClicked
+    private void panelRound2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRound2MouseClicked
         fillTableThongKeByCard2();
         // TODO add your handling code here:
     }//GEN-LAST:event_panelRound2MouseClicked
 
-    public void panelRound3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRound3MouseClicked
+    private void panelRound3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelRound3MouseClicked
         fillTableThongKeByCard3();
         // TODO add your handling code here:
     }//GEN-LAST:event_panelRound3MouseClicked
 
-    public void btnExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcelActionPerformed
+    private void btnExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcelActionPerformed
         if (tabs.getTitleAt(tabs.getSelectedIndex()).equalsIgnoreCase("Doanh Thu")) {         
             XExcel.writeToExcel(tblThongKe,"Thống kê Doanh thu");
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_btnExcelActionPerformed
 
-    public void btnExcelSPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcelSPActionPerformed
+    private void btnExcelSPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcelSPActionPerformed
          if (tabs.getTitleAt(tabs.getSelectedIndex()).equalsIgnoreCase("Sản Phẩm")) {         
             XExcel.writeToExcel(tblSanPham,"Thống kê sản phẩm");
         }
@@ -1182,50 +1182,50 @@ public class ThongKe1 extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnExcel;
-    public javax.swing.JButton btnExcelSP;
-    public javax.swing.JButton btnHomNay;
-    public javax.swing.JButton btnThangNay;
-    public javax.swing.JButton btnTuanNay;
-    public com.chart.Chart chart1;
-    public com.chart.Chart chart2;
-    public com.chart.Chart chart3;
-    public com.chart.Chart chart4;
-    public javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel16;
-    public javax.swing.JLabel jLabel2;
-    public javax.swing.JLabel jLabel3;
-    public javax.swing.JLabel jLabel4;
-    public javax.swing.JLabel jLabel5;
-    public javax.swing.JLabel jLabel6;
-    public javax.swing.JPanel jPanel1;
-    public javax.swing.JPanel jPanel2;
-    public javax.swing.JPanel jPanel7;
-    public javax.swing.JPanel jPanel8;
-    public javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JScrollPane jScrollPane3;
-    public javax.swing.JSeparator jSeparator1;
-    public javax.swing.JLabel lblHoaDonTuyChon;
-    public javax.swing.JLabel lblSoHDHomNay;
-    public javax.swing.JLabel lblSoHoaTuanNay;
-    public javax.swing.JLabel lblSoTienHomNay;
-    public javax.swing.JLabel lblSoTienTuanNay;
-    public javax.swing.JLabel lblTienTuyChon;
-    public javax.swing.JLabel lblTongHDThangNay;
-    public javax.swing.JLabel lblTongTienThangNay;
-    public com.JpanelBoder.PanelRound panelRound1;
-    public com.JpanelBoder.PanelRound panelRound2;
-    public com.JpanelBoder.PanelRound panelRound3;
-    public com.JpanelBoder.PanelRound panelRound4;
-    public javax.swing.JTabbedPane tabs;
-    public javax.swing.JTable tblSanPham;
-    public javax.swing.JTable tblThongKe;
-    public com.toedter.calendar.JDateChooser txtHoaDonDen;
-    public com.toedter.calendar.JDateChooser txtHoaDonTu;
-    public com.toedter.calendar.JDateChooser txtNgayBDTK;
-    public com.toedter.calendar.JDateChooser txtNgayKTTK;
-    public com.toedter.calendar.JDateChooser txtSPDenNgay;
-    public com.toedter.calendar.JDateChooser txtSPTuNgay;
+    private javax.swing.JButton btnExcel;
+    private javax.swing.JButton btnExcelSP;
+    private javax.swing.JButton btnHomNay;
+    private javax.swing.JButton btnThangNay;
+    private javax.swing.JButton btnTuanNay;
+    private com.chart.Chart chart1;
+    private com.chart.Chart chart2;
+    private com.chart.Chart chart3;
+    private com.chart.Chart chart4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblHoaDonTuyChon;
+    private javax.swing.JLabel lblSoHDHomNay;
+    private javax.swing.JLabel lblSoHoaTuanNay;
+    private javax.swing.JLabel lblSoTienHomNay;
+    private javax.swing.JLabel lblSoTienTuanNay;
+    private javax.swing.JLabel lblTienTuyChon;
+    private javax.swing.JLabel lblTongHDThangNay;
+    private javax.swing.JLabel lblTongTienThangNay;
+    private com.JpanelBoder.PanelRound panelRound1;
+    private com.JpanelBoder.PanelRound panelRound2;
+    private com.JpanelBoder.PanelRound panelRound3;
+    private com.JpanelBoder.PanelRound panelRound4;
+    private javax.swing.JTabbedPane tabs;
+    private javax.swing.JTable tblSanPham;
+    private javax.swing.JTable tblThongKe;
+    private com.toedter.calendar.JDateChooser txtHoaDonDen;
+    private com.toedter.calendar.JDateChooser txtHoaDonTu;
+    private com.toedter.calendar.JDateChooser txtNgayBDTK;
+    private com.toedter.calendar.JDateChooser txtNgayKTTK;
+    private com.toedter.calendar.JDateChooser txtSPDenNgay;
+    private com.toedter.calendar.JDateChooser txtSPTuNgay;
     // End of variables declaration//GEN-END:variables
  void fillTableHoaDonTheoDK() throws ParseException {
         DefaultTableModel model = (DefaultTableModel) tblThongKe.getModel();
@@ -1313,7 +1313,7 @@ public class ThongKe1 extends javax.swing.JPanel {
     boolean flag4 = true;
     boolean flag5 = true;
 
-    public List<ModelChart> callStoredProcedureAndGetChartData() {
+    private List<ModelChart> callStoredProcedureAndGetChartData() {
         List<ModelChart> chartData = new ArrayList<>();
         try {
             conn = JDBC.conn;
@@ -1401,7 +1401,7 @@ public class ThongKe1 extends javax.swing.JPanel {
     }
     String sql = "";
 
-    public List<ModelChart> callStoredProcedureAndGetChartData2(Date startDate, Date endDate) {
+    private List<ModelChart> callStoredProcedureAndGetChartData2(Date startDate, Date endDate) {
         List<ModelChart> chartData = new ArrayList<>();
         try {
             conn = JDBC.conn;

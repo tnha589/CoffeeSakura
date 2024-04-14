@@ -6,8 +6,6 @@ package com.form;
 
 import com.Dao.ChiTieuDao;
 import com.untils.XDialog;
-import com.untils.getJOptionePane;
-
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -39,7 +37,7 @@ public class ChiTieu1 extends javax.swing.JPanel {
         loadNameNV();
     }
 
-    public void fillTable() {
+    private void fillTable() {
         DefaultTableModel model = (DefaultTableModel) tblChiTieu.getModel();
         model.setRowCount(0);
         //listMaHD.clear();
@@ -57,12 +55,12 @@ public class ChiTieu1 extends javax.swing.JPanel {
                 model.addRow(row);
             }
         } catch (Exception e) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Lỗi truy vấn dữ liệu Chi Tieu");
+            XDialog.alert(this, "Lỗi truy vấn dữ liệu Chi Tieu");
             e.printStackTrace();
         }
     }
 
-    public ChiTieu getForm() {
+    private ChiTieu getForm() {
         ChiTieu CT = new ChiTieu();
         CT.setTenNV(txtTenNV.getText());
         CT.setTien(Double.parseDouble(txtTien.getText()));
@@ -71,41 +69,41 @@ public class ChiTieu1 extends javax.swing.JPanel {
         return CT;
     }
 
-    public void setForm(ChiTieu CT) {
+    private void setForm(ChiTieu CT) {
         txtTenNV.setText(CT.getTenNV());
         txtTien.setText(String.valueOf(CT.getTien()));
         txtNgayLay.setDate(CT.getThoiGian());
         txtGhiChu.setText(CT.getGhiChu());
     }
 
-    public void edit() {
+    private void edit() {
         int makh = (int) tblChiTieu.getValueAt(this.row, 0);
         ChiTieu kh = CTD.selectById(makh);
         this.setForm(kh);
     }
 
-    public void clearForm() {
+    private void clearForm() {
         ChiTieu ct = new ChiTieu();
         this.setForm(ct);
         txtTien.setText("");
         row = -1;
     }
 
-    public void them() {
+    private void them() {
         ChiTieu nv = this.getForm();
         try {
             CTD.insert(nv); // thêm mới
             this.fillTable(); // đỗ lại bảng
             this.clearForm(); // xóa trắng form
-              getJOptionePane.methodThatUsesOptionPane(this, "Thêm hóa đơn thành công!");
+            XDialog.alert(this, "Thêm hóa đơn thành công!");
         } catch (Exception e) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Thêm hóa đơn thất bại!");
+            XDialog.alert(this, "Thêm hóa đơn thất bại!");
             e.printStackTrace();
         }
         fillTable2();
     }
 
-    public void fillTable2() {
+    private void fillTable2() {
         DefaultTableModel model = (DefaultTableModel) tblLichSu.getModel();
         model.setRowCount(0);
         listMaHD.clear();
@@ -124,12 +122,12 @@ public class ChiTieu1 extends javax.swing.JPanel {
                 model.addRow(row);
             }
         } catch (Exception e) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Lỗi truy vấn dữ liệu lịch sử Chi Tieu");
+            XDialog.alert(this, "Lỗi truy vấn dữ liệu lịch sử Chi Tieu");
             e.printStackTrace();
         }
     }
 
-    public ChiTieu getForm2() {
+    private ChiTieu getForm2() {
         ChiTieu CT = new ChiTieu();
         CT.setMaHD((int) tblLichSu.getValueAt(row, 0));
         if (rboXacNhan.isSelected()) {
@@ -140,7 +138,7 @@ public class ChiTieu1 extends javax.swing.JPanel {
         return CT;
     }
 
-    public void setForm2(ChiTieu CT) {
+    private void setForm2(ChiTieu CT) {
         lblTenNV.setText(CT.getTenNV());
         lblTien.setText(String.valueOf(CT.getTien()));
         lblNgay.setText(XDate.toString(CT.getThoiGian()));
@@ -149,7 +147,7 @@ public class ChiTieu1 extends javax.swing.JPanel {
         rboXacNhan.setSelected(CT.isTrangThai());
     }
 
-    public void edit2() {
+    private void edit2() {
         int makh = (int) tblChiTieu.getValueAt(this.row, 0);
         ChiTieu kh = CTD.selectById(makh);
         this.setForm2(kh);
@@ -162,9 +160,9 @@ public class ChiTieu1 extends javax.swing.JPanel {
             CTD.update(CT);
             this.fillTable2();
             clearLable();
-              getJOptionePane.methodThatUsesOptionPane(this, "Đã xác nhận thành công!");
+            XDialog.alert(this, "Đã xác nhận thành công!");
         } catch (Exception e) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Lỗi! Không thể cập nhật");
+            XDialog.alert(this, "Lỗi! Không thể cập nhật");
             e.printStackTrace();
         }
     }
@@ -176,7 +174,7 @@ public class ChiTieu1 extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    public void initComponents() {
+    private void initComponents() {
 
         btngTrangThai = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
@@ -589,83 +587,83 @@ public class ChiTieu1 extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    public void btnHUyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHUyActionPerformed
+    private void btnHUyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHUyActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnHUyActionPerformed
 
-    public void txtTenNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTenNVActionPerformed
+    private void txtTenNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTenNVActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTenNVActionPerformed
 
-    public void txtTienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTienActionPerformed
+    private void txtTienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTienActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTienActionPerformed
 
-    public void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
+    private void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
         // TODO add your handling code here:
         them();
     }//GEN-LAST:event_btnXacNhanActionPerformed
 
-    public void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
+    private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
         // TODO add your handling code here:
         //   clearForm();
     }//GEN-LAST:event_btnHuyActionPerformed
 
-    public void tblChiTieuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblChiTieuMouseClicked
+    private void tblChiTieuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblChiTieuMouseClicked
         // TODO add your handling code here:
         this.row = tblChiTieu.getSelectedRow();
         this.edit();
     }//GEN-LAST:event_tblChiTieuMouseClicked
 
-    public void tblLichSuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLichSuMouseClicked
+    private void tblLichSuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLichSuMouseClicked
         // TODO add your handling code here:
         this.row = tblLichSu.getSelectedRow();
         this.edit2();
     }//GEN-LAST:event_tblLichSuMouseClicked
 
-    public void btnCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhatActionPerformed
+    private void btnCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhatActionPerformed
         // TODO add your handling code here:
         CapNhat();
     }//GEN-LAST:event_btnCapNhatActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnCapNhat;
-    public javax.swing.JButton btnHUy;
-    public javax.swing.JButton btnHuy;
-    public javax.swing.JButton btnXacNhan;
-    public javax.swing.ButtonGroup btngTrangThai;
-    public javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel2;
-    public javax.swing.JLabel jLabel3;
-    public javax.swing.JLabel jLabel4;
-    public javax.swing.JLabel jLabel5;
-    public javax.swing.JLabel jLabel6;
-    public javax.swing.JLabel jLabel7;
-    public javax.swing.JLabel jLabel8;
-    public javax.swing.JLabel jLabel9;
-    public javax.swing.JPanel jPanel1;
-    public javax.swing.JPanel jPanel2;
-    public javax.swing.JPanel jPanel3;
-    public javax.swing.JPanel jPanel4;
-    public javax.swing.JPanel jPanel5;
-    public javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JScrollPane jScrollPane2;
-    public javax.swing.JScrollPane jScrollPane3;
-    public javax.swing.JScrollPane jScrollPane4;
-    public javax.swing.JTabbedPane jTabbedPane1;
-    public javax.swing.JLabel lblNgay;
-    public javax.swing.JLabel lblTenNV;
-    public javax.swing.JLabel lblTien;
-    public javax.swing.JRadioButton rboKoXacNhan;
-    public javax.swing.JRadioButton rboXacNhan;
-    public javax.swing.JTable tblChiTieu;
-    public javax.swing.JTable tblLichSu;
-    public javax.swing.JTextArea txtGhiChu;
-    public javax.swing.JTextArea txtGhiChu2;
-    public com.toedter.calendar.JDateChooser txtNgayLay;
-    public javax.swing.JTextField txtTenNV;
-    public javax.swing.JTextField txtTien;
+    private javax.swing.JButton btnCapNhat;
+    private javax.swing.JButton btnHUy;
+    private javax.swing.JButton btnHuy;
+    private javax.swing.JButton btnXacNhan;
+    private javax.swing.ButtonGroup btngTrangThai;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lblNgay;
+    private javax.swing.JLabel lblTenNV;
+    private javax.swing.JLabel lblTien;
+    private javax.swing.JRadioButton rboKoXacNhan;
+    private javax.swing.JRadioButton rboXacNhan;
+    private javax.swing.JTable tblChiTieu;
+    private javax.swing.JTable tblLichSu;
+    private javax.swing.JTextArea txtGhiChu;
+    private javax.swing.JTextArea txtGhiChu2;
+    private com.toedter.calendar.JDateChooser txtNgayLay;
+    private javax.swing.JTextField txtTenNV;
+    private javax.swing.JTextField txtTien;
     // End of variables declaration//GEN-END:variables
 public void loadNameNV() {
         txtTenNV.setEnabled(false);

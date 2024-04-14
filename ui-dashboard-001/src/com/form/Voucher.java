@@ -9,8 +9,6 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
-import com.untils.getJOptionePane;
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -65,7 +63,7 @@ public class Voucher extends javax.swing.JDialog {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    public void initComponents() {
+    private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -149,7 +147,7 @@ public class Voucher extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void btnTaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaoActionPerformed
+    private void btnTaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaoActionPerformed
 //        demo();
         if (checkForm()) {
             try {
@@ -161,7 +159,7 @@ public class Voucher extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_btnTaoActionPerformed
 
-    public void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
+    private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnThoatActionPerformed
 
@@ -208,20 +206,20 @@ public class Voucher extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnTao;
-    public javax.swing.JButton btnThoat;
-    public javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel2;
-    public javax.swing.JLabel jLabel3;
-    public javax.swing.JSeparator jSeparator1;
-    public javax.swing.JSpinner spnSoLuong;
-    public javax.swing.JTextField txtGia;
+    private javax.swing.JButton btnTao;
+    private javax.swing.JButton btnThoat;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSpinner spnSoLuong;
+    private javax.swing.JTextField txtGia;
     // End of variables declaration//GEN-END:variables
     public void init() {
         spnSoLuong.setModel(new SpinnerNumberModel(1, 1, 20, 1));
     }
 
-    public String getRandomString(int n) {
+    private String getRandomString(int n) {
         String txt = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJLMNOPQRSTUVWXYZ1234567890";
         StringBuilder sb = new StringBuilder();
         while (n > 0) {
@@ -247,7 +245,7 @@ public class Voucher extends javax.swing.JDialog {
             createQR();
             khuyenMaiDao.insertVoucher(giaTri, maXT);
         }
-            getJOptionePane.methodThatUsesOptionPane(null, "Tạo voucher thành công");
+        JOptionPane.showMessageDialog(null, "Tạo voucher thành công");
     }
 
     public void createQR() {
@@ -294,22 +292,22 @@ public class Voucher extends javax.swing.JDialog {
     public void demo() {
         String gia = txtGia.getText();
         int sl = (int) spnSoLuong.getValue();
-            getJOptionePane.methodThatUsesOptionPane(null, "gia tri la: " + gia + " so luong la: " + sl);
+        JOptionPane.showMessageDialog(null, "gia tri la: " + gia + " so luong la: " + sl);
     }
 
     public boolean checkForm() {
         if (txtGia.getText().isEmpty()) {
-                getJOptionePane.methodThatUsesOptionPane(null, "Vui lòng nhập giá trị voucher");
+            JOptionPane.showMessageDialog(null, "Vui lòng nhập giá trị voucher");
             return false;
         }
         try {
             int checGiaTri = Integer.parseInt(txtGia.getText());
             if (checGiaTri < 10 || checGiaTri > 500) {
-                    getJOptionePane.methodThatUsesOptionPane(null, "Giá trị voucher từ 10 --> 500");
+                JOptionPane.showMessageDialog(null, "Giá trị voucher từ 10 --> 500");
                 return false;
             }
         } catch (Exception e) {
-                getJOptionePane.methodThatUsesOptionPane(null, "Giá trị chưa đúng");
+            JOptionPane.showMessageDialog(null, "Giá trị chưa đúng");
             return false;
         }
         return true;
