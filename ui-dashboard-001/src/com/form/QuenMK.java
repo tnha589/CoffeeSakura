@@ -30,6 +30,7 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
     String manv = "";
     Timer t = null;
     boolean timer = false;
+    public String message;
 
     /**
      * Creates new form QuenMK
@@ -44,7 +45,7 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
 
     }
 
-    private String getRandomString(int n) {
+    public String getRandomString(int n) {
         String txt = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJLMNOPQRSTUVWXYZ1234567890";
         StringBuilder sb = new StringBuilder();
         while (n > 0) {
@@ -63,25 +64,25 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
         String dinhangemail = "^[A-Za-z0-9+_.-]+@(.+)$";
         //bắt lỗi trống
         if (tenTaiKhoan.equals("") || email.equals("")) {
-            XDialog.alert(this, "Vui lòng nhập đầy đủ tên tài khoản và email.");
+            XDialog.alert(this, message="Vui lòng nhập đầy đủ tên tài khoản và email.");
             return;
         }
         // bắt lỗi ko có dữ liệu 
         NhanVien nv = NVD.selectById(tenTaiKhoan);
         if (nv == null) {
-            XDialog.alert(this, "Tài khoản không tồn tại trên hệ thống.");
+            XDialog.alert(this, message="Tài khoản không tồn tại trên hệ thống.");
             return;
         }
 
         //bắt lỗi định dạng email
         if (!email.matches(dinhangemail)) {
-            XDialog.alert(this, "Email không đúng định dạng.");
+            XDialog.alert(this, message="Email không đúng định dạng.");
             return;
         }
 
         //bắt lỗi không tương thích vói tài khoản
         if (!nv.getEmail().equals(email)) {
-            XDialog.alert(this, "Email không tương thích với tài khoản đã nhập.");
+            XDialog.alert(this, message= "Email không tương thích với tài khoản đã nhập.");
             return;
         }
 
@@ -124,7 +125,7 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
             message.setSubject(tieuDe);
             message.setContent(noiDung, "text/html;charset=utf-8");
             Transport.send(message);
-            XDialog.alert(this, "Mã đã được gửi!");
+            XDialog.alert(this,   "Mã đã được gửi!");
             Thread time = new Thread(this);
             time.start();
             timer = false;
@@ -141,15 +142,15 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
         String emailMau = "^[A-Za-z0-9+_.-]+@(.+)$";
 
         if (TenTK.equals("")) {
-            XDialog.alert(this, "Vui lòng nhập tài khoản");
+            XDialog.alert(this, message="Vui lòng nhập tài khoản");
         } else if (email.equals("")) {
-            XDialog.alert(this, "Vui lòng nhập email");
+            XDialog.alert(this,message= "Vui lòng nhập email");
             return;
         } else if (!email.matches(emailMau)) {
-            XDialog.alert(this, "Email không đúng định dạng");
+            XDialog.alert(this, message="Email không đúng định dạng");
             return;
         } else if (maxn.isEmpty()) {
-            XDialog.alert(this, "Vui lòng nhập mã xác thực!");
+            XDialog.alert(this, message= "Vui lòng nhập mã xác thực!");
             return;
         } else if (maxn.equals(maXT)) {
             String strMaNV = txtTK.getText();
@@ -163,7 +164,7 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
             matkhaumoi.setVisible(true);
             dispose();
         } else {
-            XDialog.alert(this, "Sai mã xác thực!");
+            XDialog.alert(this,message= "Sai mã xác thực!");
         }
     }
 
@@ -174,7 +175,7 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    public void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         txtEmail = new javax.swing.JTextField();
@@ -310,20 +311,20 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnLayMaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLayMaActionPerformed
+    public void btnLayMaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLayMaActionPerformed
         // TODO add your handling code here:
         sendMail();
 
     }//GEN-LAST:event_btnLayMaActionPerformed
 
-    private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
+    public void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
         // TODO add your handling code here:
-        if (XDialog.confirm(this, "Bạn chắc chắn thoát!! ")) {
+        if (XDialog.confirm(this, message= "Bạn chắc chắn thoát!! ")) {
             dispose();
         }
     }//GEN-LAST:event_btnHuyActionPerformed
 
-    private void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
+    public void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
         // TODO add your handling code here:
         xacNhan();
     }//GEN-LAST:event_btnXacNhanActionPerformed
@@ -372,17 +373,17 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnHuy;
-    private javax.swing.JButton btnLayMa;
-    private javax.swing.JButton btnXacNhan;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtMaXT;
-    private javax.swing.JTextField txtTK;
+    public javax.swing.JButton btnHuy;
+    public javax.swing.JButton btnLayMa;
+    public javax.swing.JButton btnXacNhan;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JTextField txtEmail;
+    public javax.swing.JTextField txtMaXT;
+    public javax.swing.JTextField txtTK;
     // End of variables declaration//GEN-END:variables
  @Override
     public void run() {

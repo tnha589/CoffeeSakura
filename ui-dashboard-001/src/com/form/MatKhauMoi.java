@@ -56,7 +56,7 @@ public class MatKhauMoi extends javax.swing.JDialog {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    public void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -182,12 +182,12 @@ public class MatKhauMoi extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
+    public void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
         // TODO add your handling code here:
        
     }//GEN-LAST:event_btnHuyActionPerformed
 
-    private void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
+    public void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
         // TODO add your handling code here:
         xacnhan();
     }//GEN-LAST:event_btnXacNhanActionPerformed
@@ -236,15 +236,15 @@ public class MatKhauMoi extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnHuy;
-    private javax.swing.JButton btnXacNhan;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblTen;
-    private javax.swing.JPasswordField txtMKM;
-    private javax.swing.JPasswordField txtNLMK;
+    public javax.swing.JButton btnHuy;
+    public javax.swing.JButton btnXacNhan;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JLabel lblTen;
+    public javax.swing.JPasswordField txtMKM;
+    public javax.swing.JPasswordField txtNLMK;
     // End of variables declaration//GEN-END:variables
 }
