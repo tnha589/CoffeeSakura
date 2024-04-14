@@ -247,7 +247,7 @@ public class KhuyenMai1 extends javax.swing.JPanel {
         txtGiaTri.setText(String.valueOf(km.getGiaKM()));
     }
 
-    KhuyenMai getForm() {
+  public  KhuyenMai getForm() {
         KhuyenMai km = new KhuyenMai();
         km.setMaKM(txtMaKM.getText());
         km.setTenKM(txtTenKM.getText());

@@ -63,7 +63,7 @@ public class Voucher extends javax.swing.JDialog {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    public void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -147,7 +147,7 @@ public class Voucher extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnTaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaoActionPerformed
+    public void btnTaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTaoActionPerformed
 //        demo();
         if (checkForm()) {
             try {
@@ -159,7 +159,7 @@ public class Voucher extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_btnTaoActionPerformed
 
-    private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
+    public void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnThoatActionPerformed
 
@@ -206,20 +206,20 @@ public class Voucher extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnTao;
-    private javax.swing.JButton btnThoat;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSpinner spnSoLuong;
-    private javax.swing.JTextField txtGia;
+    public javax.swing.JButton btnTao;
+    public javax.swing.JButton btnThoat;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JSeparator jSeparator1;
+    public javax.swing.JSpinner spnSoLuong;
+    public javax.swing.JTextField txtGia;
     // End of variables declaration//GEN-END:variables
     public void init() {
         spnSoLuong.setModel(new SpinnerNumberModel(1, 1, 20, 1));
     }
 
-    private String getRandomString(int n) {
+    public String getRandomString(int n) {
         String txt = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJLMNOPQRSTUVWXYZ1234567890";
         StringBuilder sb = new StringBuilder();
         while (n > 0) {
@@ -245,7 +245,7 @@ public class Voucher extends javax.swing.JDialog {
             createQR();
             khuyenMaiDao.insertVoucher(giaTri, maXT);
         }
-        JOptionPane.showMessageDialog(null, "Tạo voucher thành công");
+        JOptionPane.showMessageDialog(null,message = "Tạo voucher thành công");
     }
 
     public void createQR() {
@@ -288,26 +288,26 @@ public class Voucher extends javax.swing.JDialog {
 
         }
     }
-
+public String message;
     public void demo() {
         String gia = txtGia.getText();
         int sl = (int) spnSoLuong.getValue();
-        JOptionPane.showMessageDialog(null, "gia tri la: " + gia + " so luong la: " + sl);
+        JOptionPane.showMessageDialog(null, message ="gia tri la: " + gia + " so luong la: " + sl);
     }
 
     public boolean checkForm() {
         if (txtGia.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Vui lòng nhập giá trị voucher");
+            JOptionPane.showMessageDialog(null,message= "Vui lòng nhập giá trị voucher");
             return false;
         }
         try {
             int checGiaTri = Integer.parseInt(txtGia.getText());
             if (checGiaTri < 10 || checGiaTri > 500) {
-                JOptionPane.showMessageDialog(null, "Giá trị voucher từ 10 --> 500");
+                JOptionPane.showMessageDialog(null,message= "Giá trị voucher từ 10 --> 500");
                 return false;
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Giá trị chưa đúng");
+            JOptionPane.showMessageDialog(null,message = "Giá trị chưa đúng");
             return false;
         }
         return true;

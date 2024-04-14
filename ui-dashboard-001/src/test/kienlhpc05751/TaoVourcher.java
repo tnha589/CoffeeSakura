@@ -3,7 +3,6 @@ package test.kienlhpc05751;
 import static org.testng.Assert.assertEquals;
 
 import java.awt.AWTEvent;
-import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
 import java.awt.Window;
@@ -22,16 +21,18 @@ import org.testng.annotations.Test;
 import com.Dao.nhanVienDao;
 import com.form.DangNhap;
 import com.form.KhuyenMai1;
+import com.form.Voucher;
 import com.main.Main;
 import com.model.KhuyenMai;
 import com.supportTest.YesMockOptionPane;
 import com.untils.XDialog;
 
-public class LamMoiKhuyenMai {
+public class TaoVourcher {
 	private Main main;
 	public DangNhap login = new DangNhap(main, false);
 //	private QuanLyNhanVien1 quanLyNhanVien;
 	public KhuyenMai1 km = new KhuyenMai1();
+	public Voucher vh = new Voucher(null, true);
 	private nhanVienDao nvDao;
 
 	public void closeJOptionPane() {
@@ -48,24 +49,11 @@ public class LamMoiKhuyenMai {
 		}
 	}
 
-	public void setText(String makm, String tenkm, Date ngayBD, Date ngayKT, boolean hinhthuc, boolean Trangthai,
-			String giatri) {
-		km.txtMaKM.setText(makm);
-		km.txtTenKM.setText(tenkm);
-
-		km.txtNgayBD.setDate(ngayBD);
-		km.txtNgayKT.setDate(ngayKT);
-		if (hinhthuc) {
-			km.rdoPhanTram.setSelected(true);
-		} else {
-			km.rdoVND.setSelected(true);
-		}
-		if (Trangthai) {
-			km.rdoDangDienRa.setSelected(true);
-		} else {
-			km.rdoDaKetThuc.setSelected(true);
-		}
-		km.txtGiaTri.setText(giatri);
+	public void setText(Integer giatri,Integer soluong ) {
+//		 int sl = (int) vh.spnSoLuong.getValue();
+	    vh.txtGia.setText(String.valueOf(giatri));
+	    vh.spnSoLuong.setValue(soluong);
+	    
 	}
 
 	@BeforeMethod
@@ -125,75 +113,30 @@ public class LamMoiKhuyenMai {
 	}
 
 	@Test(priority = 0)
-	public void lamMoiKhuyenmai() throws InterruptedException {
-		km.row2 = 2;
-		km.edit();
-		TimeUnit.SECONDS.sleep(2);
-		XDialog.setOptionPane(new YesMockOptionPane());
-		km.btnMoi.doClick(1);
-		TimeUnit.SECONDS.sleep(2);
-//			closeJOptionPane();
-		closeJOptionPaneIfDisplayed();
-		KhuyenMai kmModel = new KhuyenMai();
-		kmModel.setTenKM(km.txtTenKM.getText());
-		kmModel.setNgayBD(km.txtNgayBD.getDate());
-		System.out.println("new "+kmModel.getTenKM());
-//		Assert.assertNull(kmModel);
-		if(kmModel.TenKM != null) {
-			Assert.assertEquals(kmModel.getTenKM(),"");
-		}else if(kmModel.NgayBD!=null) {
-			Assert.assertEquals(kmModel.getNgayBD(),"");
-		}
-		assertEquals("", "");
+	public void TS_ThemVoucher_02() throws InterruptedException {
+		
+//		setText("a@@", 11);
+	  
+//		km.btnMoi1.doClick(1);
+		
+		    
+		    vh.createVoucher();
+//		    vh.txtGia.setText(String.valueOf("1"));
+		    vh.txtGia.setText("40");
+		    
+//		   String giaTri = Integer.parseInt(vh.txtGia.getText());
+		    vh.spnSoLuong.setValue(11);
+//		TimeUnit.SECONDS.sleep(2);
+		
+//		vh.btnTao.doClick(1);
 	
-
+		TimeUnit.SECONDS.sleep(2);
+//		closeJOptionPane();
+//		assertEquals(vh.message, "Giá trị chưa đúng");
+		assertEquals(vh.message, "Vui lòng nhập giá trị voucher");
+	
 	}
 	
-	@Test(priority = 1)
-	public void lamMoiKhuyenmai3() throws InterruptedException {
-		km.row2 = 2;
-		km.edit();
-		TimeUnit.SECONDS.sleep(2);
-		km.btnMoi.doClick(1);
-//		TimeUnit.SECONDS.sleep(2);
-//			closeJOptionPane();
-		closeJOptionPaneIfDisplayed();
-		KhuyenMai kmModel = new KhuyenMai();
-		kmModel.setTenKM(km.txtTenKM.getText());
-		kmModel.setNgayBD(km.txtNgayBD.getDate());
-		System.out.println("new "+kmModel.getTenKM());
-//		Assert.assertNull(kmModel);
-		if(kmModel.TenKM != null) {
-			Assert.assertEquals(kmModel.getTenKM(),"");
-		}else if(kmModel.NgayBD!=null) {
-			Assert.assertEquals(kmModel.getNgayBD(),"");
-		}
-		assertEquals("", "");
-	
-
-	}
-	
-//	@Test(priority = 1)
-//	public void lamMoiKhuyenmai1() throws InterruptedException {
-//		km.row2 = 2;
-//		km.edit();
-//		TimeUnit.SECONDS.sleep(2);
-//		XDialog.setOptionPane(new YesMockOptionPane());
-//		km.btnMoi.doClick(1);
-//		TimeUnit.SECONDS.sleep(2);
-////			closeJOptionPane();
-//		closeJOptionPaneIfDisplayed();
-//        KhuyenMai kmModel = km.getForm();
-////		Assert.assertNull(kmModel);
-//		if(kmModel.TenKM != null) {
-//			Assert.assertEquals(kmModel.getTenKM(),"");
-//		}else if(kmModel.MaKM!=null) {
-//			Assert.assertEquals(kmModel.getMaKM(),"");
-//		}else if(kmModel.GhiChu != null) {
-//			Assert.assertEquals(kmModel.getGhiChu(), "");
-//		}
-//		assertEquals("", "");
-//	
-//
-//	}
+//    Voucher voucher = new Voucher(null, true);
+//    voucher.setVisible(true);
 }
