@@ -22,7 +22,7 @@ public class QuenMatKhau {
     }
 
     @Test(priority = 0)
-    public void test_TK_Email_KhongTonTai() {
+    public void TC_QLF_QuenMK1() {
         quen.txtTK.setText("tenTaiKhoanKhongTonTai");
         quen.txtEmail.setText("example@example.com");
         quen.btnLayMaActionPerformed(null);
@@ -32,16 +32,57 @@ public class QuenMatKhau {
     }
 
     @Test(priority = 1)
-    public void test_TK_Email_KhongKhop() {
+    public void TC_QLF_QuenMK2() {
         quen.txtTK.setText("NV000");
         quen.txtEmail.setText("mismatched@example.com");
+        quen.btnLayMa.doClick();
         quen.btnLayMaActionPerformed(null);
         String expectedMessage = "Email không tương thích với tài khoản đã nhập.";
         String actualMessage = quen.message;
         Assert.assertEquals(expectedMessage, actualMessage);
     }
-
     @Test(priority = 2)
+    public void TC_QLF_QuenMK3() {
+        quen.txtTK.setText("NV001");
+        quen.txtEmail.setText("");
+        quen.btnLayMa.doClick(1);
+        quen.btnLayMaActionPerformed(null);
+        String expectedMessage = "Vui lòng nhập đầy đủ tên tài khoản và email.";
+        String actualMessage = quen.message;
+        Assert.assertEquals(expectedMessage, actualMessage);
+    }
+    
+    @Test(priority = 3)
+    public void TC_QLF_QuenMK4() {
+        quen.txtTK.setText("NV001");
+        quen.txtEmail.setText("exampleexamplecom");
+//        quen.txtMaXT.setText(quen.maXT);
+        quen.btnLayMa.doClick(1);
+        quen.btnLayMaActionPerformed(null);
+        
+        String expectedMessage = "Email không đúng định dạng.";
+        String actualMessage = quen.message;
+        Assert.assertEquals(expectedMessage, actualMessage);
+    }
+     
+    
+    
+    @Test(priority = 4)
+    public void TC_QLF_QuenMK5() {
+        quen.txtTK.setText("NV40");
+        quen.txtEmail.setText("kienl8595@gmail.com");
+        quen.btnLayMa.doClick(1);
+        quen.txtMaXT.setText(quen.maXT);
+        quen.btnLayMaActionPerformed(null);
+        quen.btnLayMa.doClick();
+       
+        String expectedMessage = "Mã đã được gửi!";
+        String actualMessage = quen.message;
+        Assert.assertEquals(expectedMessage, actualMessage);
+    }
+    //
+
+    @Test(priority = 5)
     public void test_GuiMailThatBai() {
         quen.txtTK.setText("NV40");
         quen.txtEmail.setText("kienl8595@gmail.com");
@@ -51,8 +92,8 @@ public class QuenMatKhau {
         Assert.assertEquals(expectedMessage, actualMessage);
     }
 
-    @Test(priority = 3)
-    public void test_MaXacThucDung() {
+    @Test(priority = 6)
+    public void TC_QLF_QuenMK6() {
         quen.txtTK.setText("tenTaiKhoan");
         quen.txtEmail.setText("example@example.com");
         quen.maXT = "123456";
@@ -61,8 +102,8 @@ public class QuenMatKhau {
         Assert.assertEquals(quen.maXT, "123456");
     }
 
-    @Test(priority = 4)
-    public void test_MaXacThucSai() {
+    @Test(priority = 7)
+    public void TC_QLF_QuenMK7() {
         quen.txtTK.setText("tenTaiKhoan");
         quen.txtEmail.setText("example@example.com");
         quen.maXT = "123456";
@@ -73,8 +114,8 @@ public class QuenMatKhau {
         Assert.assertEquals(expectedMessage, actualMessage);
     }
 
-    @Test(priority = 5)
-    public void test_NhapThieuThongTin() {
+    @Test(priority = 8)
+    public void TC_QLF_QuenMK8() {
         quen.txtTK.setText("");
         quen.txtEmail.setText("example@example.com");
         quen.btnXacNhan.doClick(1);
@@ -84,31 +125,12 @@ public class QuenMatKhau {
         Assert.assertEquals(expectedMessage, actualMessage);
     }
 
-    @Test(priority = 6)
-    public void test_NhapThieuEmail() {
-        quen.txtTK.setText("NV001");
-        quen.txtEmail.setText("");
-        quen.btnXacNhan.doClick(1);
-        quen.btnLayMaActionPerformed(null);
-        String expectedMessage = "Vui lòng nhập đầy đủ tên tài khoản và email.";
-        String actualMessage = quen.message;
-        Assert.assertEquals(expectedMessage, actualMessage);
-    }
 
-    @Test(priority = 7)
-    public void test_EmailKhongHopLe() {
-        quen.txtTK.setText("NV001");
-        quen.txtEmail.setText("example@examplecom");
-        quen.txtMaXT.setText(quen.maXT);
-        quen.btnLayMaActionPerformed(null);
-        quen.btnXacNhan.doClick(1);
-        String expectedMessage = "Email không tương thích với tài khoản đã nhập.";
-        String actualMessage = quen.message;
-        Assert.assertEquals(expectedMessage, actualMessage);
-    }
 
-    @Test(priority = 8)
-    public void test_ChuaNhapMaXacThuc() {
+
+
+    @Test(priority = 9)
+    public void TC_QLF_QuenMK9() {
         quen.txtTK.setText("NV001");
         quen.txtEmail.setText("example@example.com");
         quen.txtMaXT.setText("");
@@ -119,8 +141,8 @@ public class QuenMatKhau {
         Assert.assertEquals(expectedMessage, actualMessage);
     }
     
-    @Test(priority = 9)
-    public void test_MaXacThucTrong() {
+    @Test(priority = 10)
+    public void TC_QLF_QuenMK10() {
         quen.txtTK.setText("NV001");
         quen.txtEmail.setText("example@example.com");
         quen.maXT = "";
@@ -132,8 +154,8 @@ public class QuenMatKhau {
         Assert.assertEquals(expectedMessage, actualMessage);
     }
 
-    @Test(priority = 10)
-    public void test_DoiMatKhau() {
+    @Test(priority = 11)
+    public void TC_QLF_QuenMK11() {
         quen.txtTK.setText("NV001");
         quen.txtEmail.setText("example@example.com");
 //        quen.maXT = "123456";
@@ -144,8 +166,8 @@ public class QuenMatKhau {
         Assert.assertNotNull(quen.maXT);
     }
 
-    @Test(priority = 11)
-    public void test_LayMaSaiNhapLaiDung() {
+    @Test(priority = 12)
+    public void TC_QLF_QuenMK12() {
         quen.txtTK.setText("tenTaiKhoan");
         quen.txtEmail.setText("example@example.com");
         quen.maXT = "123456";
@@ -158,8 +180,8 @@ public class QuenMatKhau {
         Assert.assertEquals(expectedMessage, actualMessage);
     }
 
-    @Test(priority = 12)
-    public void test_LayMaDungNhapLaiSai() {
+    @Test(priority = 13)
+    public void TC_QLF_QuenMK13() {
         quen.txtTK.setText("NV001");
         quen.txtEmail.setText("example@example.com");
 //        quen.maXT = "123456";
