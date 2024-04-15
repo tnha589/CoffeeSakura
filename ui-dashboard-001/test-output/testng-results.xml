@@ -1,211 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="13" passed="12" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-14T17:03:43 ICT" name="Default suite" finished-at="2024-04-14T17:04:30 ICT" duration-ms="46858">
+  <suite started-at="2024-04-15T07:23:32 ICT" name="Default suite" finished-at="2024-04-15T07:23:42 ICT" duration-ms="10324">
     <groups>
     </groups>
-    <test started-at="2024-04-14T17:03:43 ICT" name="Default test" finished-at="2024-04-14T17:04:30 ICT" duration-ms="46858">
-      <class name="test.kienlhpc05751.QuenMatKhau">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:43 ICT" name="setUp" finished-at="2024-04-14T17:03:43 ICT" duration-ms="333" status="PASS">
+    <test started-at="2024-04-15T07:23:32 ICT" name="Default test" finished-at="2024-04-15T07:23:42 ICT" duration-ms="10324">
+      <class name="test.kienlhpc05751.LamMoiKhuyenMai">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.LamMoiKhuyenMai@698122b2]" started-at="2024-04-15T07:23:32 ICT" name="setUp" finished-at="2024-04-15T07:23:38 ICT" duration-ms="6160" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="test_TK_Email_KhongTonTai()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:43 ICT" name="test_TK_Email_KhongTonTai" finished-at="2024-04-14T17:03:46 ICT" duration-ms="2844" status="PASS">
+        <test-method signature="lamMoiKhuyenmai()[pri:0, instance:test.kienlhpc05751.LamMoiKhuyenMai@698122b2]" started-at="2024-04-15T07:23:38 ICT" name="lamMoiKhuyenmai" finished-at="2024-04-15T07:23:42 ICT" duration-ms="4097" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_TK_Email_KhongTonTai -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:46 ICT" name="tearDown" finished-at="2024-04-14T17:03:46 ICT" duration-ms="0" status="PASS">
+        </test-method> <!-- lamMoiKhuyenmai -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:test.kienlhpc05751.LamMoiKhuyenMai@698122b2]" started-at="2024-04-15T07:23:42 ICT" name="logout" finished-at="2024-04-15T07:23:42 ICT" duration-ms="17" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:46 ICT" name="setUp" finished-at="2024-04-14T17:03:46 ICT" duration-ms="17" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="test_TK_Email_KhongKhop()[pri:1, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:46 ICT" name="test_TK_Email_KhongKhop" finished-at="2024-04-14T17:03:47 ICT" duration-ms="721" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_TK_Email_KhongKhop -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:47 ICT" name="tearDown" finished-at="2024-04-14T17:03:47 ICT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:47 ICT" name="setUp" finished-at="2024-04-14T17:03:47 ICT" duration-ms="15" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="test_GuiMailThatBai()[pri:2, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:47 ICT" name="test_GuiMailThatBai" finished-at="2024-04-14T17:03:48 ICT" duration-ms="1352" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[expected [null] but found [Lỗi khi gửi email. Vui lòng thử lại sau.]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [null] but found [Lỗi khi gửi email. Vui lòng thử lại sau.]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-at org.testng.Assert.assertEquals(Assert.java:122)
-at org.testng.Assert.assertEquals(Assert.java:629)
-at org.testng.Assert.assertEquals(Assert.java:639)
-at test.kienlhpc05751.QuenMatKhau.test_GuiMailThatBai(QuenMatKhau.java:51)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_GuiMailThatBai -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:48 ICT" name="tearDown" finished-at="2024-04-14T17:03:48 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:48 ICT" name="setUp" finished-at="2024-04-14T17:03:48 ICT" duration-ms="14" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="test_MaXacThucDung()[pri:3, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:48 ICT" name="test_MaXacThucDung" finished-at="2024-04-14T17:03:51 ICT" duration-ms="2324" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_MaXacThucDung -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:51 ICT" name="tearDown" finished-at="2024-04-14T17:03:51 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:51 ICT" name="setUp" finished-at="2024-04-14T17:03:51 ICT" duration-ms="10" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="test_MaXacThucSai()[pri:4, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:51 ICT" name="test_MaXacThucSai" finished-at="2024-04-14T17:03:53 ICT" duration-ms="1803" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_MaXacThucSai -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:53 ICT" name="tearDown" finished-at="2024-04-14T17:03:53 ICT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:53 ICT" name="setUp" finished-at="2024-04-14T17:03:53 ICT" duration-ms="12" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="test_NhapThieuThongTin()[pri:5, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:53 ICT" name="test_NhapThieuThongTin" finished-at="2024-04-14T17:03:55 ICT" duration-ms="2571" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_NhapThieuThongTin -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:55 ICT" name="setUp" finished-at="2024-04-14T17:03:55 ICT" duration-ms="11" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:55 ICT" name="tearDown" finished-at="2024-04-14T17:03:55 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="test_NhapThieuEmail()[pri:6, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:55 ICT" name="test_NhapThieuEmail" finished-at="2024-04-14T17:03:58 ICT" duration-ms="2461" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_NhapThieuEmail -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:58 ICT" name="tearDown" finished-at="2024-04-14T17:03:58 ICT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:58 ICT" name="setUp" finished-at="2024-04-14T17:03:58 ICT" duration-ms="10" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="test_EmailKhongHopLe()[pri:7, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:03:58 ICT" name="test_EmailKhongHopLe" finished-at="2024-04-14T17:04:01 ICT" duration-ms="3413" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_EmailKhongHopLe -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:04:01 ICT" name="tearDown" finished-at="2024-04-14T17:04:01 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:04:01 ICT" name="setUp" finished-at="2024-04-14T17:04:01 ICT" duration-ms="12" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="test_ChuaNhapMaXacThuc()[pri:8, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:04:01 ICT" name="test_ChuaNhapMaXacThuc" finished-at="2024-04-14T17:04:05 ICT" duration-ms="4298" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_ChuaNhapMaXacThuc -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:04:05 ICT" name="tearDown" finished-at="2024-04-14T17:04:05 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:04:05 ICT" name="setUp" finished-at="2024-04-14T17:04:05 ICT" duration-ms="9" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="test_MaXacThucTrong()[pri:9, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:04:05 ICT" name="test_MaXacThucTrong" finished-at="2024-04-14T17:04:11 ICT" duration-ms="5659" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_MaXacThucTrong -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:04:11 ICT" name="tearDown" finished-at="2024-04-14T17:04:11 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:04:11 ICT" name="setUp" finished-at="2024-04-14T17:04:11 ICT" duration-ms="12" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="test_DoiMatKhau()[pri:10, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:04:11 ICT" name="test_DoiMatKhau" finished-at="2024-04-14T17:04:24 ICT" duration-ms="13044" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_DoiMatKhau -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:04:24 ICT" name="tearDown" finished-at="2024-04-14T17:04:24 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:04:24 ICT" name="setUp" finished-at="2024-04-14T17:04:24 ICT" duration-ms="9" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="test_LayMaSaiNhapLaiDung()[pri:11, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:04:24 ICT" name="test_LayMaSaiNhapLaiDung" finished-at="2024-04-14T17:04:28 ICT" duration-ms="3643" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_LayMaSaiNhapLaiDung -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:04:28 ICT" name="tearDown" finished-at="2024-04-14T17:04:28 ICT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:04:28 ICT" name="setUp" finished-at="2024-04-14T17:04:28 ICT" duration-ms="10" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="test_LayMaDungNhapLaiSai()[pri:12, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:04:28 ICT" name="test_LayMaDungNhapLaiSai" finished-at="2024-04-14T17:04:30 ICT" duration-ms="2199" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_LayMaDungNhapLaiSai -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@1700915]" started-at="2024-04-14T17:04:30 ICT" name="tearDown" finished-at="2024-04-14T17:04:30 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- test.kienlhpc05751.QuenMatKhau -->
+        </test-method> <!-- logout -->
+      </class> <!-- test.kienlhpc05751.LamMoiKhuyenMai -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
