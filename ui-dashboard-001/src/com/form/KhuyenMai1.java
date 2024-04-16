@@ -22,9 +22,9 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
 public class KhuyenMai1 extends javax.swing.JPanel {
-	
+
 	public List<KhuyenMai> listKM = new ArrayList<>();
-	
+
 	public KhuyenMai1() {
 		initComponents();
 		init();
@@ -40,58 +40,59 @@ public class KhuyenMai1 extends javax.swing.JPanel {
 	}
 
 	boolean flag = true;
+	public String message = "";
 
 	boolean kiemTraInsert() {
 		// String pattenGiaTri = "\\d+(\\.\\d+)?";
 
 		// Bắt lỗi Mã khuyến mãi
 		if (txtMaKM.getText().isBlank()) {
-			getJOptionePane.methodThatUsesOptionPane(this, "Hãy điền mã khuyến mãi!");
+			XDialog.alert(this, message = "Hãy điền mã khuyến mãi!");
 			flag = false;
 		} else if (txtMaKM.getText().length() > 7) {
-			getJOptionePane.methodThatUsesOptionPane(this, "Mã khuyến mãi quá dài");
+			XDialog.alert(this, "Mã khuyến mãi quá dài");
 			flag = false;
 		} else if (daokm.selectById(txtMaKM.getText()) != null) {
-			getJOptionePane.methodThatUsesOptionPane(this, "Mã khuyến mãi đã tồn tại!");
+			XDialog.alert(this, message = "Mã khuyến mãi đã tồn tại!");
 			flag = false;
 		}
 		// Bắt lỗi tên khuyến mãi
 
 		if (txtTenKM.getText().isBlank()) {
-			getJOptionePane.methodThatUsesOptionPane(this, "hãy nhập tên khuyến mãi!");
+			XDialog.alert(this, message = "hãy nhập tên khuyến mãi!");
 			flag = false;
 		}
 		try {
 			// bắt lỗi giá trị khuyến mãi
 			if (txtGiaTri.getText().isBlank()) {
-				getJOptionePane.methodThatUsesOptionPane(this, "hãy nhập giá khuyến mãi!");
+				XDialog.alert(this, message = "hãy nhập giá khuyến mãi!");
 				flag = false;
 			} else if (Double.parseDouble(txtGiaTri.getText()) > 10 || Double.parseDouble(txtGiaTri.getText()) <= 0) {
-				getJOptionePane.methodThatUsesOptionPane(this, "Giá khuyến mãi chưa phù hợp!");
+				XDialog.alert(this, message = "Giá khuyến mãi chưa phù hợp!");
 				flag = false;
 			}
 		} catch (Exception e) {
-			getJOptionePane.methodThatUsesOptionPane(this, "Giá khuyến mãi chỉ nhập số!");
+			XDialog.alert(this, message = "Giá khuyến mãi chỉ nhập số!");
 			flag = false;
 		}
 
 		// kiểm tra trang thái / loại khuyến mãi
 		if (!rdoDaKetThuc.isSelected() && !rdoDangDienRa.isSelected()) {
-			getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng chọn trạng thái!");
+			XDialog.alert(this, message = "Vui lòng chọn trạng thái!");
 			flag = false;
 		}
 		if (!rdoPhanTram.isSelected() && !rdoVND.isSelected()) {
-			getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng chọn loại khuyến mãi");
+			XDialog.alert(this, message = "Vui lòng chọn loại khuyến mãi");
 			flag = false;
 		}
 		// Kiểm tra JDateChoser
 		if (txtNgayBD.getDate() == null || txtNgayKT.getDate() == null) {
-			getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng chọn ngày khuyến mãi");
+			XDialog.alert(this, message = "Vui lòng chọn ngày khuyến mãi");
 			flag = false;
 		}
 		if (!txtNgayBD.getDate().before(txtNgayKT.getDate())) {
 			// Ngày BD trước Ngày KT, hợp lệ
-			getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng chọn ngày khuyến mãi phù hợp");
+			XDialog.alert(this, message = "Vui lòng chọn ngày khuyến mãi phù hợp");
 			flag = false;
 
 		}
@@ -99,52 +100,56 @@ public class KhuyenMai1 extends javax.swing.JPanel {
 	}
 
 	boolean kiemTraUpdate() {
-		// String pattenGiaTri = "\\d+(\\.\\d+)?";
-//        float giaTri = Float.parseFloat(txtGiaTri.getText());
-		if (txtMaKM.getText().isBlank()) {
-			getJOptionePane.methodThatUsesOptionPane(this, "Hãy điền mã khuyến mãi!");
-			flag = false;
-		} else if (txtMaKM.getText().length() > 7) {
-			getJOptionePane.methodThatUsesOptionPane(this, "Mã khuyến mãi quá dài");
-			flag = false;
-		}
-		//
+		// Bắt lỗi Mã khuyến mãi
+//        if (txtMaKM.getText().isBlank()) {
+//            XDialog.alert(this, "Hãy điền mã khuyến mãi!");
+//            flag = false;
+//        } else if (txtMaKM.getText().length() > 7) {
+//            XDialog.alert(this, "Mã khuyến mãi quá dài");
+//            flag = false;
+//        } else if (daokm.selectById(txtMaKM.getText()) != null) {
+//            XDialog.alert(this, "Mã khuyến mãi đã tồn tại!");
+//            flag = false;
+//        }
+		// Bắt lỗi tên khuyến mãi
+
 		if (txtTenKM.getText().isBlank()) {
-			getJOptionePane.methodThatUsesOptionPane(this, "hãy nhập tên khuyến mãi!");
+			XDialog.alert(this, "hãy nhập tên khuyến mãi!");
 			flag = false;
 		}
-		//
 		try {
 			// bắt lỗi giá trị khuyến mãi
 			if (txtGiaTri.getText().isBlank()) {
-				getJOptionePane.methodThatUsesOptionPane(this, "hãy nhập giá khuyến mãi!");
+				XDialog.alert(this, message = "hãy nhập giá khuyến mãi!");
 				flag = false;
 			} else if (Double.parseDouble(txtGiaTri.getText()) > 10 || Double.parseDouble(txtGiaTri.getText()) <= 0) {
-				getJOptionePane.methodThatUsesOptionPane(this, "Giá khuyến mãi chưa phù hợp!");
+				XDialog.alert(this, message = "Giá khuyến mãi chưa phù hợp!");
 				flag = false;
 			}
 		} catch (Exception e) {
-			getJOptionePane.methodThatUsesOptionPane(this, "Giá khuyến mãi chỉ nhập số!");
+			XDialog.alert(this, message = "Giá khuyến mãi chỉ nhập số!");
 			flag = false;
 		}
 
+		// kiểm tra trang thái / loại khuyến mãi
 		if (!rdoDaKetThuc.isSelected() && !rdoDangDienRa.isSelected()) {
-			getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng chọn trạng thái!");
+			XDialog.alert(this, message = "Vui lòng chọn trạng thái!");
 			flag = false;
 		}
 		if (!rdoPhanTram.isSelected() && !rdoVND.isSelected()) {
-			getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng chọn loại khuyến mãi");
+			XDialog.alert(this, message = "Vui lòng chọn loại khuyến mãi");
 			flag = false;
 		}
-		//
+		// Kiểm tra JDateChoser
 		if (txtNgayBD.getDate() == null || txtNgayKT.getDate() == null) {
-			getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng chọn ngày khuyến mãi");
+			XDialog.alert(this, message = "Vui lòng chọn ngày khuyến mãi");
 			flag = false;
 		}
 		if (!txtNgayBD.getDate().before(txtNgayKT.getDate())) {
 			// Ngày BD trước Ngày KT, hợp lệ
-			getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng chọn ngày khuyến mãi phù hợp");
+			XDialog.alert(this, message = "Vui lòng chọn ngày khuyến mãi phù hợp");
 			flag = false;
+
 		}
 		return flag;
 	}
@@ -328,9 +333,9 @@ public class KhuyenMai1 extends javax.swing.JPanel {
 				daokm.delete(maNV);
 				this.fillTableKM();
 				this.clearForm();
-				getJOptionePane.methodThatUsesOptionPane(this, "Xóa thành công");
+				XDialog.alert(this, "Xóa thành công");
 			} catch (Exception e) {
-				getJOptionePane.methodThatUsesOptionPane(this, "Xóa thất bại");
+				XDialog.alert(this, "Xóa thất bại");
 			}
 
 			clearForm();
@@ -368,7 +373,7 @@ public class KhuyenMai1 extends javax.swing.JPanel {
 					} else {
 						tblSanPam.setEnabled(false);
 
-						getJOptionePane.methodThatUsesOptionPane(this, "Bạn chưa chọn mã khuyến mãi!");
+						XDialog.alert(this, "Bạn chưa chọn mã khuyến mãi!");
 						tblSanPam.setValueAt(false, row, 4);
 						tblSanPam.setEnabled(true);
 						return;
@@ -377,7 +382,7 @@ public class KhuyenMai1 extends javax.swing.JPanel {
 					if (tblKhuyenMai.getValueAt(row2, 4).equals("Đã kết thúc")) {
 						tblSanPam.setEnabled(false);
 
-						getJOptionePane.methodThatUsesOptionPane(this, "Khuyến mãi đã kết thúc!");
+						XDialog.alert(this, "Khuyến mãi đã kết thúc!");
 						tblSanPam.setValueAt(false, row, 4);
 						tblSanPam.setEnabled(true);
 						return;
@@ -390,7 +395,7 @@ public class KhuyenMai1 extends javax.swing.JPanel {
 
 						if (khuyenMaiDouble > sanPhamDouble && tblKhuyenMai.getValueAt(row2, 2).equals("VNĐ")) {
 							tblSanPam.setEnabled(false);
-							getJOptionePane.methodThatUsesOptionPane(this, "Giá khuyến mãi lớn hơn giá trị sản phẩm!");
+							XDialog.alert(this, "Giá khuyến mãi lớn hơn giá trị sản phẩm!");
 							tblSanPam.setValueAt(false, row, 4);
 							tblSanPam.setEnabled(true);
 							return;
