@@ -52,8 +52,8 @@ public class CustomRowRendererDemo {
 
 class CustomRowRenderer implements TableCellRenderer {
 
-    private final List<String> statuses;
-    private final DefaultTableCellRenderer defaultRenderer = new DefaultTableCellRenderer();
+    public final List<String> statuses;
+    public final DefaultTableCellRenderer defaultRenderer = new DefaultTableCellRenderer();
 
     public CustomRowRenderer(List<String> statuses) {
         this.statuses = statuses;

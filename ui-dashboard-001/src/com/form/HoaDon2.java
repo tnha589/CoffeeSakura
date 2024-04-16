@@ -8,6 +8,8 @@ import com.Dao.HoaDonDAO_1;
 import com.model.HoaDon;
 import com.untils.XAuth;
 import com.untils.XDate;
+import com.untils.getJOptionePane;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.text.SimpleDateFormat;
@@ -56,7 +58,7 @@ public class HoaDon2 extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    public void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -825,13 +827,13 @@ public class HoaDon2 extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tblHoaDonMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    public void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         updateHoaDon();
         Reset();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void tblLSHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLSHoaDonMouseClicked
+    public void tblLSHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLSHoaDonMouseClicked
         try {
             row1 = tblLSHoaDon.getSelectedRow();
             String maHD = (String) tblLSHoaDon.getValueAt(row1, 0);
@@ -843,7 +845,7 @@ public class HoaDon2 extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tblLSHoaDonMouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    public void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         userInput = JOptionPane.showInputDialog("Lý do hủy:");
         if (userInput != null) {
             updateHuyHoaDon();
@@ -851,11 +853,11 @@ public class HoaDon2 extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void btnXacNhanHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanHuyActionPerformed
+    public void btnXacNhanHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanHuyActionPerformed
         updateXacNhanHuy();
     }//GEN-LAST:event_btnXacNhanHuyActionPerformed
 
-    private void btnTuChoiHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTuChoiHuyActionPerformed
+    public void btnTuChoiHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTuChoiHuyActionPerformed
         updateTrangThaiHuy();
     }//GEN-LAST:event_btnTuChoiHuyActionPerformed
 
@@ -1140,7 +1142,7 @@ public void init() {
         fillTableHoaDon();
         row = -1;
         fillTableHoaDonCT();
-        JOptionPane.showMessageDialog(null, "Đã từ chối hủy hóa đơn");
+            getJOptionePane.methodThatUsesOptionPane(null, "Đã từ chối hủy hóa đơn");
     }
 
     public void updateXacNhanHuy() {
@@ -1161,7 +1163,7 @@ public void init() {
         row = -1;
         fillTableHoaDonCT();
         fillTableLSHoaDon();
-        JOptionPane.showMessageDialog(null, "Đã xác nhận hủy hóa đơn");
+            getJOptionePane.methodThatUsesOptionPane(null, "Đã xác nhận hủy hóa đơn");
     }
 
     public void xemLyDo() {
@@ -1203,8 +1205,8 @@ public void init() {
 
     class CustomRowRenderer implements TableCellRenderer {
 
-        private final List<String> statuses;
-        private final DefaultTableCellRenderer defaultRenderer = new DefaultTableCellRenderer();
+        public final List<String> statuses;
+        public final DefaultTableCellRenderer defaultRenderer = new DefaultTableCellRenderer();
 
         public CustomRowRenderer(List<String> statuses) {
             this.statuses = statuses;

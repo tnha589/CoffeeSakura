@@ -1,14 +1,20 @@
 package com.untils;
 
 import java.awt.Component;
+import java.awt.Window;
+import java.awt.event.WindowEvent;
+
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+
+
+
 
 /**
  *
  * @author HP
  */
 public class XDialog {
-
     /*
      * Hiển thị thông báo cho người dùng
      */

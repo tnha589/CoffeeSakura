@@ -37,7 +37,7 @@ public class TongKetCaLamDao {
     public static String DeleteByThu = "DELETE FROM ChiTietCaLamViec WHERE MaCaLam IN (SELECT MaCaLam FROM CaLam WHERE Thu LIKE ?) and MaNV is not null;";
     public static String DeleteAllCaLam = "DELETE FROM ChiTietCaLamViec WHERE MaNV is not null;";
     
-    private List<Object[]> getListOfArray(String sql, String[] cols, Object... args) {
+    public List<Object[]> getListOfArray(String sql, String[] cols, Object... args) {
         try {
             List<Object[]> list = new ArrayList<>();
             rs = JDBC.query(sql, args);

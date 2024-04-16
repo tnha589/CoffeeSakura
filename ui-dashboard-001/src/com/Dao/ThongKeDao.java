@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class ThongKeDao {
 
-    private List<Object[]> getListOfArray(String sql, String[] cols, Object... args) {
+    public List<Object[]> getListOfArray(String sql, String[] cols, Object... args) {
         try {
             List<Object[]> list = new ArrayList<>();
             ResultSet rs = JDBC.query(sql, args);

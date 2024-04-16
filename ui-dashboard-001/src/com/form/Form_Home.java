@@ -40,7 +40,7 @@ public class Form_Home extends javax.swing.JPanel {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    public void initComponents() {
 
         panel = new javax.swing.JLayeredPane();
         card1 = new com.component.Card();
@@ -138,13 +138,13 @@ public class Form_Home extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.component.Card card1;
-    private com.component.Card card2;
-    private com.component.Card card3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLayeredPane panel;
-    private com.swing.PanelBorder panelBorder1;
-    private javax.swing.JScrollPane spTable;
-    private com.swing.Table table;
+    public com.component.Card card1;
+    public com.component.Card card2;
+    public com.component.Card card3;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLayeredPane panel;
+    public com.swing.PanelBorder panelBorder1;
+    public javax.swing.JScrollPane spTable;
+    public com.swing.Table table;
     // End of variables declaration//GEN-END:variables
 }
