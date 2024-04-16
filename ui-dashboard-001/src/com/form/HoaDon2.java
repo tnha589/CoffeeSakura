@@ -818,7 +818,7 @@ public class HoaDon2 extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tblHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHoaDonMouseClicked
+    public void tblHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHoaDonMouseClicked
         row = tblHoaDon.getSelectedRow();
         String maHD = (String) tblHoaDon.getValueAt(row, 0);
         fillTableHoaDonCT();
@@ -928,7 +928,7 @@ public class HoaDon2 extends javax.swing.JPanel {
     private javax.swing.JLabel lblTrangThai1;
     private javax.swing.JLabel lblVoucher;
     private javax.swing.JLabel lbllLyDoHuy;
-    private javax.swing.JTable tblHoaDon;
+    public javax.swing.JTable tblHoaDon;
     private javax.swing.JTable tblHoaDonCT;
     private javax.swing.JTable tblLSHoaDon;
     // End of variables declaration//GEN-END:variables

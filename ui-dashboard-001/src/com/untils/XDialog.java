@@ -12,9 +12,11 @@ public class XDialog {
     /*
      * Hiển thị thông báo cho người dùng
      */
-    public static void alert(Component parent, String message) {
+    public static String alert(Component parent, String message) {
         JOptionPane.showMessageDialog(parent, message, "Hệ thống quản lý đào tạo",
                 JOptionPane.INFORMATION_MESSAGE);
+        
+        return message;
     }
 
     /*
