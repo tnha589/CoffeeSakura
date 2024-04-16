@@ -16,7 +16,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import com.model.NhanVien;
 
-import static org.mockito.Mockito.timeout;
+//import static org.mockito.Mockito.timeout;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -58,6 +58,7 @@ public class DangNhap extends javax.swing.JDialog {
 	}
 
 	nhanVienDao NVDao = new nhanVienDao();
+	public String message = "";
 
 	/**
 	 * Creates new form DangNhap
@@ -78,19 +79,23 @@ public class DangNhap extends javax.swing.JDialog {
 		String MK = new String(txtPassword.getPassword());
 		NhanVien nv = NVDao.selectById(MaNV);
 		if (nv == null) {
-			XDialog.alert(this, "Sai tên đăng nhập!");
+			message = "Sai tên đăng nhập!";
+			XDialog.alert(this, message);
 		} else if (!MK.equals(nv.getMatKhau())) {
-			XDialog.alert(this, "Sai mật khẩu!");
+			message = "Sai mật khẩu!";
+			XDialog.alert(this, message);
 		} else if (nv.getChuVu().equals("Nhân Viên")) {
-			XDialog.alert(this, "Nhân viên không có quyền truy cập ứng dụng");
+			message = "Nhân viên không có quyền truy cập ứng dụng";
+			XDialog.alert(this, message);
 		} else if (nv.isTrangThai() == false) {
-			XDialog.alert(null, "Nhân viên đã nghĩ làm, không thể đăng nhập!");
+			message = "Nhân viên đã nghĩ làm, không thể đăng nhập!";
+			XDialog.alert(null, message);
 		} else {
 			System.out.println("Logged in successfully...");
 			XAuth.user = nv;
 			getOptionePane.methodThatUsesOptionPane(this, "Dangnhap thanh cong");
 //			getoptionPane(this, "Đăng nhập thành công");
-//            this.dispose();
+            this.dispose();
 		}
 	}
 
@@ -225,27 +230,29 @@ public class DangNhap extends javax.swing.JDialog {
 	}// </editor-fold>//GEN-END:initComponents
 
 	public void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnXacNhanActionPerformed
-		// TODO add your handling code here:
-		if (txtTenTK.getText().trim().length() > 0) {
-			if (txtPassword.getPassword().length > 0) {
-				this.login();
-			} else {
-				XDialog.alert(this, "Không được để trống tên mật khẩu.");
-			}
-		} else {
-			XDialog.alert(this, "Không được để trống tên đăng nhập.");
-		}
+		  // TODO add your handling code here:
+        if (txtTenTK.getText().trim().length() > 0) {
+            if (txtPassword.getPassword().length > 0) {
+                this.login();
+            } else {
+            	message = "Không được để trống tên mật khẩu.";
+                XDialog.alert(this, "Không được để trống tên mật khẩu.");
+            }
+        } else {
+        	message = "Không được để trống tên đăng nhập.";
+            XDialog.alert(this, message);
+        }
 
 	}// GEN-LAST:event_btnXacNhanActionPerformed
 
 	public void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyActionPerformed
-		// TODO add your handling code here:
-		if (XDialog.confirm(this, "Bạn chắc chắn thoát!! ")) {
-			System.exit(0);
-		}
+		  // TODO add your handling code here:
+    	message = "Bạn chắc chắn thoát!!";
+        if (XDialog.confirm(this, message)) {
+            System.exit(0);
+        }
 
 	}// GEN-LAST:event_btnHuyActionPerformed
-
 	public void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel5MouseClicked
 		new QuenMK(null, true).setVisible(true);
 		// TODO add your handling code here:
@@ -289,8 +296,4 @@ public class DangNhap extends javax.swing.JDialog {
 	public javax.swing.JPasswordField txtPassword;
 	public javax.swing.JTextField txtTenTK;
 	// End of variables declaration//GEN-END:variables
-
-	
-	
-
 }

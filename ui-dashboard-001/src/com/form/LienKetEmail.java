@@ -11,6 +11,9 @@ import com.untils.XAuth;
 import com.untils.XDialog;
 import com.untils.getJOptionePane;
 
+import test.quangddpc05711.LienKetEmailTest;
+
+
 import java.awt.Color;
 import java.util.Properties;
 import java.util.Random;
@@ -35,12 +38,15 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
     /**
      * Creates new form LienKetEmail
      */
-    public LienKetEmail(java.awt.Frame parent, boolean modal) {
+    
+
+	public LienKetEmail(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
         init();
     }
+
 
     void init() {
         if (XAuth.isLogin() && XAuth.user != null) {
@@ -413,19 +419,20 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnGui;
-    public javax.swing.JButton btnHuy;
-    public javax.swing.JButton btnLienKet;
-    public javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel2;
-    public javax.swing.JLabel jLabel3;
-    public javax.swing.JLabel jLabel4;
-    public javax.swing.JPanel jPanel1;
-    public javax.swing.JLabel lblEmail;
-    public javax.swing.JLabel lblXN;
+    private javax.swing.JButton btnGui;
+    private javax.swing.JButton btnHuy;
+    private javax.swing.JButton btnLienKet;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblXN;
     public javax.swing.JTextField txtEmail;
     public javax.swing.JTextField txtMa;
-    public javax.swing.JTextField txtTen;
+    private javax.swing.JTextField txtTen;
+
     // End of variables declaration//GEN-END:variables
  @Override
     public void run() {

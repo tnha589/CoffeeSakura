@@ -27,6 +27,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Date;
 import java.util.List;
@@ -55,6 +56,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class QuanLyNhanVien1 extends javax.swing.JPanel {
 
+	public List<NhanVien> listSP = new ArrayList<>();
+    
+	
     JFileChooser fileChooser = new JFileChooser();
     nhanVienDao nvDao = new nhanVienDao();
     int row = -1;
@@ -829,6 +833,7 @@ public void init() {
         try {
             nvDao.update(nv); // cập nhật
             this.fillTable(); // đổ lại bảng
+//            JOptionPane.showMessageDialog(this, "Cập nhật nhân viên thành công!");
               getJOptionePane.methodThatUsesOptionPane(this, "Cập nhật nhân viên thành công!");
         } catch (Exception e) {
               getJOptionePane.methodThatUsesOptionPane(this, "Cập nhật nhân viên thất bại!");
@@ -1096,6 +1101,7 @@ public void init() {
         } else {
             ErrorMaNV1.setText("");
         }
+        System.out.println("1: "+check);
 
         // Kiểm tra tên nhân viên
         String tenNV = txtTenNV.getText();
@@ -1105,6 +1111,7 @@ public void init() {
         } else {
             ErrorTenNV.setText("");
         }
+        
         // Kiểm tra chức vụ
         int vaiTroIndex = cboVaiTro.getSelectedIndex();
         if (vaiTroIndex == 0) {

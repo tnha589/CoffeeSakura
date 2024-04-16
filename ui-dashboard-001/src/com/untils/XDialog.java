@@ -1,20 +1,29 @@
 package com.untils;
 
 import java.awt.Component;
+import java.awt.Window;
+import java.awt.event.WindowEvent;
+
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+
+
+
 
 /**
  *
  * @author HP
  */
 public class XDialog {
-
+	 private static String alertMessage;
     /*
      * Hiển thị thông báo cho người dùng
      */
-    public static void alert(Component parent, String message) {
+    public static String alert(Component parent, String message) {
         JOptionPane.showMessageDialog(parent, message, "Hệ thống quản lý đào tạo",
                 JOptionPane.INFORMATION_MESSAGE);
+        alertMessage = message;
+        return message;
     }
 
     /*
@@ -32,5 +41,8 @@ public class XDialog {
     public static String prompt(Component parent, String message) {
         return JOptionPane.showInputDialog(parent, message, "Hệ thống quản lý đào tạo",
                 JOptionPane.INFORMATION_MESSAGE);
+    }
+    public static String getAlertMessage() {
+        return alertMessage;
     }
 }
