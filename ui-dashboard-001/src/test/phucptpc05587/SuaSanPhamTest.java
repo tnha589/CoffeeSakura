@@ -161,7 +161,7 @@ public class SuaSanPhamTest {
 		}
 	}
     @DataProvider(name = "dataSanPhamSua")
-    public static Object[][] testData() {
+    public static Object[][] testData() { 
         return new Object[][] {
             {"","sp01","10","test",1,"sp01.png","Không được trống!"},
             {"SP1","","10","test",1,"sp01.png","Không được trống!"},
