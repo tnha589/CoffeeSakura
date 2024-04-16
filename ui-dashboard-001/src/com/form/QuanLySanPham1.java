@@ -35,6 +35,7 @@ public class QuanLySanPham1 extends javax.swing.JPanel {
     loaiSanPhamDao lspDao = new loaiSanPhamDao();
 
     int row = -1;
+    int count = 0;
 
     /**
      * Creates new form QuanLySanPham1
@@ -441,11 +442,19 @@ public class QuanLySanPham1 extends javax.swing.JPanel {
 
     public void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
         search(txtFindTen.getText());
+        if(count>1) {
+       	 XDialog.alert(this, "Tìm kiếm thành công!");
+       }
+      count++;
         // TODO add your handling code here:
     }//GEN-LAST:event_btnFindActionPerformed
 
     public void cboFindLoaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboFindLoaiActionPerformed
         Loc();
+        if(count>1) {
+       	 XDialog.alert(this, "Tìm kiếm thành công!");
+       }
+      count++;
         // TODO add your handling code here:
     }//GEN-LAST:event_cboFindLoaiActionPerformed
 
