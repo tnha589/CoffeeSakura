@@ -159,7 +159,7 @@ public class Header extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_quanLyCaActionPerformed
 
-    private void lienKetGmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lienKetGmailActionPerformed
+    public void lienKetGmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lienKetGmailActionPerformed
         new LienKetEmail(null, true).setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_lienKetGmailActionPerformed
@@ -198,7 +198,7 @@ public class Header extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel lblTime;
     private javax.swing.JMenuItem lienKetGmail;
-    private javax.swing.JPopupMenu mnuAcccount;
+    public javax.swing.JPopupMenu mnuAcccount;
     private javax.swing.JMenuItem quanLyCa;
     // End of variables declaration//GEN-END:variables
 public boolean checkADM2() {

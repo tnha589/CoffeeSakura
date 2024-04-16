@@ -11,7 +11,7 @@ public class LegendItem extends javax.swing.JPanel {
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    public void initComponents() {
 
         lbColor = new com.chart.LabelColor();
         lbName = new javax.swing.JLabel();
@@ -47,7 +47,7 @@ public class LegendItem extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.chart.LabelColor lbColor;
-    private javax.swing.JLabel lbName;
+    public com.chart.LabelColor lbColor;
+    public javax.swing.JLabel lbName;
     // End of variables declaration//GEN-END:variables
 }

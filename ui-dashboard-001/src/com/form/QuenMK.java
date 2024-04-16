@@ -8,6 +8,8 @@ import com.Dao.nhanVienDao;
 import com.model.NhanVien;
 import com.untils.XAuth;
 import com.untils.XDialog;
+import com.untils.getJOptionePane;
+
 import java.util.Properties;
 import java.util.Random;
 import javax.mail.Message;
@@ -82,7 +84,7 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
 
         //bắt lỗi không tương thích vói tài khoản
         if (!nv.getEmail().equals(email)) {
-            XDialog.alert(this, message= "Email không tương thích với tài khoản đã nhập.");
+              getJOptionePane.methodThatUsesOptionPane(this, "Email không tương thích với tài khoản đã nhập.");
             return;
         }
 
@@ -127,6 +129,7 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
             Transport.send(messagesend);
             message ="Mã đã được gửi!";
             XDialog.alert(this, message  );
+
             Thread time = new Thread(this);
             time.start();
             timer = false;
@@ -143,6 +146,7 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
         String emailMau = "^[A-Za-z0-9+_.-]+@(.+)$";
 
         if (TenTK.equals("")) {
+
             XDialog.alert(this, message="Vui lòng nhập tài khoản");
         } else if (email.equals("")) {
             XDialog.alert(this,message= "Vui lòng nhập email");
@@ -166,6 +170,7 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
             dispose();
         } else {
             XDialog.alert(this,message= "Sai mã xác thực!");
+
         }
     }
 

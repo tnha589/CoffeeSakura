@@ -74,7 +74,7 @@ public class Item extends javax.swing.JPanel {
         listKM = kmdao.selectAll();
         this.data = data;
         this.GiaSP = data.getGia();
-        ImageIcon imgIcon = new ImageIcon(getClass().getResource("/com/image/" + data.getHinh()));
+        ImageIcon imgIcon = new ImageIcon(getClass().getResource("/com/image/" + "hinh1.png"));
 //        Image img = imgIcon.getImage();
         pictureBox1.setImage(imgIcon);
         lbItemName.setText(data.getTenSP());
