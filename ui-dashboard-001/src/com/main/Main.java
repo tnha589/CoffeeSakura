@@ -43,7 +43,7 @@ public class Main extends javax.swing.JFrame {
     private KhuyenMai1 form4;
     private ThongKe1 form5;
     private QuanLyNhanVien1 form6;
-    private ChiTieu1 form7;
+    public ChiTieu1 form7;
     private ModelItem itemSelected;
     Header h = new Header();
 
