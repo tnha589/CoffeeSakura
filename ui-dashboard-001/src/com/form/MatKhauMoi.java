@@ -7,6 +7,7 @@ package com.form;
 import com.Helper.JDBC;
 import com.untils.XAuth;
 import com.untils.XDialog;
+import com.untils.getJOptionePane;
 
 /**
  *
@@ -40,10 +41,10 @@ public class MatKhauMoi extends javax.swing.JDialog {
 
         try {
             JDBC.update("UPDATE NhanVien SET MatKhau = ? WHERE MaNV = ?", password, ma);
-            XDialog.alert(this, "Đã đổi mật khẩu!");
+              getJOptionePane.methodThatUsesOptionPane(this, "Đã đổi mật khẩu!");
             this.dispose();
         } catch (Exception e) {
-            XDialog.alert(this, "Xảy ra lỗi!!");
+              getJOptionePane.methodThatUsesOptionPane(this, "Xảy ra lỗi!!");
             e.printStackTrace();
         }
 

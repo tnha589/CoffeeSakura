@@ -13,11 +13,11 @@ import java.util.concurrent.ThreadFactory;
 
 public class QRScanner extends javax.swing.JDialog implements Runnable, ThreadFactory {
     
-    private WebcamPanel panel = null;
-    private Webcam webcam = null;
-    private final Executor executor = Executors.newSingleThreadExecutor(this);
-    private Boolean running = true;
-    private Boolean found = false;
+    public WebcamPanel panel = null;
+    public Webcam webcam = null;
+    public final Executor executor = Executors.newSingleThreadExecutor(this);
+    public Boolean running = true;
+    public Boolean found = false;
     
     public QRScanner() {
         initComponents();
@@ -31,7 +31,7 @@ public class QRScanner extends javax.swing.JDialog implements Runnable, ThreadFa
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    public void initComponents() {
 
         panelCamera = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -79,7 +79,7 @@ public class QRScanner extends javax.swing.JDialog implements Runnable, ThreadFa
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void formComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentHidden
+    public void formComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentHidden
         running = false;
         webcam.close();
         if(!found){
@@ -88,7 +88,7 @@ public class QRScanner extends javax.swing.JDialog implements Runnable, ThreadFa
         this.dispose();
     }//GEN-LAST:event_formComponentHidden
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    public void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
     /**
@@ -128,7 +128,7 @@ public class QRScanner extends javax.swing.JDialog implements Runnable, ThreadFa
         });
     }
     
-    private void initWebcam(){
+    public void initWebcam(){
         Dimension size = WebcamResolution.VGA.getSize();
         webcam = Webcam.getWebcams().get(0);
         webcam.setViewSize(size);
@@ -185,7 +185,7 @@ public class QRScanner extends javax.swing.JDialog implements Runnable, ThreadFa
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JPanel panelCamera;
+    public javax.swing.JButton jButton1;
+    public javax.swing.JPanel panelCamera;
     // End of variables declaration//GEN-END:variables
 }

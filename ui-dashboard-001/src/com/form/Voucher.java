@@ -9,6 +9,8 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
+import com.untils.getJOptionePane;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -246,6 +248,7 @@ public class Voucher extends javax.swing.JDialog {
             khuyenMaiDao.insertVoucher(giaTri, maXT);
         }
         JOptionPane.showMessageDialog(null,message = "Tạo voucher thành công");
+
     }
 
     public void createQR() {
@@ -298,6 +301,7 @@ public String message;
     public boolean checkForm() {
         if (txtGia.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null,message= "Vui lòng nhập giá trị voucher");
+
             return false;
         }
         try {
@@ -308,6 +312,7 @@ public String message;
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,message = "Giá trị chưa đúng");
+
             return false;
         }
         return true;
