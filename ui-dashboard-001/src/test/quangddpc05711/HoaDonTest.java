@@ -138,7 +138,7 @@ public class HoaDonTest {
 		String tgTT = main.form2.lblThoiGianThanhToan.getText();
 		String trangThai = main.form2.lblTrangThai.getText();
 		String tienSP = main.form2.lblTienSP.getText();
-		String phiKhac = main.form2.lblPhiKhac.getText();
+		String phiKhac = main.form2.lblPhiKhac.getText(); 
 		String tongTien = main.form2.lblTongTien.getText();
 
 		// KIỂM TRA THÔNG TIN CHI TIẾT CÓ HIỂN THI KHI CLICK VÀO HÓA ĐƠN
@@ -488,7 +488,7 @@ public class HoaDonTest {
 		}
 
 		// Chọn một hàng chỉ định, ví dụ hàng 1
-		int selectedRow = 0;
+		int selectedRow = form2.tblHoaDon.getModel().getRowCount() - 1;
 
 		// Tạo một sự kiện MouseEvent để mô phỏng việc click đúp liên tiếp vào hàng đã
 		// chọn
@@ -680,7 +680,7 @@ public class HoaDonTest {
 		}
 
 		// Chọn một hàng chỉ định, ví dụ hàng 1
-		int selectedRow = 0;
+		int selectedRow = form2.tblHoaDon.getModel().getRowCount() - 1;;
 
 		// Tạo một sự kiện MouseEvent để mô phỏng việc click đúp liên tiếp vào hàng đã
 		// chọn
