@@ -6,13 +6,20 @@ package com.form;
 
 import com.Dao.nhanVienDao;
 import com.component.Header;
+import com.untils.JOptionPane;
 import com.untils.XAuth;
 import com.untils.XDialog;
+import com.untils.getJOptionePane;
+
 import java.awt.Font;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
+import javax.swing.JDialog;
 import com.model.NhanVien;
+
+//import static org.mockito.Mockito.timeout;
+
 import java.awt.Color;
+import java.awt.Component;
 
 /**
  *
@@ -20,9 +27,7 @@ import java.awt.Color;
  */
 public class DangNhap extends javax.swing.JDialog {
 
-	
-	
-    public javax.swing.JButton getBtnHuy() {
+	public javax.swing.JButton getBtnHuy() {
 		return btnHuy;
 	}
 
@@ -53,35 +58,38 @@ public class DangNhap extends javax.swing.JDialog {
 	public void setTxtTenTK(javax.swing.JTextField txtTenTK) {
 		this.txtTenTK = txtTenTK;
 	}
+
 	nhanVienDao NVDao = new nhanVienDao();
 
-    /**
-     * Creates new form DangNhap
-     */
-    public DangNhap(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
-        initComponents();
-        setLocationRelativeTo(null);
+	/**
+	 * Creates new form DangNhap
+	 */
+	public DangNhap(java.awt.Frame parent, boolean modal) {
+		super(parent, modal);
+		initComponents();
+		setLocationRelativeTo(null);
 //        txtTenTK.setText("NV000");
 //        txtPassword.setText("123");
-    }
+	}
 
-    //Nhập dữ liệu tư
-    public void login() {
-        String MaNV = txtTenTK.getText();
-        String MK = new String(txtPassword.getPassword());
-        NhanVien nv = NVDao.selectById(MaNV);
-        if (nv == null) {
-            XDialog.alert(this, "Sai tên đăng nhập!");
-        } else if (!MK.equals(nv.getMatKhau())) {
-            XDialog.alert(this, "Sai mật khẩu!");
-        } else if (nv.getChuVu().equals("Nhân Viên")) {
-            XDialog.alert(this, "Nhân viên không có quyền truy cập ứng dụng");
-        } else if (nv.isTrangThai() == false) {
-            XDialog.alert(null, "Nhân viên đã nghĩ làm, không thể đăng nhập!");
-        } else {
-            System.out.println("Logged in successfully...");
-            XAuth.user = nv;
+	// Nhập dữ liệu tư
+	public void login() {
+		String MaNV = txtTenTK.getText();
+		String MK = new String(txtPassword.getPassword());
+		NhanVien nv = NVDao.selectById(MaNV);
+		if (nv == null) {
+			XDialog.alert(this, "Sai tên đăng nhập!");
+		} else if (!MK.equals(nv.getMatKhau())) {
+			XDialog.alert(this, "Sai mật khẩu!");
+		} else if (nv.getChuVu().equals("Nhân Viên")) {
+			XDialog.alert(this, "Nhân viên không có quyền truy cập ứng dụng");
+		} else if (nv.isTrangThai() == false) {
+			XDialog.alert(null, "Nhân viên đã nghĩ làm, không thể đăng nhập!");
+		} else {
+			System.out.println("Logged in successfully...");
+			XAuth.user = nv;
+			getJOptionePane.methodThatUsesOptionPane(this, "Dangnhap thanh cong");
+//			getoptionPane(this, "Đăng nhập thành công");
             this.dispose();
         }
     }

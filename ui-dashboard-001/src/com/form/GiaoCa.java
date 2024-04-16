@@ -7,6 +7,8 @@ package com.form;
 import com.Dao.CaLamDao;
 import com.Dao.TongKetCaLamDao;
 import com.untils.XDialog;
+import com.untils.getJOptionePane;
+
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.sql.Timestamp;
@@ -78,7 +80,7 @@ public class GiaoCa extends javax.swing.JDialog {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    public void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -483,33 +485,33 @@ public class GiaoCa extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnTatCaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTatCaActionPerformed
+    public void btnTatCaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTatCaActionPerformed
         fillTableLSCa();
         // TODO add your handling code here:
     }//GEN-LAST:event_btnTatCaActionPerformed
 
-    private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
+    public void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
         this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_btnThoatActionPerformed
 
-    private void btnGiaoCaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGiaoCaActionPerformed
+    public void btnGiaoCaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGiaoCaActionPerformed
         ThemGiaoCa();
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGiaoCaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    public void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         fillTableLSCaByDate(NgayHomNay);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jDateChooser2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jDateChooser2KeyReleased
+    public void jDateChooser2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jDateChooser2KeyReleased
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jDateChooser2KeyReleased
 
-    private void jDateChooser2AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jDateChooser2AncestorAdded
+    public void jDateChooser2AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jDateChooser2AncestorAdded
 
 // TODO add your handling code here:
     }//GEN-LAST:event_jDateChooser2AncestorAdded
@@ -564,42 +566,42 @@ public class GiaoCa extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGiaoCa;
-    private javax.swing.JButton btnTatCa;
-    private javax.swing.JButton btnThoat;
-    private javax.swing.JButton jButton1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JLabel lblChuyenKhoan;
-    private javax.swing.JLabel lblDoanhThu;
-    private javax.swing.JLabel lblSoLuongHD;
-    private javax.swing.JLabel lblSoLuongHDC;
-    private javax.swing.JLabel lblTenCa;
-    private javax.swing.JLabel lblTenThuNgan;
-    private javax.swing.JLabel lblTienKet;
-    private javax.swing.JLabel lblTienMat;
-    private javax.swing.JLabel lblTongTienHD;
-    private javax.swing.JLabel lblTongTienHDC;
-    private javax.swing.JTable tblLichSuCa;
-    private javax.swing.JTable tblNhanVien;
+    public javax.swing.JButton btnGiaoCa;
+    public javax.swing.JButton btnTatCa;
+    public javax.swing.JButton btnThoat;
+    public javax.swing.JButton jButton1;
+    public com.toedter.calendar.JDateChooser jDateChooser2;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel10;
+    public javax.swing.JLabel jLabel11;
+    public javax.swing.JLabel jLabel12;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel5;
+    public javax.swing.JLabel jLabel6;
+    public javax.swing.JLabel jLabel7;
+    public javax.swing.JLabel jLabel8;
+    public javax.swing.JLabel jLabel9;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel2;
+    public javax.swing.JPanel jPanel3;
+    public javax.swing.JPanel jPanel4;
+    public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTabbedPane jTabbedPane1;
+    public javax.swing.JLabel lblChuyenKhoan;
+    public javax.swing.JLabel lblDoanhThu;
+    public javax.swing.JLabel lblSoLuongHD;
+    public javax.swing.JLabel lblSoLuongHDC;
+    public javax.swing.JLabel lblTenCa;
+    public javax.swing.JLabel lblTenThuNgan;
+    public javax.swing.JLabel lblTienKet;
+    public javax.swing.JLabel lblTienMat;
+    public javax.swing.JLabel lblTongTienHD;
+    public javax.swing.JLabel lblTongTienHDC;
+    public javax.swing.JTable tblLichSuCa;
+    public javax.swing.JTable tblNhanVien;
     // End of variables declaration//GEN-END:variables
 public void init() {
         fillDataCalam();
@@ -681,7 +683,7 @@ public void init() {
         }
     }
 
-    private void fillTableLSCa() {
+    public void fillTableLSCa() {
         DefaultTableModel model = (DefaultTableModel) tblLichSuCa.getModel();
         model.setRowCount(0);
         try {
@@ -691,12 +693,12 @@ public void init() {
                 lsCa.add(new Object[]{row[0], row[1], row[2], row[3], row[4], row[5], row[6]});
             }
         } catch (Exception e) {
-            XDialog.alert(this, "Lỗi truy vấn dữ lịch sử giao ca!");
+              getJOptionePane.methodThatUsesOptionPane(this, "Lỗi truy vấn dữ lịch sử giao ca!");
             e.printStackTrace();
         }
     }
 
-    private void fillTableLSCaByDate(String day) {
+    public void fillTableLSCaByDate(String day) {
         DefaultTableModel model = (DefaultTableModel) tblLichSuCa.getModel();
         model.setRowCount(0);
         try {
@@ -710,7 +712,7 @@ public void init() {
         }
     }
 
-    private String xacDinhCaLam(int gio) {
+    public String xacDinhCaLam(int gio) {
         if (gio >= 0 && gio < 6) {
             return "Ca Tối";
         } else if (gio >= 6 && gio < 12) {
@@ -722,7 +724,7 @@ public void init() {
         }
     }
 
-    private void updateThongTin() {
+    public void updateThongTin() {
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -769,22 +771,22 @@ public void init() {
             }
         } else {
             dao.updateDatabase(maNV, lblTenCa.getText(), Integer.parseInt(lblSoLuongHD.getText()), Double.parseDouble(lblTongTienHD.getText()), Integer.parseInt(lblSoLuongHDC.getText()), Double.parseDouble(lblTongTienHDC.getText()), Double.parseDouble(lblChuyenKhoan.getText()), Double.parseDouble(lblTienMat.getText()), Double.parseDouble(lblDoanhThu.getText()), String.valueOf(NgayHomNay));
-            XDialog.alert(this, "Đã lưu ca hôm nay ");
+              getJOptionePane.methodThatUsesOptionPane(this, "Đã lưu ca hôm nay ");
             fillTableLSCa();
-            XDialog.alert(null, "Giao ca thành công!");
+              getJOptionePane.methodThatUsesOptionPane(null, "Giao ca thành công!");
             return;
         }
 
         if (check == true) {
             dao.updateDatabaseTontai(Integer.parseInt(lblSoLuongHD.getText()), Double.parseDouble(lblTongTienHD.getText()), Integer.parseInt(lblSoLuongHDC.getText()), Double.parseDouble(lblTongTienHDC.getText()), Double.parseDouble(lblChuyenKhoan.getText()), Double.parseDouble(lblTienMat.getText()), Double.parseDouble(lblDoanhThu.getText()));
-            XDialog.alert(this, "Đã cập nhật ca hôm nay");
+              getJOptionePane.methodThatUsesOptionPane(this, "Đã cập nhật ca hôm nay");
         } else {
             dao.updateDatabase(maNV, lblTenCa.getText(), Integer.parseInt(lblSoLuongHD.getText()), Double.parseDouble(lblTongTienHD.getText()), Integer.parseInt(lblSoLuongHDC.getText()), Double.parseDouble(lblTongTienHDC.getText()), Double.parseDouble(lblChuyenKhoan.getText()), Double.parseDouble(lblTienMat.getText()), Double.parseDouble(lblDoanhThu.getText()), String.valueOf(NgayHomNay));
-            XDialog.alert(this, "Đã lưu ca hôm nay ");
+              getJOptionePane.methodThatUsesOptionPane(this, "Đã lưu ca hôm nay ");
         }
 
         fillTableLSCa();
-        XDialog.alert(null, "Giao ca thành công!");
+          getJOptionePane.methodThatUsesOptionPane(null, "Giao ca thành công!");
     }
 
 }

@@ -8,6 +8,8 @@ import com.Dao.CaLamDao;
 import com.model.SapCa;
 import com.Dao.SapCaDao;
 import com.untils.XDialog;
+import com.untils.getJOptionePane;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -50,7 +52,7 @@ public class SapCa1 extends javax.swing.JDialog {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    public void initComponents() {
 
         jPopupMenu1 = new javax.swing.JPopupMenu();
         Them = new javax.swing.JMenuItem();
@@ -395,11 +397,11 @@ public class SapCa1 extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    public void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void tblThuNganMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblThuNganMouseClicked
+    public void tblThuNganMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblThuNganMouseClicked
         // TODO add your handling code here:
         this.rowtn = tblThuNgan.getSelectedRow();
         listTN.clear();
@@ -409,22 +411,22 @@ public class SapCa1 extends javax.swing.JDialog {
         txtThuNgan.setText(TenNV);
     }//GEN-LAST:event_tblThuNganMouseClicked
 
-    private void tblPhucVuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPhucVuMouseClicked
+    public void tblPhucVuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPhucVuMouseClicked
         // TODO add your handling code here:       
         jPopupMenu1.show(evt.getComponent(), evt.getX(), evt.getY());
 
     }//GEN-LAST:event_tblPhucVuMouseClicked
 
-    private void ThemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ThemMouseClicked
+    public void ThemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ThemMouseClicked
 
     }//GEN-LAST:event_ThemMouseClicked
 
-    private void ThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThemActionPerformed
+    public void ThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThemActionPerformed
         // TODO add your handling code here:
         ThemPV();
     }//GEN-LAST:event_ThemActionPerformed
 
-    private void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
+    public void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
         // TODO add your handling code here:
         deleteDataThu();
         Them();
@@ -432,12 +434,12 @@ public class SapCa1 extends javax.swing.JDialog {
         thu.init();
     }//GEN-LAST:event_btnXacNhanActionPerformed
 
-    private void tblTenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTenMouseClicked
+    public void tblTenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTenMouseClicked
         jPopupMenu2.show(evt.getComponent(), evt.getX(), evt.getY());
         // TODO add your handling code here:
     }//GEN-LAST:event_tblTenMouseClicked
 
-    private void XoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XoaActionPerformed
+    public void XoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XoaActionPerformed
         Xoa();
         // TODO add your handling code here:
     }//GEN-LAST:event_XoaActionPerformed
@@ -492,35 +494,35 @@ public class SapCa1 extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem Them;
-    private javax.swing.JMenuItem Xoa;
-    private javax.swing.JButton btnXacNhan;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPopupMenu jPopupMenu1;
-    private javax.swing.JPopupMenu jPopupMenu2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JLabel lblCaLam;
-    private javax.swing.JLabel lblThu;
-    private javax.swing.JTable tblPhucVu;
-    private javax.swing.JTable tblTen;
-    private javax.swing.JTable tblThuNgan;
-    private javax.swing.JTextField txtThuNgan;
+    public javax.swing.JMenuItem Them;
+    public javax.swing.JMenuItem Xoa;
+    public javax.swing.JButton btnXacNhan;
+    public javax.swing.JButton jButton1;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel5;
+    public javax.swing.JLabel jLabel6;
+    public javax.swing.JLabel jLabel7;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel2;
+    public javax.swing.JPanel jPanel3;
+    public javax.swing.JPanel jPanel4;
+    public javax.swing.JPopupMenu jPopupMenu1;
+    public javax.swing.JPopupMenu jPopupMenu2;
+    public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JScrollPane jScrollPane3;
+    public javax.swing.JScrollPane jScrollPane6;
+    public javax.swing.JTabbedPane jTabbedPane1;
+    public javax.swing.JTable jTable2;
+    public javax.swing.JLabel lblCaLam;
+    public javax.swing.JLabel lblThu;
+    public javax.swing.JTable tblPhucVu;
+    public javax.swing.JTable tblTen;
+    public javax.swing.JTable tblThuNgan;
+    public javax.swing.JTextField txtThuNgan;
     // End of variables declaration//GEN-END:variables
 
     public void init() {
@@ -543,7 +545,7 @@ public class SapCa1 extends javax.swing.JDialog {
 
             }
         } catch (Exception e) {
-            XDialog.alert(this, "Lỗi truy vấn dữ liệu Sap ca");
+              getJOptionePane.methodThatUsesOptionPane(this, "Lỗi truy vấn dữ liệu Sap ca");
             e.printStackTrace();
         }
     }
@@ -560,7 +562,7 @@ public class SapCa1 extends javax.swing.JDialog {
             }
 
         } catch (Exception e) {
-            XDialog.alert(this, "Lỗi truy vấn dữ liệu Sap ca");
+              getJOptionePane.methodThatUsesOptionPane(this, "Lỗi truy vấn dữ liệu Sap ca");
             e.printStackTrace();
         }
     }
@@ -584,7 +586,7 @@ public class SapCa1 extends javax.swing.JDialog {
             if (!existed) {
                 listNV.add(new Object[]{MaNV, TenNV});
             } else {
-                XDialog.alert(this, "Đã thêm nhân viên vào ca");
+                  getJOptionePane.methodThatUsesOptionPane(this, "Đã thêm nhân viên vào ca");
                 return;
             }
         }
@@ -601,7 +603,7 @@ public class SapCa1 extends javax.swing.JDialog {
             }
 
         } catch (Exception e) {
-            XDialog.alert(this, "Lỗi truy vấn dữ liệu Sap ca");
+              getJOptionePane.methodThatUsesOptionPane(this, "Lỗi truy vấn dữ liệu Sap ca");
             e.printStackTrace();
         }
     }
@@ -629,7 +631,7 @@ public class SapCa1 extends javax.swing.JDialog {
             }
 
         } catch (Exception e) {
-            XDialog.alert(this, "Lỗi truy vấn dữ liệu Sap ca");
+              getJOptionePane.methodThatUsesOptionPane(this, "Lỗi truy vấn dữ liệu Sap ca");
             e.printStackTrace();
         }
     }
@@ -658,7 +660,7 @@ public class SapCa1 extends javax.swing.JDialog {
             String manv = (String) nv[0];
             clDao.updateDatabase(lblThu.getText(), lblCaLam.getText(), manv, "Nhân Viên");
         }
-        XDialog.alert(null, "Thêm Thành Công!");
+          getJOptionePane.methodThatUsesOptionPane(null, "Thêm Thành Công!");
 
     }
 
