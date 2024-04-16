@@ -9,8 +9,9 @@ import com.model.ChiTieu;
 import com.model.NhanVien;
 import com.untils.XAuth;
 import com.untils.XDialog;
+import com.untils.getJOptionePane;
 
-import quangddpc05711.LienKetEmailTest;
+import test.quangddpc05711.LienKetEmailTest;
 
 
 import java.awt.Color;

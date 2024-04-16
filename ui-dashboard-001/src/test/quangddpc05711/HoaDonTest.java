@@ -1,4 +1,4 @@
-package quangddpc05711;
+package test.quangddpc05711;
 
 import org.testng.annotations.Test;
 
@@ -8,11 +8,11 @@ import com.form.Menu1;
 import com.main.Main;
 import com.untils.XDate;
 
-import quangddpc05711.SwingTestNG.CancelInputMockOptionPane;
-import quangddpc05711.SwingTestNG.DangNhapTestNG;
-import quangddpc05711.SwingTestNG.HoaDon2TestNG;
-import quangddpc05711.SwingTestNG.InputMockOptionPane;
-import quangddpc05711.SwingTestNG.MainTestNG;
+import test.quangddpc05711.SwingTestNG.CancelInputMockOptionPane;
+import test.quangddpc05711.SwingTestNG.DangNhapTestNG;
+import test.quangddpc05711.SwingTestNG.HoaDon2TestNG;
+import test.quangddpc05711.SwingTestNG.InputMockOptionPane;
+import test.quangddpc05711.SwingTestNG.MainTestNG;
 
 import org.testng.annotations.BeforeMethod;
 

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package quangddpc05711.SwingTestNG;
+package test.quangddpc05711.SwingTestNG;
 
 import com.Dao.nhanVienDao;
 import com.model.ChiTieu;
@@ -10,7 +10,7 @@ import com.model.NhanVien;
 import com.untils.XAuth;
 import com.untils.XDialog;
 
-import quangddpc05711.LienKetEmailTest;
+import test.quangddpc05711.LienKetEmailTest;
 
 import java.awt.Color;
 import java.util.Properties;

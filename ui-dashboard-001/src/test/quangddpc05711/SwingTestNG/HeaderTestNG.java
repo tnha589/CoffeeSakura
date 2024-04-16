@@ -1,4 +1,4 @@
-package quangddpc05711.SwingTestNG;
+package test.quangddpc05711.SwingTestNG;
 
 import com.form.Calam;
 import com.form.DangNhap;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package quangddpc05711.SwingTestNG;
+package test.quangddpc05711.SwingTestNG;
 
 import com.Dao.sanPhamDao;
 import com.event.EventMenuSelected;
@@ -19,7 +19,7 @@ import com.UI.model.ModelItem;
 import com.component.Header;
 import com.untils.XAuth;
 
-import quangddpc05711.SwingTestNG.DangNhapTestNG;
+import test.quangddpc05711.SwingTestNG.DangNhapTestNG;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

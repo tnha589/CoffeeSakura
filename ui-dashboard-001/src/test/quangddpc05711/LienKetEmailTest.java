@@ -1,4 +1,4 @@
-package quangddpc05711;
+package test.quangddpc05711;
 
 import static org.testng.Assert.assertEquals;
 
@@ -11,10 +11,10 @@ import org.testng.annotations.Test;
 import com.form.Menu1;
 import com.form.TrangChu;
 
-import quangddpc05711.SwingTestNG.DangNhapTestNG;
-import quangddpc05711.SwingTestNG.HeaderTestNG;
-import quangddpc05711.SwingTestNG.LienKetEmailTestNG;
-import quangddpc05711.SwingTestNG.MainTestNG;
+import test.quangddpc05711.SwingTestNG.DangNhapTestNG;
+import test.quangddpc05711.SwingTestNG.HeaderTestNG;
+import test.quangddpc05711.SwingTestNG.LienKetEmailTestNG;
+import test.quangddpc05711.SwingTestNG.MainTestNG;
 
 public class LienKetEmailTest {
 	DangNhapTestNG login = new DangNhapTestNG();

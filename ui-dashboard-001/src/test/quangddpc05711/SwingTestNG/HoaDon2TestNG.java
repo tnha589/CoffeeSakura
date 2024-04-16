@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package quangddpc05711.SwingTestNG;
+package test.quangddpc05711.SwingTestNG;
 
 import com.Dao.HoaDonDAO_1;
 import com.model.HoaDon;
