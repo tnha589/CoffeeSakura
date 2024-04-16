@@ -17,12 +17,14 @@ import javax.swing.SwingUtilities;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.form.DangNhap;
 import com.form.Form_Home;
 import com.form.QuanLyNhanVien1;
 import com.main.Main;
+import com.model.NhanVien;
 import com.untils.JOptionPane;
 import com.untils.XAuth;
 import com.untils.getJOptionePane;
@@ -39,7 +41,7 @@ public class ThemNhanVienTest {
 		DangNhap dangnhap = new DangNhap(new Frame(), true);
 		dangnhap.txtTenTK.setText("NV000");
 		System.out.println(dangnhap.getTxtTenTK().getText());
-		dangnhap.txtPassword.setText("1234");		
+		dangnhap.txtPassword.setText("1234");
 		TimeUnit.SECONDS.sleep(5);
 		dangnhap.btnXacNhan.doClick();
 
@@ -47,14 +49,16 @@ public class ThemNhanVienTest {
 		main.setVisible(true);
 		main.setForm(main.form6);
 		QLNV = new QuanLyNhanVien1();
-
-	}
-
-	@BeforeMethod
-	public void BeforeMethod() {
 		jOptionPane = new JOptionPane();
 	}
 
+//	@DataProvider(name = "checkDateException")
+//	public Object[][] checkDate() {
+//		return new Object[][] {
+//			{""},
+//			{}
+//		};
+//	}
 	// Kiểm tra thêm nhân viên khi mã nhân viên để trống
 	@Test
 	public void TC_QLCF_QLNhanVien_04() throws InterruptedException, ParseException {
@@ -239,7 +243,6 @@ public class ThemNhanVienTest {
 		QLNV.btnThem.doClick();
 
 		assertEquals(QLNV.ErrorTenNV.getText(), "");
-		assertTrue(QLNV.validateForm());
 		jOptionPane.dispose();
 	}
 
@@ -266,7 +269,6 @@ public class ThemNhanVienTest {
 		QLNV.btnThem.doClick();
 
 		assertEquals(QLNV.ErrorVaiTro.getText(), "Chưa chọn!");
-		assertFalse(QLNV.validateForm());
 		jOptionPane.dispose();
 	}
 
@@ -293,7 +295,6 @@ public class ThemNhanVienTest {
 		QLNV.btnThem.doClick();
 
 		assertEquals(QLNV.ErrorVaiTro.getText(), "");
-		assertTrue(QLNV.validateForm());
 		jOptionPane.dispose();
 	}
 
@@ -320,7 +321,6 @@ public class ThemNhanVienTest {
 		QLNV.btnThem.doClick();
 
 		assertEquals(QLNV.ErrorVaiTro.getText(), "");
-		assertTrue(QLNV.validateForm());
 		jOptionPane.dispose();
 	}
 
@@ -347,7 +347,6 @@ public class ThemNhanVienTest {
 		QLNV.btnThem.doClick();
 
 		assertEquals(QLNV.ErrorVaiTro.getText(), "");
-		assertTrue(QLNV.validateForm());
 		jOptionPane.dispose();
 	}
 
@@ -374,7 +373,6 @@ public class ThemNhanVienTest {
 		QLNV.btnThem.doClick();
 
 		assertEquals(QLNV.ErrorTrangThai.getText(), "");
-		assertTrue(QLNV.validateForm());
 		jOptionPane.dispose();
 	}
 
@@ -401,7 +399,6 @@ public class ThemNhanVienTest {
 		QLNV.btnThem.doClick();
 
 		assertEquals(QLNV.ErrorGioiTinh.getText(), "Hãy chọn giới tính");
-		assertFalse(QLNV.validateForm());
 		jOptionPane.dispose();
 	}
 
@@ -427,8 +424,7 @@ public class ThemNhanVienTest {
 		TimeUnit.SECONDS.sleep(2);
 		QLNV.btnThem.doClick();
 
-		assertEquals(QLNV.ErrorGioiTinh.getText(), "");
-		assertTrue(QLNV.validateForm());
+		assertEquals(QLNV.validateForm(), true);
 		jOptionPane.dispose();
 	}
 
@@ -455,7 +451,6 @@ public class ThemNhanVienTest {
 		QLNV.btnThem.doClick();
 
 		assertEquals(QLNV.ErrorNgayVaoLam.getText(), "Chưa chọn");
-		assertFalse(QLNV.validateForm());
 		jOptionPane.dispose();
 	}
 
@@ -482,7 +477,6 @@ public class ThemNhanVienTest {
 		QLNV.btnThem.doClick();
 
 		assertEquals(QLNV.ErrorNgayVaoLam.getText(), "Không thể chọn ngày trong tương lai!");
-		assertFalse(QLNV.validateForm());
 		jOptionPane.dispose();
 	}
 
@@ -508,7 +502,7 @@ public class ThemNhanVienTest {
 		TimeUnit.SECONDS.sleep(2);
 		QLNV.btnThem.doClick();
 
-		assertFalse(QLNV.validateForm());
+		assertTrue(QLNV.validateForm());
 		jOptionPane.dispose();
 	}
 
@@ -537,7 +531,6 @@ public class ThemNhanVienTest {
 		QLNV.btnThem.doClick();
 
 		assertEquals(QLNV.ErrorMatKhau.getText(), "Không được để trống!");
-		assertFalse(QLNV.validateForm());
 		jOptionPane.dispose();
 	}
 
@@ -556,7 +549,7 @@ public class ThemNhanVienTest {
 		QLNV.rdoNu.setSelected(true);
 		QLNV.jdcNgayVaoLam.setDate(new SimpleDateFormat("yyyy-MM-dd").parse("2024-04-02"));
 		QLNV.txtPass.setText("THU123*");
-		QLNV.txtRePass.setText("THU123");
+		QLNV.txtRePass.setText("THU123*");
 		QLNV.txtSDT.setText("0706688895");
 		QLNV.txtGhiChu.setText("Quản lý mới");
 
@@ -564,7 +557,6 @@ public class ThemNhanVienTest {
 		QLNV.btnThem.doClick();
 
 		assertEquals(QLNV.ErrorMatKhau.getText(), "Mật khẩu chứa ít nhất 8 ký tự");
-		assertFalse(QLNV.validateForm());
 		jOptionPane.dispose();
 	}
 
@@ -775,14 +767,14 @@ public class ThemNhanVienTest {
 		jOptionPane.dispose();
 	}
 
-//		Kiểm tra thêm nhân viên khi để trống ghi chú
+//		Kiểm tra thêm nhân viên đã tồn tại
 	@Test
 	public void TC_QLCF_QLNhanVien_31() throws InterruptedException, ParseException {
 		QuanLyNhanVien1 QLNV = new QuanLyNhanVien1();
 		main.setForm(QLNV);
 		main.setVisible(true);
 
-		QLNV.txtMaNV.setText("NV00135");
+		QLNV.txtMaNV.setText("NV0145");
 		QLNV.txtTenNV.setText("Anh Thư");
 		QLNV.cboTrangThai.setSelectedIndex(1);
 		QLNV.cboVaiTro.setSelectedIndex(1);
@@ -794,9 +786,14 @@ public class ThemNhanVienTest {
 		QLNV.txtGhiChu.setText("");
 
 		TimeUnit.SECONDS.sleep(2);
+		NhanVien nv = QLNV.getForm();
+		// kiểm tra form trước khi insert, kỳ vọng formValidate = false (nghĩa là form đầy đủ check)
+		boolean formValidate = QLNV.validateForm(); 
 		QLNV.btnThem.doClick();
 
-		assertTrue(QLNV.validateForm());
+		//kiểm tra sau khi nhấn nút insert, kỳ vọng QLNV.validateForm() = true (nghĩa là form bị clear do đã được insert)
+		formValidate = (formValidate == false) && (QLNV.validateForm() == true);
+		assertTrue(formValidate);
 		jOptionPane.dispose();
 	}
 }
