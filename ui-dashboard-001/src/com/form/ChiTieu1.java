@@ -57,7 +57,7 @@ public class ChiTieu1 extends javax.swing.JPanel {
                 model.addRow(row);
             }
         } catch (Exception e) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Lỗi truy vấn dữ liệu Chi Tieu");
+          getJOptionePane.methodThatUsesOptionPane(this, "Lỗi truy vấn dữ liệu Chi Tieu");
             e.printStackTrace();
         }
     }
@@ -97,9 +97,9 @@ public class ChiTieu1 extends javax.swing.JPanel {
             CTD.insert(nv); // thêm mới
             this.fillTable(); // đỗ lại bảng
             this.clearForm(); // xóa trắng form
-              getJOptionePane.methodThatUsesOptionPane(this, "Thêm hóa đơn thành công!");
+          getJOptionePane.methodThatUsesOptionPane(this, "Thêm hóa đơn thành công!");
         } catch (Exception e) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Thêm hóa đơn thất bại!");
+          getJOptionePane.methodThatUsesOptionPane(this, "Thêm hóa đơn thất bại!");
             e.printStackTrace();
         }
         fillTable2();
@@ -124,7 +124,7 @@ public class ChiTieu1 extends javax.swing.JPanel {
                 model.addRow(row);
             }
         } catch (Exception e) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Lỗi truy vấn dữ liệu lịch sử Chi Tieu");
+          getJOptionePane.methodThatUsesOptionPane(this, "Lỗi truy vấn dữ liệu lịch sử Chi Tieu");
             e.printStackTrace();
         }
     }
@@ -162,9 +162,9 @@ public class ChiTieu1 extends javax.swing.JPanel {
             CTD.update(CT);
             this.fillTable2();
             clearLable();
-              getJOptionePane.methodThatUsesOptionPane(this, "Đã xác nhận thành công!");
+          getJOptionePane.methodThatUsesOptionPane(this, "Đã xác nhận thành công!");
         } catch (Exception e) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Lỗi! Không thể cập nhật");
+          getJOptionePane.methodThatUsesOptionPane(this, "Lỗi! Không thể cập nhật");
             e.printStackTrace();
         }
     }
@@ -683,5 +683,14 @@ btngTrangThai.clearSelection();
 lblNgay.setText("---------------");
 txtGhiChu2.setText("");
 }
+
+public javax.swing.JTabbedPane getjTabbedPane1() {
+	return jTabbedPane1;
+}
+
+public void setjTabbedPane1(javax.swing.JTabbedPane jTabbedPane1) {
+	this.jTabbedPane1 = jTabbedPane1;
+}
+
 
 }

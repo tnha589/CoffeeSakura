@@ -7,7 +7,7 @@
 
     <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
     <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
-    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -21,7 +21,8 @@
      -->
   </head>
 
-  <body>    <div class="top-banner-root">
+  <body>
+    <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
@@ -50,6 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
+
                     <span>C:\Users\NGHIA\AppData\Local\Temp\testng-eclipse-2098802714\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -92,6 +94,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
+
                     <span class="method-stats">3 methods, 2 failed,   1 passed</span>
                   </li>
                   <li>
@@ -122,6 +125,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
+
                         <a href="#" panel-name="suite-Default_suite" title="test.phucptpc05587.TimKiemSanPham" class="method navigator-link" hash-for-method="testCaseTimKiemSanPham(sp01, Tìm kiếm thành công!)">testCaseTimKiemSanPham(sp01, Tìm kiếm thành công!)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -140,6 +144,7 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
+
               <span class="class-name">test.phucptpc05587.TimKiemSanPham</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -295,6 +300,7 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
+
 data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testCaseTimKiemSanPham')
@@ -312,6 +318,7 @@ window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-
 return data;
 }
               </script>
+
               <span class="suite-total-time">Total running time: 10 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
@@ -338,14 +345,28 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
+
               <div class="chronological-class-name">test.phucptpc05587.TimKiemSanPham</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">beformethod</span>
+                <span class="method-start">5201 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">Click</span>
+                <span class="method-start">5204 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">beformethod</span>
+                <span class="method-start">15314 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
+
                 <span class="method-name">testCaseTimKiemSanPham(, Tìm kiếm thành công!)</span>
                 <span class="method-start">5904 ms</span>
               </div> <!-- test-method -->
