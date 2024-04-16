@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package com.form;
+package quangddpc05711.SwingTestNG;
 
 import com.Dao.nhanVienDao;
 import com.model.ChiTieu;
@@ -11,7 +11,6 @@ import com.untils.XAuth;
 import com.untils.XDialog;
 
 import quangddpc05711.LienKetEmailTest;
-
 
 import java.awt.Color;
 import java.util.Properties;
@@ -28,7 +27,7 @@ import javax.swing.Timer;
  *
  * @author ACER
  */
-public class LienKetEmail extends javax.swing.JDialog implements Runnable {
+public class LienKetEmailTestNG extends javax.swing.JDialog implements Runnable {
 
     nhanVienDao NVD = new nhanVienDao();
     Timer t = null;
@@ -38,8 +37,22 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
      * Creates new form LienKetEmail
      */
     
+    
+    private String messageReturn;
+    
+    
+    
+    public String getMessageReturn() {
+		return messageReturn;
+	}
 
-	public LienKetEmail(java.awt.Frame parent, boolean modal) {
+
+	public void setMessageReturn(String message) {
+		this.messageReturn = message;
+	}
+
+
+	public LienKetEmailTestNG(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
@@ -57,7 +70,7 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
         }
     }
 
-    public String getRandomString(int n) {
+    private String getRandomString(int n) {
         String txt = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJLMNOPQRSTUVWXYZ1234567890";
         StringBuilder sb = new StringBuilder();
         while (n > 0) {
@@ -76,19 +89,22 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
 
         ///bắt lỗi trống
         if (email.equals("")) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng nhập email.");
+        	AutoCloseOptionPane.autoClose(2000);
+            messageReturn = XDialog.alert(this, "Vui lòng nhập email.");
             return;
         }
 
         //bắt lỗi định dạng email
         if (!email.matches(dinhangemail)) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Email không đúng định dạng.");
+        	AutoCloseOptionPane.autoClose(2000);
+            messageReturn = XDialog.alert(this, "Email không đúng định dạng.");
             return;
         }
 
         //bắt lỗi tồn tại
         if (email.equals(XAuth.user.getEmail())) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Email đã tồn tại trong hệ thống.");
+        	AutoCloseOptionPane.autoClose(2000);
+            messageReturn = XDialog.alert(this, "Email đã tồn tại trong hệ thống.");
             return;
         }
 
@@ -105,13 +121,12 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
 
         try {
             Properties p = new Properties();
-            p.put("mail.smtp.auth", "true");
-            p.put("mail.smtp.starttls.enable", "true");
-            p.put("mail.smtp.host", "smtp.gmail.com");
-            p.put("mail.smtp.port", 587);
-            p.put("mail.smtp.socketFactory.port", "587");
-            p.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-            p.put("mail.smtp.ssl.protocols", "TLSv1.2");
+            p.put("mail.smtp.auth","true");
+    		p.put("mail.smtp.starttls.enable", "true");
+    		p.put("mail.smtp.host", "smtp.gmail.com");
+    		p.put("mail.smtp.port", "587");
+    		p.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+
             String senderEmail = "sakuracoffe1@gmail.com";
             String pass = "louawtomnzrfbzjp";
             Session session = Session.getInstance(p,
@@ -129,7 +144,8 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
             message.setSubject(tieuDe);
             message.setContent(noiDung, "text/html;charset=utf-8");
             Transport.send(message);
-              getJOptionePane.methodThatUsesOptionPane(this, "Đã gửi mã thành công!");
+            AutoCloseOptionPane.autoClose(2000);
+            messageReturn = XDialog.alert(this, "Đã gửi mã thành công!");
             //   System.out.println("Da gui");
             timer = false;
             Thread time = new Thread(this);
@@ -144,7 +160,8 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
         String email = txtEmail.getText().trim();
 
         if (maxn.equals("")) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Mã xác thực không được để trống");
+        	AutoCloseOptionPane.autoClose(2000);
+            messageReturn = XDialog.alert(this, "Mã xác thực không được để trống");
         }
         if (maxn.equals(maXT)) {
             String maNV = XAuth.user.getMaNV();
@@ -159,10 +176,11 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
             txtEmail.setText("");
             txtMa.setText("");
 
-              getJOptionePane.methodThatUsesOptionPane(this, "Liên kết thành công!");
+            AutoCloseOptionPane.autoClose(2000);
+            messageReturn = XDialog.alert(this, "Liên kết thành công!");
         } else {
-
-              getJOptionePane.methodThatUsesOptionPane(this, "Sai mã xác thực");
+        	AutoCloseOptionPane.autoClose(2000);
+            messageReturn = XDialog.alert(this, "Sai mã xác thực");
 
         }
     }
@@ -175,7 +193,7 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    public void initComponents() {
+    private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         txtEmail = new javax.swing.JTextField();
@@ -357,20 +375,20 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
 
     }//GEN-LAST:event_btnGuiActionPerformed
 
-    public void btnGuiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuiMouseClicked
+    private void btnGuiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuiMouseClicked
         // TODO add your handling code here:
 
 
     }//GEN-LAST:event_btnGuiMouseClicked
 
-    public void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
+    private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
         // TODO add your handling code here:
         if (XDialog.confirm(this, "Bạn chắc chắn thoát!! ")) {
             dispose();
         }
     }//GEN-LAST:event_btnHuyActionPerformed
 
-    public void txtMaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtMaCaretUpdate
+    private void txtMaCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtMaCaretUpdate
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMaCaretUpdate
 
@@ -391,13 +409,13 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LienKetEmail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LienKetEmailTestNG.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LienKetEmail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LienKetEmailTestNG.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LienKetEmail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LienKetEmailTestNG.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LienKetEmail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LienKetEmailTestNG.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -405,7 +423,7 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                LienKetEmail dialog = new LienKetEmail(new javax.swing.JFrame(), true);
+                LienKetEmailTestNG dialog = new LienKetEmailTestNG(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -431,7 +449,6 @@ public class LienKetEmail extends javax.swing.JDialog implements Runnable {
     public javax.swing.JTextField txtEmail;
     public javax.swing.JTextField txtMa;
     private javax.swing.JTextField txtTen;
-
     // End of variables declaration//GEN-END:variables
  @Override
     public void run() {

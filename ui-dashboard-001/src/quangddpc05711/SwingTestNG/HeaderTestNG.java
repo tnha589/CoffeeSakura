@@ -1,4 +1,4 @@
-package com.component;
+package quangddpc05711.SwingTestNG;
 
 import com.form.Calam;
 import com.form.DangNhap;
@@ -19,9 +19,9 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
-public class Header extends javax.swing.JPanel {
+public class HeaderTestNG extends javax.swing.JPanel {
 
-    public Header() {
+    public HeaderTestNG() {
         initComponents();
 //        init();
         setOpaque(false);
@@ -159,8 +159,11 @@ public class Header extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_quanLyCaActionPerformed
 
-    public void lienKetGmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lienKetGmailActionPerformed
-        new LienKetEmail(null, true).setVisible(true);
+    public LienKetEmailTestNG lienKetGmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lienKetGmailActionPerformed
+        LienKetEmailTestNG lkemail = new LienKetEmailTestNG(null, true);
+        lkemail.setModal(false);
+        lkemail.setVisible(true);
+        return lkemail;
         // TODO add your handling code here:
     }//GEN-LAST:event_lienKetGmailActionPerformed
 
@@ -197,7 +200,7 @@ public class Header extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel lblTime;
-    private javax.swing.JMenuItem lienKetGmail;
+    public javax.swing.JMenuItem lienKetGmail;
     public javax.swing.JPopupMenu mnuAcccount;
     private javax.swing.JMenuItem quanLyCa;
     // End of variables declaration//GEN-END:variables

@@ -27,6 +27,7 @@ import java.awt.Component;
  */
 public class DangNhap extends javax.swing.JDialog {
 
+
 	public javax.swing.JButton getBtnHuy() {
 		return btnHuy;
 	}
@@ -251,7 +252,6 @@ public class DangNhap extends javax.swing.JDialog {
         }
 
 	}// GEN-LAST:event_btnHuyActionPerformed
-
 	public void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel5MouseClicked
 		new QuenMK(null, true).setVisible(true);
 		// TODO add your handling code here:
