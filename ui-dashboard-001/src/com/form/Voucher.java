@@ -247,7 +247,7 @@ public class Voucher extends javax.swing.JDialog {
             createQR();
             khuyenMaiDao.insertVoucher(giaTri, maXT);
         }
-            getJOptionePane.methodThatUsesOptionPane(null, "Tạo voucher thành công");
+        JOptionPane.showMessageDialog(null,message = "Tạo voucher thành công");
     }
 
     public void createQR() {
@@ -280,7 +280,7 @@ public class Voucher extends javax.swing.JDialog {
 //            filePane.setAcceptAllFileFilterUsed(false);
 //            int ketQua = filePane.showSaveDialog(this);
             try {
-                String outputDir = "D:\\";
+                String outputDir = "E:\\kiemthu\\";
                 ImageIO.write(bi, "png", new File(outputDir + "giatri_" + giaTri + "_ma" + maVC + ".png"));
             } catch (Exception e) {
             }
@@ -290,29 +290,31 @@ public class Voucher extends javax.swing.JDialog {
 
         }
     }
-
+    public String message;
     public void demo() {
         String gia = txtGia.getText();
         int sl = (int) spnSoLuong.getValue();
-            getJOptionePane.methodThatUsesOptionPane(null, "gia tri la: " + gia + " so luong la: " + sl);
-    }
+        	JOptionPane.showMessageDialog(null, message ="gia tri la: " + gia + " so luong la: " + sl);
+    }	
 
     public boolean checkForm() {
-        if (txtGia.getText().isEmpty()) {
-                getJOptionePane.methodThatUsesOptionPane(null, "Vui lòng nhập giá trị voucher");
-            return false;
-        }
-        try {
-            int checGiaTri = Integer.parseInt(txtGia.getText());
-            if (checGiaTri < 10 || checGiaTri > 500) {
-                    getJOptionePane.methodThatUsesOptionPane(null, "Giá trị voucher từ 10 --> 500");
-                return false;
-            }
-        } catch (Exception e) {
-                getJOptionePane.methodThatUsesOptionPane(null, "Giá trị chưa đúng");
-            return false;
-        }
-        return true;
+    	 if (txtGia.getText().isEmpty()) {
+             JOptionPane.showMessageDialog(null,message= "Vui lòng nhập giá trị voucher");
+
+             return false;
+         }
+         try {
+             int checGiaTri = Integer.parseInt(txtGia.getText());
+             if (checGiaTri < 10 || checGiaTri > 500) {
+                 JOptionPane.showMessageDialog(null,message= "Giá trị voucher từ 10 --> 500");
+                 return false;
+             }
+         } catch (Exception e) {
+             JOptionPane.showMessageDialog(null,message = "Giá trị chưa đúng");
+
+             return false;
+         }
+         return true;
     }
 
 }

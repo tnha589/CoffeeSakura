@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-
-      <class name="test.phucptpc05587.TimKiemSanPham">
+      <class name="test.kienlhpc05751.QuenMatKhau">
         <methods>
-          <include name="logout"/>
-          <include name="testCaseTimKiemSanPham" invocation-numbers="0 2"/>
+          <include name="tearDown"/>
+          <include name="TC_QLF_QuenMK2"/>
+          <include name="TC_QLF_QuenMK5"/>
+          <include name="test_GuiMailThatBai"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- test.phucptpc05587.TimKiemSanPham -->
-
+      </class> <!-- test.kienlhpc05751.QuenMatKhau -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

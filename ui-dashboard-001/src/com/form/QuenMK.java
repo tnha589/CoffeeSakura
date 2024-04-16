@@ -32,6 +32,8 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
     String manv = "";
     Timer t = null;
     boolean timer = false;
+    public String message;
+    MatKhauMoi matKhauMoi = new MatKhauMoi(null, true);
 
     /**
      * Creates new form QuenMK
@@ -65,19 +67,19 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
         String dinhangemail = "^[A-Za-z0-9+_.-]+@(.+)$";
         //bắt lỗi trống
         if (tenTaiKhoan.equals("") || email.equals("")) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng nhập đầy đủ tên tài khoản và email.");
+            XDialog.alert(this, message="Vui lòng nhập đầy đủ tên tài khoản và email.");
             return;
         }
         // bắt lỗi ko có dữ liệu 
         NhanVien nv = NVD.selectById(tenTaiKhoan);
         if (nv == null) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Tài khoản không tồn tại trên hệ thống.");
+            XDialog.alert(this, message="Tài khoản không tồn tại trên hệ thống.");
             return;
         }
 
         //bắt lỗi định dạng email
         if (!email.matches(dinhangemail)) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Email không đúng định dạng.");
+            XDialog.alert(this, message="Email không đúng định dạng.");
             return;
         }
 
@@ -120,13 +122,14 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
             String receiveEmail = txtEmail.getText();
             String tieuDe = "Lấy lại mật khẩu EdySys";
             String noiDung = messageBody;
-            Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(senderEmail));
-            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(receiveEmail));
-            message.setSubject(tieuDe);
-            message.setContent(noiDung, "text/html;charset=utf-8");
-            Transport.send(message);
-              getJOptionePane.methodThatUsesOptionPane(this, "Mã đã được gửi!");
+            Message messagesend = new MimeMessage(session);
+            messagesend.setFrom(new InternetAddress(senderEmail));
+            messagesend.setRecipients(Message.RecipientType.TO, InternetAddress.parse(receiveEmail));
+            messagesend.setSubject(tieuDe);
+            messagesend.setContent(noiDung, "text/html;charset=utf-8");
+            Transport.send(messagesend);
+            message ="Mã đã được gửi!";
+            XDialog.alert(this, message  );
             Thread time = new Thread(this);
             time.start();
             timer = false;
@@ -143,29 +146,24 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
         String emailMau = "^[A-Za-z0-9+_.-]+@(.+)$";
 
         if (TenTK.equals("")) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng nhập tài khoản");
+
+            XDialog.alert(this, message="Vui lòng nhập tài khoản");
         } else if (email.equals("")) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng nhập email");
+            XDialog.alert(this,message= "Vui lòng nhập email");
             return;
         } else if (!email.matches(emailMau)) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Email không đúng định dạng");
+            XDialog.alert(this, message="Email không đúng định dạng");
             return;
         } else if (maxn.isEmpty()) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng nhập mã xác thực!");
+            XDialog.alert(this, message= "Vui lòng nhập mã xác thực!");
             return;
         } else if (maxn.equals(maXT)) {
             String strMaNV = txtTK.getText();
-            NhanVien nv = NVD.selectById(strMaNV);
-            XAuth.user = nv;
-            timer = true;
-            txtTK.setText("");
-            txtEmail.setText("");
-            txtMaXT.setText("");
-            MatKhauMoi matkhaumoi = new MatKhauMoi(null, true);
-            matkhaumoi.setVisible(true);
+            matKhauMoi.setVisible(true);
             dispose();
         } else {
-              getJOptionePane.methodThatUsesOptionPane(this, "Sai mã xác thực!");
+            XDialog.alert(this,message= "Sai mã xác thực!");
+
         }
     }
 
@@ -320,9 +318,9 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
 
     public void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
         // TODO add your handling code here:
-        if (XDialog.confirm(this, "Bạn chắc chắn thoát!! ")) {
-            dispose();
-        }
+    	   if (XDialog.confirm(this, message= "Bạn chắc chắn thoát!! ")) {
+               dispose();
+           }
     }//GEN-LAST:event_btnHuyActionPerformed
 
     public void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed

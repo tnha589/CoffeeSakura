@@ -159,7 +159,7 @@ public class KhuyenMai1 extends javax.swing.JPanel {
 //    KhuyenMai km = new KhuyenMai();
 //    loaiSanPhamDao daolsp = new loaiSanPhamDao();
 	// int row = 0;
-	int row2 = -1;
+	public int row2 = -1;
 	// Date currentDate = new Date();
 
 	void fillTableKM() {
@@ -218,7 +218,7 @@ public class KhuyenMai1 extends javax.swing.JPanel {
 		}
 	}
 
-	void edit() {
+	public void edit() {
 		try {
 			String MaKM = (String) tblKhuyenMai.getValueAt(this.row2, 0);
 			KhuyenMai model = daokm.selectById(MaKM);
