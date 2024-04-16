@@ -5,9 +5,9 @@
     <classes>
       <class name="test.LoginTest">
         <methods>
-          <include name="f"/>
-          <include name="beforeMethod"/>
-          <include name="afterMethod"/>
+          <include name="closeMenu"/>
+          <include name="openMenu"/>
+          <include name="CF_18"/>
         </methods>
       </class> <!-- test.LoginTest -->
     </classes>
