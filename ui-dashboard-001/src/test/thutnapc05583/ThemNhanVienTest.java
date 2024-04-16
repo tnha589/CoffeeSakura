@@ -767,7 +767,7 @@ public class ThemNhanVienTest {
 		jOptionPane.dispose();
 	}
 
-//		Kiểm tra thêm nhân viên đã tồn tại
+//		Kiểm tra thêm nhân viên khi để trống ghi chú
 	@Test
 	public void TC_QLCF_QLNhanVien_31() throws InterruptedException, ParseException {
 		QuanLyNhanVien1 QLNV = new QuanLyNhanVien1();
