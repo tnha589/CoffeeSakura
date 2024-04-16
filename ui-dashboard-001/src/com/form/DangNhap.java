@@ -90,7 +90,7 @@ public class DangNhap extends javax.swing.JDialog {
 			XAuth.user = nv;
 			getJOptionePane.methodThatUsesOptionPane(this, "Dangnhap thanh cong");
 //			getoptionPane(this, "Đăng nhập thành công");
-//            this.dispose();
+            this.dispose();
 		}
 	}
 

@@ -105,7 +105,7 @@ public class TimKiemSanPham {
     @DataProvider(name = "dataSanPham")
     public static Object[][] testData() {
         return new Object[][] {
-            {"","Tìm kiếm thành công!"},
+            {" ","Tìm kiếm thành công!"},
             {"sp01","Tìm kiếm thành công!"},
             {"123123","Tìm kiếm thất bại!"},
         };

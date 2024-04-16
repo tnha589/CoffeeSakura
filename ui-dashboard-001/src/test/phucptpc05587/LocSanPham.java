@@ -63,7 +63,10 @@ public class LocSanPham {
 			quanLySanPham.setVisible(true);
 		});
 	}
-
+	@AfterMethod
+	public void logout() {
+		main.setVisible(false);
+	}
 	
 	public void closeJOptionPane() {
 		Window[] windows = Window.getWindows();
