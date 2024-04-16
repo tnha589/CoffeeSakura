@@ -21,11 +21,9 @@ import static org.mockito.Mockito.timeout;
 import java.awt.Color;
 import java.awt.Component;
 
-/**
- *
- * @author ACER
- */
+
 public class DangNhap extends javax.swing.JDialog {
+
 
 	public javax.swing.JButton getBtnHuy() {
 		return btnHuy;
@@ -72,8 +70,10 @@ public class DangNhap extends javax.swing.JDialog {
 //        txtPassword.setText("123");
 	}
 
+	public getJOptionePane getOptionePane ;
 	// Nhập dữ liệu tư
 	public void login() {
+		
 		String MaNV = txtTenTK.getText();
 		String MK = new String(txtPassword.getPassword());
 		NhanVien nv = NVDao.selectById(MaNV);
@@ -88,7 +88,7 @@ public class DangNhap extends javax.swing.JDialog {
 		} else {
 			System.out.println("Logged in successfully...");
 			XAuth.user = nv;
-			getJOptionePane.methodThatUsesOptionPane(this, "Dangnhap thanh cong");
+			getOptionePane.methodThatUsesOptionPane(this, "Dangnhap thanh cong");
 //			getoptionPane(this, "Đăng nhập thành công");
 //            this.dispose();
 		}
