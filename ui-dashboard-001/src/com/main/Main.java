@@ -123,6 +123,7 @@ public class Main extends javax.swing.JFrame {
 		form1.testData();
 //        openLogin();
 
+
 	}
 
 	public Point getLocationOf(Component com) {
@@ -382,6 +383,7 @@ public class Main extends javax.swing.JFrame {
 	}
 
 	public void openQuanLyNhanVien() {
+
 		setForm(form6);
 	}
 
@@ -392,12 +394,10 @@ public class Main extends javax.swing.JFrame {
 	public void openThongKe() {
 		setForm(form5);
 	}
-
 	public void openKhuyenMai() {
 		setForm(form4);
 
 	}
-
 	public void openSanPham() {
 		setForm(form3);
 

@@ -22,7 +22,6 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 
 public class KhuyenMai1 extends javax.swing.JPanel {
-
 	public List<KhuyenMai> listKM = new ArrayList<>();
 
 	public KhuyenMai1() {
@@ -1006,5 +1005,4 @@ public class KhuyenMai1 extends javax.swing.JPanel {
 	public void setCboKhuyenMai(javax.swing.JComboBox<String> cboKhuyenMai) {
 		this.cboKhuyenMai = cboKhuyenMai;
 	}
-
 }

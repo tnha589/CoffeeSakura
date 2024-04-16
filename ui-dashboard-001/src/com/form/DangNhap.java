@@ -245,10 +245,9 @@ public class DangNhap extends javax.swing.JDialog {
 
 	}// GEN-LAST:event_btnXacNhanActionPerformed
 
-	public void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnHuyActionPerformed
-		  // TODO add your handling code here:
-    	message = "Bạn chắc chắn thoát!!";
-        if (XDialog.confirm(this, message)) {
+    public void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
+        // TODO add your handling code here:
+        if (XDialog.confirm(this, "Bạn chắc chắn thoát!! ")) {
             System.exit(0);
         }
 
@@ -284,16 +283,45 @@ public class DangNhap extends javax.swing.JDialog {
 		});
 	}
 
-	// Variables declaration - do not modify//GEN-BEGIN:variables
-	public javax.swing.JButton btnHuy;
-	public javax.swing.JButton btnXacNhan;
-	public javax.swing.JLabel jLabel1;
-	public javax.swing.JLabel jLabel2;
-	public javax.swing.JLabel jLabel3;
-	public javax.swing.JLabel jLabel4;
-	public javax.swing.JLabel jLabel5;
-	public javax.swing.JPanel jPanel1;
-	public javax.swing.JPasswordField txtPassword;
-	public javax.swing.JTextField txtTenTK;
-	// End of variables declaration//GEN-END:variables
+    }//GEN-LAST:event_btnHuyActionPerformed
+
+    public void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        new QuenMK(null, true).setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                DangNhap dialog = new DangNhap(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
+            }
+        });
+    }
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnHuy;
+    public javax.swing.JButton btnXacNhan;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel5;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JPasswordField txtPassword;
+    public javax.swing.JTextField txtTenTK;
+    // End of variables declaration//GEN-END:variables
 }
