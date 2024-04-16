@@ -1,5 +1,7 @@
-package test;
+package test.VanNghia_PC05510;
 
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.Window;
@@ -102,7 +104,7 @@ public class MenuTest {
 		sleep(1);
 		list = spDao.selectAll();
 		sleep(1);
-		assertEquals(menu1.listSP, list);
+		AssertJUnit.assertEquals(menu1.listSP, list);
 		sleep(1);
 	}
 	
@@ -115,7 +117,7 @@ public class MenuTest {
 		sleep(1);
 		list = new ArrayList<SanPham>();
 		sleep(1);
-		assertEquals(menu1.listSP, list);
+		AssertJUnit.assertEquals(menu1.listSP, list);
 		sleep(1);
 	}
 	
@@ -128,7 +130,7 @@ public class MenuTest {
 		sleep(1);
 		list = spDao.selectByKeywordProduct("Nước");
 		sleep(1);
-		assertEquals(menu1.listSP, list);
+		AssertJUnit.assertEquals(menu1.listSP, list);
 		sleep(1);
 	}
 	
@@ -140,7 +142,7 @@ public class MenuTest {
 		sleep(1);
 		list = spDao.selectByLoaiSP("Thức ăn");
 		sleep(1);
-		assertEquals(menu1.listSP, list);
+		AssertJUnit.assertEquals(menu1.listSP, list);
 		sleep(1);
 	}
 	
@@ -155,7 +157,7 @@ public class MenuTest {
 		list = spDao.selectByTenAdnLoaiSP("Nước", "Thức ăn");
 		System.out.println(list);
 		sleep(1);
-		assertEquals(menu1.listSP, list);
+		AssertJUnit.assertEquals(menu1.listSP, list);
 		sleep(1);
 	}
 	
@@ -170,7 +172,7 @@ public class MenuTest {
 		list = spDao.selectByTenAdnLoaiSP("pizza", "Thức ăn");
 		System.out.println(list);
 		sleep(1);
-		assertEquals(menu1.listSP, list);	
+		AssertJUnit.assertEquals(menu1.listSP, list);	
 		sleep(1);
 	}
 	
@@ -186,7 +188,7 @@ public class MenuTest {
 		sleep(2);
 		menu1.cleadTable();
 		sleep(2);
-		assertEquals(menu1.getLblTongTien().getText(), "0");	
+		AssertJUnit.assertEquals(menu1.getLblTongTien().getText(), "0");	
 	}
 	
 	
@@ -207,7 +209,7 @@ public class MenuTest {
 		sleep(2);
 		menu1.closeJdialog();
 		sleep(1);
-		assertEquals(menu1.getMessage(), expected);
+		AssertJUnit.assertEquals(menu1.getMessage(), expected);
 	}
 	
 	@DataProvider
@@ -264,7 +266,7 @@ public class MenuTest {
 		sleep(3);
 		menu1.closeJdialog();
 		sleep(1);
-		assertEquals(menu1.getMessage(), "Hãy chọn một hóa đơn chờ hoặc thanh toán hóa đơn mới để in!");
+		AssertJUnit.assertEquals(menu1.getMessage(), "Hãy chọn một hóa đơn chờ hoặc thanh toán hóa đơn mới để in!");
 	}
 	
 	@Test(priority = 10)
@@ -298,7 +300,7 @@ public class MenuTest {
 			
 		}).start();
 		sleep(3);
-		assertEquals(menu1.getMessage(), "In hóa đơn thành công!");
+		AssertJUnit.assertEquals(menu1.getMessage(), "In hóa đơn thành công!");
 		sleep(1);
 	}
 	
