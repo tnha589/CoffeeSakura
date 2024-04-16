@@ -129,7 +129,7 @@ public class LamMoiKhuyenMai {
 		km.row2 = 2;
 		km.edit();
 		TimeUnit.SECONDS.sleep(2);
-		XDialog.setOptionPane(new YesMockOptionPane());
+//		XDialog.setOptionPane(new YesMockOptionPane());
 		km.btnMoi.doClick(1);
 		TimeUnit.SECONDS.sleep(2);
 //			closeJOptionPane();
@@ -152,29 +152,29 @@ public class LamMoiKhuyenMai {
 
 	}
 	
-//	@Test(priority = 1)
-//	public void lamMoiKhuyenmai3() throws InterruptedException {
-//		km.row2 = 2;
-//		km.edit();
+	@Test(priority = 1)
+	public void lamMoiKhuyenmai3() throws InterruptedException {
+		km.row2 = 2;
+		km.edit();
+		TimeUnit.SECONDS.sleep(2);
+		km.btnMoi.doClick(1);
 //		TimeUnit.SECONDS.sleep(2);
-//		km.btnMoi.doClick(1);
-////		TimeUnit.SECONDS.sleep(2);
-////			closeJOptionPane();
-//		closeJOptionPaneIfDisplayed();
-//		KhuyenMai kmModel = new KhuyenMai();
-//		kmModel.setTenKM(km.txtTenKM.getText());
-//		kmModel.setNgayBD(km.txtNgayBD.getDate());
-//		System.out.println("new "+kmModel.getTenKM());
-////		Assert.assertNull(kmModel);
-//		if(kmModel.TenKM != null) {
-//			Assert.assertEquals(kmModel.getTenKM(),"");
-//		}else if(kmModel.NgayBD!=null) {
-//			Assert.assertEquals(kmModel.getNgayBD(),"");
-//		}
-//		assertEquals("", "");
-//	
-//
-//	}
+//			closeJOptionPane();
+		closeJOptionPaneIfDisplayed();
+		KhuyenMai kmModel = new KhuyenMai();
+		kmModel.setTenKM(km.txtTenKM.getText());
+		kmModel.setNgayBD(km.txtNgayBD.getDate());
+		System.out.println("new "+kmModel.getTenKM());
+//		Assert.assertNull(kmModel);
+		if(kmModel.TenKM != null) {
+			Assert.assertEquals(kmModel.getTenKM(),"");
+		}else if(kmModel.NgayBD!=null) {
+			Assert.assertEquals(kmModel.getNgayBD(),"");
+		}
+		assertEquals("", "");
+	
+
+	}
 //	
 //	@Test(priority = 1)
 //	public void lamMoiKhuyenmai1() throws InterruptedException {

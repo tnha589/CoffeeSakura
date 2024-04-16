@@ -144,7 +144,7 @@ public class DangNhap extends javax.swing.JDialog {
 		jLabel5.setText("Quên mật khẩu ?");
 		jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
 			public void mouseClicked(java.awt.event.MouseEvent evt) {
-				jLabel5MouseClicked(evt);
+				jLabel5MouseClicked1(evt);
 			}
 		});
 
@@ -252,7 +252,7 @@ public class DangNhap extends javax.swing.JDialog {
         }
 
 	}// GEN-LAST:event_btnHuyActionPerformed
-	public void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel5MouseClicked
+	public void jLabel5MouseClicked1(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel5MouseClicked
 		new QuenMK(null, true).setVisible(true);
 		// TODO add your handling code here:
 	}// GEN-LAST:event_jLabel5MouseClicked
@@ -260,7 +260,7 @@ public class DangNhap extends javax.swing.JDialog {
 	/**
 	 * @param args the command line arguments
 	 */
-	public static void main(String args[]) {
+	public static void main1(String args[]) {
 		/* Set the Nimbus look and feel */
 		// <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
 		// (optional) ">
@@ -283,7 +283,7 @@ public class DangNhap extends javax.swing.JDialog {
 		});
 	}
 
-    }//GEN-LAST:event_btnHuyActionPerformed
+    //GEN-LAST:event_btnHuyActionPerformed
 
     public void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         new QuenMK(null, true).setVisible(true);

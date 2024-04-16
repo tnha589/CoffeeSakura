@@ -84,7 +84,7 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
 
         //bắt lỗi không tương thích vói tài khoản
         if (!nv.getEmail().equals(email)) {
-              getJOptionePane.methodThatUsesOptionPane(this, "Email không tương thích với tài khoản đã nhập.");
+              getJOptionePane.methodThatUsesOptionPane(this, message = "Email không tương thích với tài khoản đã nhập.");
             return;
         }
 
