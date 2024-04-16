@@ -93,7 +93,7 @@ public class DangNhap extends javax.swing.JDialog {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    public void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -218,7 +218,7 @@ public class DangNhap extends javax.swing.JDialog {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
+    public void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
         // TODO add your handling code here:
         if (txtTenTK.getText().trim().length() > 0) {
             if (txtPassword.getPassword().length > 0) {
@@ -232,7 +232,7 @@ public class DangNhap extends javax.swing.JDialog {
 
     }//GEN-LAST:event_btnXacNhanActionPerformed
 
-    private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
+    public void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
         // TODO add your handling code here:
         if (XDialog.confirm(this, "Bạn chắc chắn thoát!! ")) {
             System.exit(0);
@@ -241,7 +241,7 @@ public class DangNhap extends javax.swing.JDialog {
 
     }//GEN-LAST:event_btnHuyActionPerformed
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    public void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         new QuenMK(null, true).setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel5MouseClicked
@@ -269,15 +269,15 @@ public class DangNhap extends javax.swing.JDialog {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnHuy;
-    private javax.swing.JButton btnXacNhan;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField txtPassword;
-    private javax.swing.JTextField txtTenTK;
+    public javax.swing.JButton btnHuy;
+    public javax.swing.JButton btnXacNhan;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel5;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JPasswordField txtPassword;
+    public javax.swing.JTextField txtTenTK;
     // End of variables declaration//GEN-END:variables
 }

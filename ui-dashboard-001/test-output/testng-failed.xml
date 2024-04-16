@@ -6,9 +6,9 @@
       <class name="test.kienlhpc05751.QuenMatKhau">
         <methods>
           <include name="tearDown"/>
-          <include name="TC_QLF_QuenMK5"/>
-          <include name="test_GuiMailThatBai"/>
           <include name="setUp"/>
+          <include name="LoginTestNull1"/>
+          <include name="closeJdialog"/>
         </methods>
       </class> <!-- test.kienlhpc05751.QuenMatKhau -->
     </classes>

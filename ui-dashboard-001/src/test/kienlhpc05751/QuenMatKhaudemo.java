@@ -1,5 +1,12 @@
 package test.kienlhpc05751;
 
+import static org.testng.Assert.assertEquals;
+
+import java.awt.AWTEvent;
+import java.awt.EventQueue;
+import java.awt.Toolkit;
+import java.awt.Window;
+import java.awt.event.MouseEvent;
 import java.util.concurrent.TimeUnit;
 
 import javax.swing.JOptionPane;
@@ -11,115 +18,119 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.form.DangNhap;
+import com.form.KhuyenMai1;
 import com.form.MatKhauMoi;
 import com.form.QuenMK;
+import com.main.Main;
 
-public class QuenMatKhau {
-	private DangNhap dangnhap;
-	private QuenMK quen;
-	JOptionPane JOptionPane = new JOptionPane();
-
-	@BeforeMethod
+@Test
+public class QuenMatKhaudemo {
+    private QuenMK quen =new QuenMK(null, true);
+	private Main main;
+	public DangNhap login = new DangNhap(main, false);
+//	private QuenMK  quen = new  
+//	private QuanLyNhanVien1 quanLyNhanVien;
+	public KhuyenMai1 km = new KhuyenMai1();
+//    @BeforeMethod
+//    public void setUp() throws InterruptedException {
+//        quen = new QuenMK(null, true);
+//        TimeUnit.SECONDS.sleep(2);
+//        
+//    }
+//
+//    @AfterMethod
+//    public void tearDown() {
+//        quen = null;
+//    }
+    @BeforeMethod
 	public void setUp() {
-		dangnhap = new DangNhap(null, false);
-		dangnhap.setVisible(true);
-		dangnhap.jLabel5MouseClicked(null);
-//    	dangnhap.btnHuy.doClick();
-
-//        quen.setVisible(true);
-        closeJdialog();
-	}
-
-	@AfterMethod
-	public void tearDown() {
-		quen = null;
-	}
-
-	public void closeJdialog() {
-		Thread loginThread = new Thread(new Runnable() {
-			@Test
-			@Override
-			public void run() {
-				try {
-					// Tạm dừng thực thi trong 3 giây
-
-					Thread.sleep(1);
-					// Sau khi tạm dừng, gọi phương thức đăng nhập
-					JOptionPane.getRootFrame().dispose();
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		loginThread.start();
-	}
-
-	public void sleep(int s) {
+//		DangNhap login = new DangNhap(null, false);
+//    	jLabel5MouseClicked
+    	
+		login.setVisible(true);
+//		login.jLabel5MouseClicked(MouseEvent.MOUSE_CLICKED);
+//		login.jLabel5.action(MouseEvent.MOUSE_CLICKED, quen);
+//		login.getTxtTenTK().setText("NV000");
+//		login.getTxtPassword().setText("1234");
+		
 		try {
-			TimeUnit.SECONDS.sleep(s);
+			TimeUnit.SECONDS.sleep(1);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		login.login();
+		main = new Main();
+		main.setVisible(true);
+//		main.openQuanLyNhanVien();
+		main.openKhuyenMai();
+
+		try {
+			TimeUnit.SECONDS.sleep(2);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		SwingUtilities.invokeLater(() -> {
+			km = main.getForm4();
+//			quanLyNhanVien = main.getForm6();
+			km.setVisible(true);
+		});
 	}
 
-//    @Test
-//	public void closeDialog() {
-//        // Sử dụng SwingUtilities để đóng hộp thoại trên EDT
-//        SwingUtilities.invokeLater(new Runnable() {
-//            @Test
-//			@Override
-//            public void run() {
-//                JOptionPane.getRootFrame().dispose();
-//            }
-//        });
-//    }
-	@Test(priority = 1)
-	public void LoginTestNull1() {
+	private void closeJOptionPane1() {
+		AWTEvent event = new AWTEvent(new JOptionPane(), 0) {
+		};
+		EventQueue queue = Toolkit.getDefaultToolkit().getSystemEventQueue();
+		queue.postEvent(event);
+	}
+
+	private void closeJOptionPaneIfDisplayed() {
+		Window[] windows = Window.getWindows();
+		for (Window window1 : windows) {
+			JOptionPane window = null;
+			if (window instanceof JOptionPane) {
+				JOptionPane optionPane = (JOptionPane) window;
+				if (optionPane.isVisible() && optionPane.getValue() != null
+						&& optionPane.getValue().equals(JOptionPane.OK_OPTION)) {
+					optionPane.setValue(JOptionPane.CLOSED_OPTION);
+//	                    optionPane.z();
+				}
+			}
+		}
+	}
+
+	@AfterMethod
+	public void logout() {
+		main.setVisible(false);
+	}
+
+
+    public void TC_QLF_QuenMK1() throws InterruptedException {
+        quen.txtTK.setText("NV40");
+        quen.txtEmail.setText("kienl8595@gmail.com");
+        quen.btnLayMa.doClick();
+        TimeUnit.SECONDS.sleep(1);
+        quen.btnLayMaActionPerformed(null);
+        String expectedMessage = "Tài khoản không tồn tại trên hệ thống.";
+        String actualMessage = quen.message;
+        Assert.assertEquals(expectedMessage, actualMessage);
+    }
+    public void TS_ThemVoucher_02() throws InterruptedException {		
+    	
+//		setText("a@@", 11);  
+//		km.btnMoi1.doClick(1);
+//		    vh.createVoucher();
+//		    vh.txtGia.setText(String.valueOf("1"));
+//		    vh.txtGia.setText("40");	    
+//		   String giaTri = Integer.parseInt(vh.txtGia.getText());
+//		    vh.spnSoLuong.setValue(11);
+//		TimeUnit.SECONDS.sleep(2);	
+//		vh.btnTao.doClick(1);
+		TimeUnit.SECONDS.sleep(2);
+//		closeJOptionPane();
+//		assertEquals(vh.message, "Giá trị chưa đúng");
+		assertEquals(.message, "Vui lòng nhập giá trị voucher");
 	
-//    	closeDialog();
-		quen = new QuenMK(null, true);
-//           new Thread(() -> {
-		sleep(400);
-		quen.getTxtTK().setText("tenTaiKhoanKhongTonTai");
-		
-		quen.getTxtEmail().setText("example@example.com");
-		quen.btnLayMa.doClick();
-//                 quen.btnLayMaActionPerformed(null);
-//                 closeJdialog();
-		String expectedMessage = "Tài khoản không tồn tại trên hệ thống.";
-		String actualMessage = quen.message;
-		Assert.assertEquals(expectedMessage, actualMessage);
-//           }).start();
-//           sleep(3); // Chờ 5 giây cho hộp thoại hiển thị và xử lý
-//           assertEquals(login.message,"Vui lòng nhập đầy đủ thông tin");
 	}
-
-//    @Test
-//	public void LoginTestNull() {
-//        new Thread(() -> {
-//        	  quen.txtTK.setText("tenTaiKhoanKhongTonTai");
-//              quen.txtEmail.setText("example@example.com");
-//              quen.btnLayMaActionPerformed(null);
-//              closeJdialog();
-//              String expectedMessage = "Tài khoản không tồn tại trên hệ thống.";
-//              String actualMessage = quen.message;
-//              Assert.assertEquals(expectedMessage, actualMessage);
-//        }).start();
-//        sleep(3); // Chờ 5 giây cho hộp thoại hiển thị và xử lý
-////        assertEquals(login.message,"Vui lòng nhập đầy đủ thông tin");
-//    }
-//    
-
-//    @Test(priority = 0)
-//    public void TC_QLF_QuenMK1() {
-//        quen.txtTK.setText("tenTaiKhoanKhongTonTai");
-//        quen.txtEmail.setText("example@example.com");
-//        quen.btnLayMaActionPerformed(null);
-//        closeJdialog();
-//        String expectedMessage = "Tài khoản không tồn tại trên hệ thống.";
-//        String actualMessage = quen.message;
-//        Assert.assertEquals(expectedMessage, actualMessage);
-//    }
 
 //    @Test(priority = 1)
 //    public void TC_QLF_QuenMK2() {
@@ -230,8 +241,7 @@ public class QuenMatKhau {
 //        Assert.assertNotNull(quen.maXT);
 //    }
 
-	// oew day
-
+    
 //    @Test(priority = 11)
 //    public void TC_QLF_QuenMK11() {
 //        quen.txtTK.setText("tenTaiKhoan");
@@ -259,8 +269,8 @@ public class QuenMatKhau {
 //        String actualMessage = quen.message;
 //        Assert.assertEquals(expectedMessage, actualMessage);
 //    }
-
-//    
+    
+    
 //    @Test(priority = 8)
 //    public void TC_QLF_QuenMK81() {
 //        quen.txtTK.setText("");

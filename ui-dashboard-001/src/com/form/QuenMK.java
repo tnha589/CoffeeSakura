@@ -407,4 +407,149 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
         }
     }
 
+public nhanVienDao getNVD() {
+	return NVD;
+}
+
+public void setNVD(nhanVienDao nVD) {
+	NVD = nVD;
+}
+
+public String getTennv() {
+	return tennv;
+}
+
+public void setTennv(String tennv) {
+	this.tennv = tennv;
+}
+
+public String getManv() {
+	return manv;
+}
+
+public void setManv(String manv) {
+	this.manv = manv;
+}
+
+public Timer getT() {
+	return t;
+}
+
+public void setT(Timer t) {
+	this.t = t;
+}
+
+public boolean isTimer() {
+	return timer;
+}
+
+public void setTimer(boolean timer) {
+	this.timer = timer;
+}
+
+public String getMessage() {
+	return message;
+}
+
+public void setMessage(String message) {
+	this.message = message;
+}
+
+public String getMaXT() {
+	return maXT;
+}
+
+public void setMaXT(String maXT) {
+	this.maXT = maXT;
+}
+
+public javax.swing.JButton getBtnHuy() {
+	return btnHuy;
+}
+
+public void setBtnHuy(javax.swing.JButton btnHuy) {
+	this.btnHuy = btnHuy;
+}
+
+public javax.swing.JButton getBtnLayMa() {
+	return btnLayMa;
+}
+
+public void setBtnLayMa(javax.swing.JButton btnLayMa) {
+	this.btnLayMa = btnLayMa;
+}
+
+public javax.swing.JButton getBtnXacNhan() {
+	return btnXacNhan;
+}
+
+public void setBtnXacNhan(javax.swing.JButton btnXacNhan) {
+	this.btnXacNhan = btnXacNhan;
+}
+
+public javax.swing.JLabel getjLabel1() {
+	return jLabel1;
+}
+
+public void setjLabel1(javax.swing.JLabel jLabel1) {
+	this.jLabel1 = jLabel1;
+}
+
+public javax.swing.JLabel getjLabel2() {
+	return jLabel2;
+}
+
+public void setjLabel2(javax.swing.JLabel jLabel2) {
+	this.jLabel2 = jLabel2;
+}
+
+public javax.swing.JLabel getjLabel3() {
+	return jLabel3;
+}
+
+public void setjLabel3(javax.swing.JLabel jLabel3) {
+	this.jLabel3 = jLabel3;
+}
+
+public javax.swing.JLabel getjLabel4() {
+	return jLabel4;
+}
+
+public void setjLabel4(javax.swing.JLabel jLabel4) {
+	this.jLabel4 = jLabel4;
+}
+
+public javax.swing.JPanel getjPanel1() {
+	return jPanel1;
+}
+
+public void setjPanel1(javax.swing.JPanel jPanel1) {
+	this.jPanel1 = jPanel1;
+}
+
+public javax.swing.JTextField getTxtEmail() {
+	return txtEmail;
+}
+
+public void setTxtEmail(javax.swing.JTextField txtEmail) {
+	this.txtEmail = txtEmail;
+}
+
+public javax.swing.JTextField getTxtMaXT() {
+	return txtMaXT;
+}
+
+public void setTxtMaXT(javax.swing.JTextField txtMaXT) {
+	this.txtMaXT = txtMaXT;
+}
+
+public javax.swing.JTextField getTxtTK() {
+	return txtTK;
+}
+
+public void setTxtTK(javax.swing.JTextField txtTK) {
+	this.txtTK = txtTK;
+}
+ 
+
 }
