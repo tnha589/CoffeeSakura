@@ -14,6 +14,8 @@ import com.untils.XAuth;
 import com.untils.XDialog;
 import com.untils.XImage;
 import com.untils.XValidate;
+import com.untils.getJOptionePane;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -78,7 +80,7 @@ public class QuanLyNhanVien1 extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    public void initComponents() {
 
         btngGioiTinh = new javax.swing.ButtonGroup();
         popcraeteQR = new javax.swing.JPopupMenu();
@@ -592,7 +594,7 @@ public class QuanLyNhanVien1 extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tblNhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanVienMouseClicked
+    public void tblNhanVienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanVienMouseClicked
         this.row = tblNhanVien.getSelectedRow();
         this.edit();
         String maNVClick = (String) tblNhanVien.getValueAt(row, 0);
@@ -601,62 +603,62 @@ public class QuanLyNhanVien1 extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tblNhanVienMouseClicked
 
-    private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
+    public void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         insert();
 //        createQR();
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btnThemActionPerformed
 
-    private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
+    public void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
         update();
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSuaActionPerformed
 
-    private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
+    public void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
         clearForm();
         // TODO add your handling code here:
     }//GEN-LAST:event_btnMoiActionPerformed
 
-    private void lblHinhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHinhMouseClicked
+    public void lblHinhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHinhMouseClicked
         chonHinh();
         // TODO add your handling code here:
     }//GEN-LAST:event_lblHinhMouseClicked
 
-    private void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
+    public void btnFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFindActionPerformed
         if (!txtFindTen.getText().isEmpty()) {
             String key = txtFindTen.getText();
             search(key);
         } else {
-            XDialog.alert(null, "Vui lòng nhập tên hoặc số điện thoại cần tìm!");
+              getJOptionePane.methodThatUsesOptionPane(null, "Vui lòng nhập tên hoặc số điện thoại cần tìm!");
         }
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btnFindActionPerformed
 
-    private void cboFindVaiTroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboFindVaiTroActionPerformed
+    public void cboFindVaiTroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboFindVaiTroActionPerformed
         Loc();
         System.out.println("haha");
         // TODO add your handling code here:
     }//GEN-LAST:event_cboFindVaiTroActionPerformed
 
-    private void cboFindTrangThaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboFindTrangThaiActionPerformed
+    public void cboFindTrangThaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboFindTrangThaiActionPerformed
         Loc();
         System.out.println("hoho");
         // TODO add your handling code here:
     }//GEN-LAST:event_cboFindTrangThaiActionPerformed
 
-    private void tblNhanVienMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanVienMousePressed
+    public void tblNhanVienMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanVienMousePressed
 
     }//GEN-LAST:event_tblNhanVienMousePressed
 
-    private void tblNhanVienMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanVienMouseReleased
+    public void tblNhanVienMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanVienMouseReleased
 //        if (evt.isPopupTrigger()) {
 //            popcraeteQR.show(evt.getComponent(), evt.getX(), evt.getY());
 //        }
     }//GEN-LAST:event_tblNhanVienMouseReleased
 
-    private void mnucreateQRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnucreateQRActionPerformed
+    public void mnucreateQRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnucreateQRActionPerformed
         List<NhanVien> listNV = nvDao.selectAll();
         for (NhanVien nhanVien : listNV) {
             if (nhanVien.getMaHoa() != null && nhanVien.getMaNV().equals(txtMaNV.getText())) {
@@ -684,62 +686,62 @@ public class QuanLyNhanVien1 extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_mnucreateQRActionPerformed
 
-    private void txtTenNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTenNVActionPerformed
+    public void txtTenNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTenNVActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTenNVActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ErrorGioiTinh;
-    private javax.swing.JLabel ErrorMaNV1;
-    private javax.swing.JLabel ErrorMatKhau;
-    private javax.swing.JLabel ErrorNgayVaoLam;
-    private javax.swing.JLabel ErrorReMatKhau;
-    private javax.swing.JLabel ErrorSoDT;
-    private javax.swing.JLabel ErrorTenNV;
-    private javax.swing.JLabel ErrorTrangThai;
-    private javax.swing.JLabel ErrorVaiTro;
-    private javax.swing.JButton btnFind;
-    private javax.swing.JButton btnMoi;
-    private javax.swing.JButton btnSua;
-    private javax.swing.JButton btnThem;
-    private javax.swing.ButtonGroup btngGioiTinh;
-    private javax.swing.JComboBox<String> cboFindTrangThai;
-    private javax.swing.JComboBox<String> cboFindVaiTro;
-    private javax.swing.JComboBox<String> cboTrangThai;
-    private javax.swing.JComboBox<String> cboVaiTro;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private com.toedter.calendar.JDateChooser jdcNgayVaoLam;
-    private javax.swing.JLabel lblHinh;
-    private javax.swing.JMenuItem mnucreateQR;
-    private javax.swing.JPopupMenu popcraeteQR;
-    private javax.swing.JRadioButton rdoNam;
-    private javax.swing.JRadioButton rdoNu;
-    private javax.swing.JTable tblNhanVien;
-    private javax.swing.JTextField txtFindTen;
-    private javax.swing.JTextArea txtGhiChu;
-    private javax.swing.JTextField txtMaNV;
-    private javax.swing.JPasswordField txtPass;
-    private javax.swing.JPasswordField txtRePass;
-    private javax.swing.JTextField txtSDT;
-    private javax.swing.JTextField txtTenNV;
+    public javax.swing.JLabel ErrorGioiTinh;
+    public javax.swing.JLabel ErrorMaNV1;
+    public javax.swing.JLabel ErrorMatKhau;
+    public javax.swing.JLabel ErrorNgayVaoLam;
+    public javax.swing.JLabel ErrorReMatKhau;
+    public javax.swing.JLabel ErrorSoDT;
+    public javax.swing.JLabel ErrorTenNV;
+    public javax.swing.JLabel ErrorTrangThai;
+    public javax.swing.JLabel ErrorVaiTro;
+    public javax.swing.JButton btnFind;
+    public javax.swing.JButton btnMoi;
+    public javax.swing.JButton btnSua;
+    public javax.swing.JButton btnThem;
+    public javax.swing.ButtonGroup btngGioiTinh;
+    public javax.swing.JComboBox<String> cboFindTrangThai;
+    public javax.swing.JComboBox<String> cboFindVaiTro;
+    public javax.swing.JComboBox<String> cboTrangThai;
+    public javax.swing.JComboBox<String> cboVaiTro;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel10;
+    public javax.swing.JLabel jLabel11;
+    public javax.swing.JLabel jLabel12;
+    public javax.swing.JLabel jLabel13;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel5;
+    public javax.swing.JLabel jLabel6;
+    public javax.swing.JLabel jLabel7;
+    public javax.swing.JLabel jLabel8;
+    public javax.swing.JLabel jLabel9;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel2;
+    public javax.swing.JPanel jPanel3;
+    public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JScrollPane jScrollPane2;
+    public com.toedter.calendar.JDateChooser jdcNgayVaoLam;
+    public javax.swing.JLabel lblHinh;
+    public javax.swing.JMenuItem mnucreateQR;
+    public javax.swing.JPopupMenu popcraeteQR;
+    public javax.swing.JRadioButton rdoNam;
+    public javax.swing.JRadioButton rdoNu;
+    public javax.swing.JTable tblNhanVien;
+    public javax.swing.JTextField txtFindTen;
+    public javax.swing.JTextArea txtGhiChu;
+    public javax.swing.JTextField txtMaNV;
+    public javax.swing.JPasswordField txtPass;
+    public javax.swing.JPasswordField txtRePass;
+    public javax.swing.JTextField txtSDT;
+    public javax.swing.JTextField txtTenNV;
     // End of variables declaration//GEN-END:variables
 public void init() {
         fillTable();
@@ -749,7 +751,7 @@ public void init() {
         mnucreateQR.setIcon(new ImageIcon(url));
     }
 
-    private void fillTable() {
+    public void fillTable() {
         DefaultTableModel model = (DefaultTableModel) tblNhanVien.getModel();
         model.setRowCount(0);
         try {
@@ -765,7 +767,7 @@ public void init() {
                 model.addRow(row);
             }
         } catch (Exception e) {
-            XDialog.alert(this, "Lỗi truy vấn dữ liệu nhân viên!");
+              getJOptionePane.methodThatUsesOptionPane(this, "Lỗi truy vấn dữ liệu nhân viên!");
             e.printStackTrace();
         }
     }
@@ -793,7 +795,7 @@ public void init() {
         // TODO add your handling code here:
     }
 
-    private void insert() {
+    public void insert() {
         if (validateForm()) {
             return;
         }
@@ -810,15 +812,15 @@ public void init() {
             fillTable(); // đỗ lại bảng
             clearForm(); // xóa trắng form
 //            createQR();
-   XDialog.alert(this, "Thêm nhân viên mới thành công!");
+     getJOptionePane.methodThatUsesOptionPane(this, "Thêm nhân viên mới thành công!");
         } catch (Exception e) {
-            XDialog.alert(this, "Thêm nhân viên mới thất bại!");
+              getJOptionePane.methodThatUsesOptionPane(this, "Thêm nhân viên mới thất bại!");
             e.printStackTrace();
         }
 
     }
 
-    private void update() {
+    public void update() {
         if (validateForm()) {
             return;
         }
@@ -827,36 +829,37 @@ public void init() {
         try {
             nvDao.update(nv); // cập nhật
             this.fillTable(); // đổ lại bảng
-            XDialog.alert(this, "Cập nhật nhân viên thành công!");
+//            JOptionPane.showMessageDialog(this, "Cập nhật nhân viên thành công!");
+              getJOptionePane.methodThatUsesOptionPane(this, "Cập nhật nhân viên thành công!");
         } catch (Exception e) {
-            XDialog.alert(this, "Cập nhật nhân viên thất bại!");
+              getJOptionePane.methodThatUsesOptionPane(this, "Cập nhật nhân viên thất bại!");
             e.printStackTrace();
         }
 
     }
 
-    private void delete() {
+    public void delete() {
         if (!XAuth.isManager()) {
-            XDialog.alert(this, "Chỉ trưởng phòng mới được phép xóa nhân viên!");
+              getJOptionePane.methodThatUsesOptionPane(this, "Chỉ trưởng phòng mới được phép xóa nhân viên!");
         } else {
             String manv = txtMaNV.getText();
             if (manv.equals(XAuth.user.getMaNV())) {
-                XDialog.alert(this, "Bạn không được phép xóa chính mình!");
+                  getJOptionePane.methodThatUsesOptionPane(this, "Bạn không được phép xóa chính mình!");
             } else if (XDialog.confirm(this, "Bạn có thực sự muốn xóa nhân viên này không?")) {
                 try {
                     nvDao.delete(manv);
                     this.fillTable();
                     this.clearForm();
-                    XDialog.alert(this, "Xóa nhân viên thành công!");
+                      getJOptionePane.methodThatUsesOptionPane(this, "Xóa nhân viên thành công!");
                 } catch (Exception e) {
-                    XDialog.alert(this, "Xóa nhân viên thất bại!");
+                      getJOptionePane.methodThatUsesOptionPane(this, "Xóa nhân viên thất bại!");
                     e.printStackTrace();
                 }
             }
         }
     }
 
-    private NhanVien getForm() {
+    public NhanVien getForm() {
 
         try {
             maHoaMaNV();
@@ -907,7 +910,7 @@ public void init() {
         return nv;
     }
 
-    private void setForm(NhanVien nv) {
+    public void setForm(NhanVien nv) {
         txtMaNV.setText(nv.getMaNV());
         txtTenNV.setText(nv.getTenNV());
         if (nv.getChuVu() != null) {
@@ -947,14 +950,14 @@ public void init() {
         }
     }
 
-    private void edit() {
+    public void edit() {
         String manv = (String) tblNhanVien.getValueAt(this.row, 0);
         NhanVien nv = nvDao.selectById(manv);
         this.setForm(nv);
         this.updateStatus();
     }
 
-    private void updateStatus() {
+    public void updateStatus() {
         boolean edit = (this.row >= 0);
         boolean first = (this.row == 0);
         boolean last = (this.row == tblNhanVien.getRowCount() - 1);
@@ -966,7 +969,7 @@ public void init() {
         // Trạng thái điều hướng
     }
 
-    private void clearForm() {
+    public void clearForm() {
         NhanVien nv = new NhanVien();
         this.setForm(nv);
         this.row = -1;
@@ -977,7 +980,7 @@ public void init() {
         txtRePass.setText("");
     }
 
-    private String hidePass(String pass) {
+    public String hidePass(String pass) {
         String hide = "";
         for (int i = 0; i < pass.length(); i++) {
             hide += "*";
@@ -985,7 +988,7 @@ public void init() {
         return hide;
     }
 
-    private void search(String keyword) {
+    public void search(String keyword) {
         DefaultTableModel model = (DefaultTableModel) tblNhanVien.getModel();
         model.setRowCount(0);
         try {
@@ -1004,7 +1007,7 @@ public void init() {
                 model.addRow(row);
             }
         } catch (Exception e) {
-            XDialog.alert(this, "Lỗi truy vấn dữ liệu nhân viên!");
+              getJOptionePane.methodThatUsesOptionPane(this, "Lỗi truy vấn dữ liệu nhân viên!");
             e.printStackTrace();
         }
 
@@ -1014,7 +1017,7 @@ public void init() {
         this.updateStatus();
     }
 
-    private void Loc() {
+    public void Loc() {
         boolean key1;
         String key2 = (String) cboFindVaiTro.getSelectedItem();
         DefaultTableModel model = (DefaultTableModel) tblNhanVien.getModel();
@@ -1048,7 +1051,7 @@ public void init() {
                     model.addRow(row);
                 }
             } catch (Exception e) {
-                XDialog.alert(this, "Lỗi truy vấn dữ liệu nhân viên!");
+                  getJOptionePane.methodThatUsesOptionPane(this, "Lỗi truy vấn dữ liệu nhân viên!");
                 e.printStackTrace();
             }
         }
@@ -1072,7 +1075,7 @@ public void init() {
                     model.addRow(row);
                 }
             } catch (Exception e) {
-                XDialog.alert(this, "Lỗi truy vấn dữ liệu nhân viên!");
+                  getJOptionePane.methodThatUsesOptionPane(this, "Lỗi truy vấn dữ liệu nhân viên!");
                 e.printStackTrace();
             }
 
@@ -1083,7 +1086,7 @@ public void init() {
         this.updateStatus();
     }
 
-    private boolean validateForm() {
+    public boolean validateForm() {
         int check = 0;
         String pass = new String(txtPass.getPassword());
         String repass = new String(txtRePass.getPassword());
@@ -1094,6 +1097,7 @@ public void init() {
         } else {
             ErrorMaNV1.setText("");
         }
+        System.out.println("1: "+check);
 
         // Kiểm tra tên nhân viên
         String tenNV = txtTenNV.getText();
@@ -1103,6 +1107,7 @@ public void init() {
         } else {
             ErrorTenNV.setText("");
         }
+        
         // Kiểm tra chức vụ
         int vaiTroIndex = cboVaiTro.getSelectedIndex();
         if (vaiTroIndex == 0) {
@@ -1285,10 +1290,10 @@ public void init() {
                         }
                         dialogQR.dispose();
                         if (tblNhanVien.getSelectedRow() == 0) {
-                            XDialog.alert(null, "Thêm nhân viên mới thành công!");
+                              getJOptionePane.methodThatUsesOptionPane(null, "Thêm nhân viên mới thành công!");
                         } else {
 
-                            XDialog.alert(null, "Tạo QR thành công");
+                              getJOptionePane.methodThatUsesOptionPane(null, "Tạo QR thành công");
                         }
 
                     }

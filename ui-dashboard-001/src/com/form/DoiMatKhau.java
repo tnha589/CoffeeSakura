@@ -7,6 +7,8 @@ package com.form;
 import com.Dao.nhanVienDao;
 import com.untils.XAuth;
 import com.untils.XDialog;
+import com.untils.getJOptionePane;
+
 import java.awt.Color;
 
 /**
@@ -55,24 +57,24 @@ public class DoiMatKhau extends javax.swing.JDialog {
 
                 XAuth.user.setMatKhau(matKhauMoi);
                 NVD.update(XAuth.user);
-                XDialog.alert(this, "Đổi mật khẩu thành công!");
+                  getJOptionePane.methodThatUsesOptionPane(this, "Đổi mật khẩu thành công!");
             } catch (Exception e) {
                 e.printStackTrace();
             }
         } else {
-            XDialog.alert(this, "Vui lòng đăng nhập trước khi đổi mật khẩu.");
+              getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng đăng nhập trước khi đổi mật khẩu.");
         }
     }
    // -----------------------------------------------Bắt lỗi---------------------------------------------------------
-    private boolean validateMatKhauCu(String matKhau) {
+    public boolean validateMatKhauCu(String matKhau) {
         if (matKhau.equals("")) {
-            XDialog.alert(this, "Mật khẩu không được để trống!");
+              getJOptionePane.methodThatUsesOptionPane(this, "Mật khẩu không được để trống!");
             txtMKC.setForeground(Color.red);
             lblTBcu.setText("(*)Không được để trống!");
             lblTBcu.setVisible(true);
             return false;
         } else if (!matKhau.equals(XAuth.user.getMatKhau())) {
-            XDialog.alert(this, "Sai mật khẩu!");
+              getJOptionePane.methodThatUsesOptionPane(this, "Sai mật khẩu!");
             txtMKC.setForeground(Color.red);
             lblTBcu.setText("(*)Sai mật khẩu!");
             lblTBcu.setVisible(true);
@@ -84,9 +86,9 @@ public class DoiMatKhau extends javax.swing.JDialog {
         }
     }
 
-    private boolean validateMatKhauMoi(String matKhauMoi) {
+    public boolean validateMatKhauMoi(String matKhauMoi) {
         if (matKhauMoi.equals("")) {
-            XDialog.alert(this, "Mật khẩu mới không được để trống!");
+              getJOptionePane.methodThatUsesOptionPane(this, "Mật khẩu mới không được để trống!");
             txtMKM.setForeground(Color.red);
             lblTBMoi.setText("(*)Không được để trống!");
             lblTBMoi.setVisible(true);
@@ -101,15 +103,15 @@ public class DoiMatKhau extends javax.swing.JDialog {
         }
     }
 
-    private boolean validateXacNhanMK(String xacNhanMK) {
+    public boolean validateXacNhanMK(String xacNhanMK) {
         if (xacNhanMK.equals("")) {
-            XDialog.alert(this, "Nhập lại không được để trống!");
+              getJOptionePane.methodThatUsesOptionPane(this, "Nhập lại không được để trống!");
             txtNLMKM.setForeground(Color.red);
             lblTBnl.setText("(*)Không được để trống");
             lblTBnl.setVisible(true);
             return false;
         } else if (!xacNhanMK.equals(xacNhanMK)) {
-            XDialog.alert(this, "Xác nhận mật khẩu không đúng!");
+              getJOptionePane.methodThatUsesOptionPane(this, "Xác nhận mật khẩu không đúng!");
             txtNLMKM.setForeground(Color.red);
             lblTBnl.setText("(*)Mật khẩu không giống");
             lblTBnl.setVisible(true);
@@ -128,7 +130,7 @@ public class DoiMatKhau extends javax.swing.JDialog {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    public void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         txtTenTK = new javax.swing.JTextField();
@@ -320,12 +322,12 @@ public class DoiMatKhau extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhatActionPerformed
+    public void btnCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhatActionPerformed
         // TODO add your handling code here:
         DoiMK();
     }//GEN-LAST:event_btnCapNhatActionPerformed
 
-    private void txtMKCCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtMKCCaretUpdate
+    public void txtMKCCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtMKCCaretUpdate
         // TODO add your handling code here:
 
 //        try {
@@ -342,7 +344,7 @@ public class DoiMatKhau extends javax.swing.JDialog {
 //        }
     }//GEN-LAST:event_txtMKCCaretUpdate
 
-    private void txtMKMCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtMKMCaretUpdate
+    public void txtMKMCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtMKMCaretUpdate
         // TODO add your handling code here:
 //        try {
 //            
@@ -359,7 +361,7 @@ public class DoiMatKhau extends javax.swing.JDialog {
 
     }//GEN-LAST:event_txtMKMCaretUpdate
 
-    private void txtNLMKMCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtNLMKMCaretUpdate
+    public void txtNLMKMCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtNLMKMCaretUpdate
         // TODO add your handling code here:
 //        try {
 //            
@@ -375,11 +377,11 @@ public class DoiMatKhau extends javax.swing.JDialog {
 //        }
     }//GEN-LAST:event_txtNLMKMCaretUpdate
 
-    private void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
+    public void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnHuyActionPerformed
 
-    private void lblTBMoiAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_lblTBMoiAncestorAdded
+    public void lblTBMoiAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_lblTBMoiAncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_lblTBMoiAncestorAdded
 
@@ -429,20 +431,20 @@ public class DoiMatKhau extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCapNhat;
-    private javax.swing.JButton btnHuy;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblTBMoi;
-    private javax.swing.JLabel lblTBcu;
-    private javax.swing.JLabel lblTBnl;
-    private javax.swing.JPasswordField txtMKC;
-    private javax.swing.JPasswordField txtMKM;
-    private javax.swing.JPasswordField txtNLMKM;
-    private javax.swing.JTextField txtTenTK;
+    public javax.swing.JButton btnCapNhat;
+    public javax.swing.JButton btnHuy;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel5;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JLabel lblTBMoi;
+    public javax.swing.JLabel lblTBcu;
+    public javax.swing.JLabel lblTBnl;
+    public javax.swing.JPasswordField txtMKC;
+    public javax.swing.JPasswordField txtMKM;
+    public javax.swing.JPasswordField txtNLMKM;
+    public javax.swing.JTextField txtTenTK;
     // End of variables declaration//GEN-END:variables
 }
