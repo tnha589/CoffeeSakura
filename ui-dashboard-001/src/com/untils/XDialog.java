@@ -7,8 +7,8 @@ import java.awt.event.WindowEvent;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
-import com.supportTest.DefaultOptionPane;
-import com.supportTest.interfaceOp.OptionPane;
+
+
 
 /**
  *
@@ -26,14 +26,14 @@ public class XDialog {
         return message;
     }
 
-	/*
-	 * Hiển thị thông báo và yêu cầu người dùng xác nhận
-	 */
-	public static boolean confirm(Component parent, String message) {
-		int result = JOptionPane.showConfirmDialog(parent, message, "Hệ thống quản lý đào tạo",
-				JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-		return result == JOptionPane.YES_OPTION;
-	}
+    /*
+     * Hiển thị thông báo và yêu cầu người dùng xác nhận
+     */
+    public static boolean confirm(Component parent, String message) {
+        int result = JOptionPane.showConfirmDialog(parent, message, "Hệ thống quản lý đào tạo",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        return result == JOptionPane.YES_OPTION;
+    }
 
     /*
      * Hiển thị thông báo yêu cầu nhập dữ liệu

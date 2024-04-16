@@ -11,6 +11,7 @@
           <include name="setUp"/>
         </methods>
       </class> <!-- test.phucptpc05587.TimKiemSanPham -->
+
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

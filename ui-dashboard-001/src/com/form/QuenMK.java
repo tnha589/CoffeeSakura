@@ -32,7 +32,6 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
     String manv = "";
     Timer t = null;
     boolean timer = false;
-    public String message;
 
     /**
      * Creates new form QuenMK
@@ -66,19 +65,19 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
         String dinhangemail = "^[A-Za-z0-9+_.-]+@(.+)$";
         //bắt lỗi trống
         if (tenTaiKhoan.equals("") || email.equals("")) {
-            XDialog.alert(this, message="Vui lòng nhập đầy đủ tên tài khoản và email.");
+              getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng nhập đầy đủ tên tài khoản và email.");
             return;
         }
         // bắt lỗi ko có dữ liệu 
         NhanVien nv = NVD.selectById(tenTaiKhoan);
         if (nv == null) {
-            XDialog.alert(this, message="Tài khoản không tồn tại trên hệ thống.");
+              getJOptionePane.methodThatUsesOptionPane(this, "Tài khoản không tồn tại trên hệ thống.");
             return;
         }
 
         //bắt lỗi định dạng email
         if (!email.matches(dinhangemail)) {
-            XDialog.alert(this, message="Email không đúng định dạng.");
+              getJOptionePane.methodThatUsesOptionPane(this, "Email không đúng định dạng.");
             return;
         }
 
@@ -121,15 +120,13 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
             String receiveEmail = txtEmail.getText();
             String tieuDe = "Lấy lại mật khẩu EdySys";
             String noiDung = messageBody;
-            Message messagesend = new MimeMessage(session);
-            messagesend.setFrom(new InternetAddress(senderEmail));
-            messagesend.setRecipients(Message.RecipientType.TO, InternetAddress.parse(receiveEmail));
-            messagesend.setSubject(tieuDe);
-            messagesend.setContent(noiDung, "text/html;charset=utf-8");
-            Transport.send(messagesend);
-            message ="Mã đã được gửi!";
-            XDialog.alert(this, message  );
-
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(senderEmail));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(receiveEmail));
+            message.setSubject(tieuDe);
+            message.setContent(noiDung, "text/html;charset=utf-8");
+            Transport.send(message);
+              getJOptionePane.methodThatUsesOptionPane(this, "Mã đã được gửi!");
             Thread time = new Thread(this);
             time.start();
             timer = false;
@@ -146,16 +143,15 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
         String emailMau = "^[A-Za-z0-9+_.-]+@(.+)$";
 
         if (TenTK.equals("")) {
-
-            XDialog.alert(this, message="Vui lòng nhập tài khoản");
+              getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng nhập tài khoản");
         } else if (email.equals("")) {
-            XDialog.alert(this,message= "Vui lòng nhập email");
+              getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng nhập email");
             return;
         } else if (!email.matches(emailMau)) {
-            XDialog.alert(this, message="Email không đúng định dạng");
+              getJOptionePane.methodThatUsesOptionPane(this, "Email không đúng định dạng");
             return;
         } else if (maxn.isEmpty()) {
-            XDialog.alert(this, message= "Vui lòng nhập mã xác thực!");
+              getJOptionePane.methodThatUsesOptionPane(this, "Vui lòng nhập mã xác thực!");
             return;
         } else if (maxn.equals(maXT)) {
             String strMaNV = txtTK.getText();
@@ -169,8 +165,7 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
             matkhaumoi.setVisible(true);
             dispose();
         } else {
-            XDialog.alert(this,message= "Sai mã xác thực!");
-
+              getJOptionePane.methodThatUsesOptionPane(this, "Sai mã xác thực!");
         }
     }
 
@@ -325,7 +320,7 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
 
     public void btnHuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyActionPerformed
         // TODO add your handling code here:
-        if (XDialog.confirm(this, message= "Bạn chắc chắn thoát!! ")) {
+        if (XDialog.confirm(this, "Bạn chắc chắn thoát!! ")) {
             dispose();
         }
     }//GEN-LAST:event_btnHuyActionPerformed
@@ -411,150 +406,5 @@ public class QuenMK extends javax.swing.JDialog implements Runnable {
             }
         }
     }
-
-public nhanVienDao getNVD() {
-	return NVD;
-}
-
-public void setNVD(nhanVienDao nVD) {
-	NVD = nVD;
-}
-
-public String getTennv() {
-	return tennv;
-}
-
-public void setTennv(String tennv) {
-	this.tennv = tennv;
-}
-
-public String getManv() {
-	return manv;
-}
-
-public void setManv(String manv) {
-	this.manv = manv;
-}
-
-public Timer getT() {
-	return t;
-}
-
-public void setT(Timer t) {
-	this.t = t;
-}
-
-public boolean isTimer() {
-	return timer;
-}
-
-public void setTimer(boolean timer) {
-	this.timer = timer;
-}
-
-public String getMessage() {
-	return message;
-}
-
-public void setMessage(String message) {
-	this.message = message;
-}
-
-public String getMaXT() {
-	return maXT;
-}
-
-public void setMaXT(String maXT) {
-	this.maXT = maXT;
-}
-
-public javax.swing.JButton getBtnHuy() {
-	return btnHuy;
-}
-
-public void setBtnHuy(javax.swing.JButton btnHuy) {
-	this.btnHuy = btnHuy;
-}
-
-public javax.swing.JButton getBtnLayMa() {
-	return btnLayMa;
-}
-
-public void setBtnLayMa(javax.swing.JButton btnLayMa) {
-	this.btnLayMa = btnLayMa;
-}
-
-public javax.swing.JButton getBtnXacNhan() {
-	return btnXacNhan;
-}
-
-public void setBtnXacNhan(javax.swing.JButton btnXacNhan) {
-	this.btnXacNhan = btnXacNhan;
-}
-
-public javax.swing.JLabel getjLabel1() {
-	return jLabel1;
-}
-
-public void setjLabel1(javax.swing.JLabel jLabel1) {
-	this.jLabel1 = jLabel1;
-}
-
-public javax.swing.JLabel getjLabel2() {
-	return jLabel2;
-}
-
-public void setjLabel2(javax.swing.JLabel jLabel2) {
-	this.jLabel2 = jLabel2;
-}
-
-public javax.swing.JLabel getjLabel3() {
-	return jLabel3;
-}
-
-public void setjLabel3(javax.swing.JLabel jLabel3) {
-	this.jLabel3 = jLabel3;
-}
-
-public javax.swing.JLabel getjLabel4() {
-	return jLabel4;
-}
-
-public void setjLabel4(javax.swing.JLabel jLabel4) {
-	this.jLabel4 = jLabel4;
-}
-
-public javax.swing.JPanel getjPanel1() {
-	return jPanel1;
-}
-
-public void setjPanel1(javax.swing.JPanel jPanel1) {
-	this.jPanel1 = jPanel1;
-}
-
-public javax.swing.JTextField getTxtEmail() {
-	return txtEmail;
-}
-
-public void setTxtEmail(javax.swing.JTextField txtEmail) {
-	this.txtEmail = txtEmail;
-}
-
-public javax.swing.JTextField getTxtMaXT() {
-	return txtMaXT;
-}
-
-public void setTxtMaXT(javax.swing.JTextField txtMaXT) {
-	this.txtMaXT = txtMaXT;
-}
-
-public javax.swing.JTextField getTxtTK() {
-	return txtTK;
-}
-
-public void setTxtTK(javax.swing.JTextField txtTK) {
-	this.txtTK = txtTK;
-}
- 
 
 }

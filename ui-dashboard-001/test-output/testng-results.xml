@@ -149,55 +149,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_GuiMailThatBai -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@74455848]" started-at="2024-04-16T21:36:06 ICT" name="tearDown" finished-at="2024-04-16T21:36:06 ICT" duration-ms="3" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@74455848]" started-at="2024-04-16T21:36:06 ICT" name="setUp" finished-at="2024-04-16T21:36:06 ICT" duration-ms="47" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="TC_QLF_QuenMK6()[pri:6, instance:test.kienlhpc05751.QuenMatKhau@74455848]" started-at="2024-04-16T21:36:06 ICT" name="TC_QLF_QuenMK6" finished-at="2024-04-16T21:36:38 ICT" duration-ms="32584" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_QLF_QuenMK6 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@74455848]" started-at="2024-04-16T21:36:38 ICT" name="tearDown" finished-at="2024-04-16T21:36:38 ICT" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@74455848]" started-at="2024-04-16T21:36:38 ICT" name="setUp" finished-at="2024-04-16T21:36:38 ICT" duration-ms="56" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="TC_QLF_QuenMK7()[pri:7, instance:test.kienlhpc05751.QuenMatKhau@74455848]" started-at="2024-04-16T21:36:38 ICT" name="TC_QLF_QuenMK7" finished-at="2024-04-16T21:36:40 ICT" duration-ms="1756" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_QLF_QuenMK7 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@74455848]" started-at="2024-04-16T21:36:40 ICT" name="tearDown" finished-at="2024-04-16T21:36:40 ICT" duration-ms="12" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@74455848]" started-at="2024-04-16T21:36:40 ICT" name="setUp" finished-at="2024-04-16T21:36:40 ICT" duration-ms="28" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="TC_QLF_QuenMK8()[pri:8, instance:test.kienlhpc05751.QuenMatKhau@74455848]" started-at="2024-04-16T21:36:40 ICT" name="TC_QLF_QuenMK8" finished-at="2024-04-16T21:36:42 ICT" duration-ms="2273" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC_QLF_QuenMK8 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@74455848]" started-at="2024-04-16T21:36:42 ICT" name="tearDown" finished-at="2024-04-16T21:36:42 ICT" duration-ms="15" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.kienlhpc05751.QuenMatKhau@74455848]" started-at="2024-04-16T21:36:42 ICT" name="setUp" finished-at="2024-04-16T21:36:42 ICT" duration-ms="47" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="TC_QLF_QuenMK9()[pri:9, instance:test.kienlhpc05751.QuenMatKhau@74455848]" started-at="2024-04-16T21:36:42 ICT" name="TC_QLF_QuenMK9" finished-at="2024-04-16T21:36:50 ICT" duration-ms="7262" status="PASS">
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCaseTimKiemSanPham -->

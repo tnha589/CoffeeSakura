@@ -34,7 +34,6 @@ at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
 at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
 at org.testng.TestNG.runSuites(TestNG.java:1134)
 at org.testng.TestNG.run(TestNG.java:1101)
-
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
@@ -163,5 +162,4 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
   <testcase classname="test.quangddpc05711.LienKetEmailTest" name="TC_LKEMAIL_08" time="29.341"/>
   <testcase classname="test.quangddpc05711.LienKetEmailTest" name="TC_LKEMAIL_09" time="32.571"/>
   <testcase classname="test.quangddpc05711.LienKetEmailTest" name="TC_LKEMAIL_10" time="19.641"/>
-
 </testsuite> <!-- Default test -->
