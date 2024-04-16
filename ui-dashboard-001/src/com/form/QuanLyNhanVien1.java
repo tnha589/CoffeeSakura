@@ -829,6 +829,7 @@ public void init() {
         try {
             nvDao.update(nv); // cập nhật
             this.fillTable(); // đổ lại bảng
+//            JOptionPane.showMessageDialog(this, "Cập nhật nhân viên thành công!");
               getJOptionePane.methodThatUsesOptionPane(this, "Cập nhật nhân viên thành công!");
         } catch (Exception e) {
               getJOptionePane.methodThatUsesOptionPane(this, "Cập nhật nhân viên thất bại!");
@@ -1096,6 +1097,7 @@ public void init() {
         } else {
             ErrorMaNV1.setText("");
         }
+        System.out.println("1: "+check);
 
         // Kiểm tra tên nhân viên
         String tenNV = txtTenNV.getText();
@@ -1105,6 +1107,7 @@ public void init() {
         } else {
             ErrorTenNV.setText("");
         }
+        
         // Kiểm tra chức vụ
         int vaiTroIndex = cboVaiTro.getSelectedIndex();
         if (vaiTroIndex == 0) {

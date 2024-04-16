@@ -16,7 +16,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import com.model.NhanVien;
 
-import static org.mockito.Mockito.timeout;
+//import static org.mockito.Mockito.timeout;
 
 import java.awt.Color;
 import java.awt.Component;
