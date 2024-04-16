@@ -27,6 +27,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Date;
 import java.util.List;
@@ -55,6 +56,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class QuanLyNhanVien1 extends javax.swing.JPanel {
 
+	public List<NhanVien> listSP = new ArrayList<>();
+    
+	
     JFileChooser fileChooser = new JFileChooser();
     nhanVienDao nvDao = new nhanVienDao();
     int row = -1;
